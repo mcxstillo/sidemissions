@@ -84,3 +84,12 @@ a:hover {
   color: #1C1259;
 }
 
+body {
+}
+
+#navcol-1 {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+}
+
