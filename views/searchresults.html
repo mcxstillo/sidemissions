@@ -4,20 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sidemission</title>
+    <title>searchresults</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="#" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
+<body style="background-color: #F6F7FB;margin: 0px;margin-left: 0px;width: 100%;height: 100%;">
+    <div class="container d-inline" style="font-family: Poppins, sans-serif;padding: 4;margin: 0;width: 44%;margin-left: 1rem;margin-right: 1rem;"><img src="assets/img/logo.png" style="height: 70px;margin: 3px;width: 75px;"><a class="navbar-brand" href="#page-top" style="background-color: rgba(28,18,89,0);color: #1c1259;font-family: 'Suez One', serif;font-size: 24px;">SideMissions</a></div>
     <div
         class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 1.5rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
@@ -41,19 +41,46 @@
                 </div>
             </div>
         </nav>
-        <div class="register-photo" style="background-color: #F6F7FB;">
-            <div class="form-container">
-                <form method="post">
-                    <h2 class="text-center" style="color: #EE4266;font-family: Poppins, sans-serif;font-weight: bold;">Create your ID, Rookie.</h2>
-                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
-                    <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Full Name"></div>
-                    <div class="form-group"><input class="form-control" type="text" id="cpNumber" placeholder="Contact Number"></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a class="login" href="login.html" style="margin-left: 262px;">Already have an account? Login here.</a></form>
+        <div class="container" style="width: 100%;height: 100%;margin-top: 3rem;">
+            <div class="row">
+                <div class="col">
+                    <h1 style="font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 2rem;">Mission Board</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-inline" style="margin-bottom: 1rem;">
+                    <div class="dropdown d-inline" style="background-color: #F6F7FB;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #F6F7FB;padding-right: 14px;margin-right: 1rem;color: #1c1259;border-color: rgba(28,18,89,0.2);width: 130px;">Category&nbsp; &nbsp; &nbsp;&nbsp;</button>
+                        <div
+                            class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                </div>
+                <div class="dropdown d-inline" style="background-color: #F6F7FB;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #F6F7FB;margin-right: 1rem;margin-left: 0rem;color: #1c1259;border-color: rgba(28,18,89,0.2);width: 130px;">Duration&nbsp; &nbsp; &nbsp; &nbsp;</button>
+                    <div
+                        class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+            </div>
+            <div class="dropdown d-inline"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #F6F7FB;margin-right: 1rem;margin-left: 0rem;color: #1c1259;border-color: rgba(28,18,89,0.2);width: 130px;">Price Offer&nbsp; &nbsp;&nbsp;</button>
+                <div
+                    class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+        </div>
+        <div class="dropdown d-inline"><button class="btn btn-primary dropdown-toggle float-right" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #F6F7FB;margin-right: 0rem;margin-left: 0rem;color: #1c1259;border-color: rgba(28,18,89,0.2);width: 130px;">Sort by&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</button>
+            <div
+                class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col" style="background-color: rgba(255,255,255,0);">
+                <div class="card" style="margin-top: 1rem;border-radius: 6px;">
+                    <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
+                        <h4 class="card-title" style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">Mission Title</h4>
+                        <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">Name ng nag&nbsp; post</h6>
+                        <p class="card-text" style="margin-top: 2rem;margin-bottom: 2rem;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. yes job description yay</p><i class="fa fa-clock-o" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i>
+                        <span
+                            class="d-inline-block" style="margin-left: 1rem;">Sample duration</span><i class="la la-money d-inline-block" style="font-size: 25px;color: #FF9800;margin-left: 5rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Sample price offer</span></div>
+                </div>
             </div>
         </div>
-        <div class="footer-dark" style="width: 100%;height: 243px;padding: 25px;margin-top: 4rem;background-color: #0d0733;">
+        </div>
+        <div class="footer-dark" style="width: 100%;height: 243px;background-color: #0d0733;padding: 25px;margin-top: 4rem;">
             <footer>
                 <div class="container">
                     <div class="row">
