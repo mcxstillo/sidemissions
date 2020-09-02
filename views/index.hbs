@@ -1,0 +1,86 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+            <form method="POST" action="register">
+                Register
+                <div class="error">{{emailerror}}</div>
+                <div class="error">{{emptyerror}}</div>
+                <input input="email" placeholder="email" name="email">
+                {{!-- <input input="password" placeholder="password" name="password"> --}}
+                <input input="password" placeholder="password" name="pw">
+                <input type="submit" value="register">
+                <br> 
+
+                {{!-- {{#each this}}
+                {{#if email}}
+                    <div id="email">Email: {{this.email}}</div>
+               {{/if}}
+                {{#if password}}
+                    <div id="password">Password: {{this.password}}</div>
+                {{/if}}
+                {{/each}}  --}}
+            </form>
+
+            <form method="POST" action="login">
+                Login
+                 <div class="error">{{error}}</div>
+                <input input="text" placeholder="email" name="email">
+                {{!-- <input input="text" placeholder="password" name="password"> --}}
+                <input input="password" placeholder="password" name="pw">
+                <input type="submit" value="login">
+
+                <br> 
+
+                {{!-- {{#each email}}
+                    <div id="email">Email:{{this.email}}</div>
+                 
+               
+                {{/each}}  
+                {{#each password}}
+              
+                    <div id="password">Password: {{this.password}}</div>
+               
+                {{/each}}  --}}
+                
+            </form>
+         
+                
+    </body>
+
+</html>
+
+   {{!-- <form method="POST" action="addgame">
+                <input input="text" placeholder="name" name="name">
+                <input input="text" placeholder="description" name="description">
+                <input input="text" placeholder="genre" name="genre">
+                <input input="text" placeholder="publish" name="publish">
+                <input type="submit" value="submit">
+
+                {{#each name}}
+                    <div id="name">Game name:{{this.name}}</div>
+                    <div id="description">Description:{{this.description}}</div>
+                    <div id="genre">Genre:{{this.genre}}</div>
+                    <div id="publish">Published:{{this.publish}}</div><br>
+                {{/each}}
+
+            </form>
+
+            <form method="GET" action="search">
+                <input input="text" placeholder="search" name="search">
+                <input type="submit" value="submit">
+            </form>
+                {{#if error_search}}
+                    <div>Result not found</div>
+
+                {{else}}
+                    {{#each searchname}}
+                        <div>Game Name: {{this.name}}</div><br>
+                    {{/each}}
+                {{/if}}
+                 --}}
+
+                
+                
