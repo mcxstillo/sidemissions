@@ -1,0 +1,28 @@
+.logerror {
+    font-size: 1em;
+    color: #0d0733;
+    background-color: #F6A2B4;
+    border-left: 3px solid red;
+    margin-bottom: 2rem;
+}
+
+.logerror span {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.regerror {
+    width: 40%;
+    font-size: 1em;
+    color: #0d0733;
+    background-color: #F6A2B4;
+    border-left: 3px solid red;
+    margin-bottom: 2rem;
+}
+
+.regerror span {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

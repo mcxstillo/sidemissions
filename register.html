@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/sidemissions.css">
 </head>
 
 <body>
@@ -45,11 +45,12 @@
             <div class="form-container">
                 <form method="post">
                     <h2 class="text-center" style="color: #EE4266;font-family: Poppins, sans-serif;font-weight: bold;">Create your ID, Rookie.</h2>
-                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                    <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
-                    <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Full Name"></div>
-                    <div class="form-group"><input class="form-control" type="text" id="cpNumber" placeholder="Contact Number"></div>
+                    <div class="regerror"><span>{{emailerror}}</span></div>
+                    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
+                    <div class="form-group"><input class="form-control" type="password" name="pw" placeholder="Password" required></div>
+                    <div class="form-group"><input class="form-control" type="text" name="firstname" placeholder="First Name" required></div>
+                    <div class="form-group"><input class="form-control" type="text" name="lastname" placeholder="Last Name" required></div>
+                    <div class="form-group"><input class="form-control" type="number" name="cpNumber" placeholder="Contact Number" required></div>
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a class="login" href="login.html" style="margin-left: 262px;">Already have an account? Login here.</a></form>
             </div>
         </div>
