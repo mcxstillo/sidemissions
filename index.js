@@ -23,7 +23,8 @@ var Schema = mongoose.Schema
 const userSchema= new Schema({ 
   email:String,
   password:String,
-  uDesc:String
+  name:String,
+  cpNumber:Number
 })
 
 const jobSchema= new Schema({ 
@@ -41,6 +42,9 @@ const jobModel= mongoose.model('job', jobSchema)
 app.get("/",async function(req,res){
   var email= await userModel.find({})
   var password= await userModel.find({})
+  var name= await userModel.find({})
+  var cpNumber= await userModel.find({})
+
   var uDesc= await userModel.find({})
 
   var title= await jobModel.find({})
@@ -48,7 +52,7 @@ app.get("/",async function(req,res){
   var reward= await jobModel.find({})
   var duration= await jobModel.find({})
 
-  res.render("index.hbs",{
+  res.render("login.hbs",{
     email: JSON.parse(JSON.stringify(email)),
     password: JSON.parse(JSON.stringify(password)),
     uDesc: JSON.parse(JSON.stringify(uDesc)),
@@ -67,56 +71,37 @@ app.get("/",async function(req,res){
 app.post("/register",urlencoder,function(req,res){
     let email = req.body.email
     let password = req.body.pw
- 
+    let name = req.body.name
+    let cpNumber = req.body.cpNumber
+
     let doc = new userModel({
       email:email,
-      password:password
+      password:password,
+      name: name,
+      cpNumber: cpNumber
     })
 
-  //   userModel.findOne({'email': email}, function(err,email){
-  //     if(email) {
-  //       console.log('not avail')
-  //       res.redirect("/")
-  //     }else {
-  //       console.log('avail')
-  //       doc.save(function(error,email){
-  //           if(error){
-  //               return console.error(error)
-  //           }else{
-  //               res.redirect("/")
-  //               console.log(email+ "added????")
-  //           }
-  //       })
-  //     }
-  // })
 
-  userModel.findOne({'email': req.body.email}, function(err,email) {
-    if (!email) {
+  userModel.findOne({'email': req.body.email}, function(err,user) {
+    if (!user) {
       console.log('avail')
-      doc.save(function(error,email) {
+      doc.save(function(error,user) {
         if(error) 
          return console.error(error)
         else{
-          console.log(email+ "added????")
+          console.log(user+ "added????")
+        
           res.redirect("/")
         }
       })
-    }else if (req.body.email == ""||req.body.pw ==""){
-      console.log("Please enter a username and password!")
-      res.render("index.hbs",{
-        emptyerror: "Please enter a username and password!"
-      })
-    }  else {
-       return res.render("index.hbs", {
+    }else {
+       return res.render("register.hbs", {
           emailerror: "Email already taken"
         })
-      // console.log('not avail')
-      // res.redirect("/")
     }
   })
   
 })
-
 
 
 app.post("/login",urlencoder,function(req,res){
@@ -126,43 +111,20 @@ app.post("/login",urlencoder,function(req,res){
   userModel.findOne({'email': req.body.email, 'password': req.body.pw}, function(err,user){
     if(user) {
       console.log("Logged In!")
-      res.redirect("/")
+      res.render("home.hbs")
+      // res.redirect("/")
     
     }else {
       console.log("Email and Password does not match")
-      return res.render("index.hbs", {
-        error: "Email and Password does not match"
+      return res.render("login.hbs", {
+        loginerror: "Email and Password does not match"
       })
     }
       
 })
-
-  // if(!matches(req.body.email,req.body.pw)){
-  //   console.log("Email and Password does not match")
-  //   return res.render("index.hbs", {
-  //     error: "Email and Password does not match"
-  //   })
-    
-  // }else{
-      
-  // }
-  
  
 })
 
-//you get an email and if merong pw na nagmmatch with it, pwede
-// function matches(email,password) {
-//   userModel.findOne({'email': email, 'password': password}, function(err,user){
-//       if(user) {
-//         console.log(email + ' ' + password + ' ' + "AUTHORIZED USER")
-//         return true
-//       }else {
-//         console.log(email + ' ' + password + ' ' + "NOT AUTHORIZED USER")
-//         return false
-//       }
-        
-//   })
-// }
 app.post("/createpost",urlencoder,function(req,res){
   let title = req.body.title
   let jDesc = req.body.jDesc
