@@ -102,6 +102,18 @@ app.get("/create", function(req,res){
   })
 })
 
+app.get("/search",function(req,res){
+  let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
+  
+  jobModel.find({title: search}, function (err, data) {
+    console.log(data)
+      res.render("searchresults.hbs", {
+          layout: false,
+          result: JSON.parse(JSON.stringify(data))
+      })
+  })
+})
+
 app.post("/register",urlencoder,function(req,res){
     let email = req.body.email
     let password = req.body.pw
@@ -194,6 +206,7 @@ app.post("/create",urlencoder,function(req,res){
       }
   }) 
 })
+
 
 app.listen(3000, function(){
   console.log("now listening to port 3000")
