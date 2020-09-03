@@ -10,6 +10,17 @@ const urlencoder = bodyparser.urlencoded({
     extended: false
 })
 
+
+app.use(session({
+  secret: "very secret",
+  resave: false,
+  saveUninitialized: true,
+  cookie:{
+      maxAge: 14 * 24 * 3600000
+  }
+}))
+
+
 const mongoose = require('mongoose');
 const { json } = require('body-parser')
 var options ={
@@ -25,7 +36,9 @@ app.engine('hbs', exphbs.create({
 app.set('view engine', 'hbs');
 
 mongoose.connect('mongodb://localhost/sidemissions', options)
-        .then(() =>{ console.log('success'); },err =>{console.log(err);
+        .then(() =>{ 
+          console.log('success'); 
+        },err =>{console.log(err);
 });
 
 var Schema = mongoose.Schema
@@ -107,11 +120,19 @@ app.get("/search",function(req,res){
   
   jobModel.find({title: search}, function (err, data) {
     console.log(data)
-      res.render("searchresults.hbs", {
+      res.render("searchresults", {
           layout: false,
           result: JSON.parse(JSON.stringify(data))
       })
   })
+})
+
+app.get("/viewpage",function(req,res){
+    console.log('viewpage sana')
+      res.render("viewpage", {
+          layout: false,
+        
+      })
 })
 
 app.post("/register",urlencoder,function(req,res){
