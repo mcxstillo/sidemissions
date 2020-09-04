@@ -37,3 +37,9 @@
     color: #1c1259;
     background-color: #FFD28C;
 }
+
+#footer {
+    position: static;
+    bottom: 0px;
+    margin-top: 4rem;
+  }

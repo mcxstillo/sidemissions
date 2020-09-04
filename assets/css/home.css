@@ -1,0 +1,57 @@
+html body {
+  width: 100%;
+}
+
+.navicon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.navbuttonform {
+  position: static;
+  bottom: 5px;
+}
+
+#navbutton {
+  background-color: #ee4266;
+  color: #F6F7FB;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.loginbutton {
+  display: inline;
+  background-color: #FF9800;
+}
+
+.loginbutton:hover {
+  background-color: #FFD28C;
+  color: #1c1259;
+}
+
+#navbutton:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.navdesc {
+  text-align: center;
+  width: 20rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 45px;
+  margin-right: 9px;
+}
+
+#footer {
+  position: static;
+  bottom: 0px;
+  margin-top: 4rem;
+}
+

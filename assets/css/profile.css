@@ -1,0 +1,63 @@
+#desc {
+  color: #62646A;
+}
+
+p {
+  font-weight: 600;
+}
+
+.skills {
+  font-weight: normal;
+  font-size: 15px;
+  background: rgb(255,255,255);
+  text-align: center;
+  padding: 14px;
+  border-radius: 26px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border: 1px solid rgba(33,37,41,0.14);
+}
+
+img {
+  height: 70px;
+  width: 80px;
+}
+
+#sidemissions {
+  font-weight: 400;
+}
+
+#footer {
+  position: static;
+  bottom: 0px;
+  margin-top: 4rem;
+}
+
+#card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.manage-btn {
+  color: #1C1259;
+  background-color: #FF9800;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+.manage-btn:hover {
+  color: #1C1259;
+  background-color: #FFD28C;
+}
+
+#card-text {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

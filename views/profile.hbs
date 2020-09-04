@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One&amp;subset=latin-ext,hebrew">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
     <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
 </head>
 
-<body style="width: 100%;height: 100%;background-color: rgb(246,247,251);">
+<body style="background-color: rgb(246,247,251);width: 100%;height: 100%;">
     <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="#" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
@@ -25,7 +29,7 @@
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
         </ul>
-    </div>
+        </div>
         <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
             <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
@@ -33,7 +37,7 @@
                     <ul class="nav navbar-nav d-flex">
                         <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
                         <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
                         <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
                         <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
                         <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
@@ -41,74 +45,53 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col d-xl-flex justify-content-xl-center">
-                    <div class="card" style="width: 985px;margin-top: 2rem;">
-                        <div class="card-body d-xl-flex justify-content-xl-center" style="padding: 25px;">
-
-                            <!--  FORM IS HERE  -->
-                            <form method="post" action="create">
-                                <h1 style="text-align: center;margin: 0;margin-bottom: 1rem;margin-top: 1rem;">Post a Mission</h1>
-                                <div class="form-group d-block" style="width: 382px;">
-                                    <label>Title</label>
-                                    <input class="form-control" type="text" name="jobTitle" style="width: 380px;">
-                                </div>
-                                <div class="form-group" style="width: 382px;">
-                                    <label>Description</label>
-                                    <textarea class="form-control" name="jobDesc" style="width: 380px;"></textarea>
-                                </div>
-                                <div class="form-group d-block" style="width: 382px;">
-                                    <label>Category</label>
-                                    <div class="dropdown">
-                                        <select name="jobCategory">
-                                            <option value="Design">Design</option>
-                                            <option value="Photography">Photography</option>
-                                            <option value="Video">Video</option>
-                                            <option value="Typing">Typing</option>
-                                            <option value="Tutor">Tutor</option>
-                                            <option value="Audio">Audio</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            <div class="form-group d-block" style="width: 382px;">
-                                <label>Duration</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" id="formCheck-1" style="margin-left: -10px;" name="jobDuration" value="1-24 Hours">
-                                        <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1-24 Hours</label>
-                                    </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="formCheck-4" style="margin-left: -10px;" name="jobDuration" value="within 3 days">
-                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">within 3 days</label>
-                                </div>
-
-                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" style="margin-left: -10px;" name="jobDuration" value="1 week">
-                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1 week</label>
-                                </div>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="formCheck-2" style="margin-left: -10px;" name="jobDuration" value="1 week+">
-                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1 week+</label>
-                                </div>
+        <div class="row" style="width: 100%;">
+            <div class="col-4" style="width: 25%;padding-top: 3rem;margin-left: 6rem;padding-right: 0;padding-left: 0;">
+                <div class="card d-xl-flex" style="width: 95%;">
+                    <div class="card-body" style="width: 100%;padding: 35px;">
+                        <h4 class="card-title" style="margin: 1rem;margin-top: 1rem;text-align: center;">{{name}}</h4>
+                        <h6 class="text-muted card-subtitle mb-2" style="text-align: center;margin: 1rem;margin-top: 1em;margin-bottom: 1em;">Approval Rating:&nbsp;</h6><button class="btn btn-primary d-xl-flex justify-content-xl-center" type="button" style="width: 92%;margin: 2em 0rem;background-color: #EE4266;border-style: none;margin-left: 1rem;"><i class="icon ion-android-mail" style="margin-right: 10px;"></i>Contact Me</button>
+                        <h4
+                            class="card-title" style="font-size: 1rem;font-family: Poppins, sans-serif;font-weight: bold;margin-top: 3rem;">Description</h4>
+                            <p class="card-text" style="color: #62646A;border-width: 0;border-style: none;border-bottom-style: solid;border-bottom-color: rgb(0,53,213);font-weight: normal;">{{userDesc}}</p>
+                            <div style="background-color: rgba(33,37,41,0);height: 0.5px;margin-top: 2em;margin-bottom: 2em;width: 85%;margin-left: 25px;border-bottom: 1px solid rgba(77,79,81,0.2) ;"></div>
+                            <h4 class="card-title" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;">Linked Accounts</h4>
+                            <p class="card-text" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;">{{linked_accounts}}</p>
+                            <div style="background-color: rgba(33,37,41,0);height: 0.5px;margin-top: 2em;margin-bottom: 2em;width: 85%;margin-left: 25px;border-bottom: 1px solid rgba(77,79,81,0.2) ;"></div>
+                            <h4 class="card-title" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;">Skills</h4>
+                            <div id="skills-body">
+                            {{#if error_search}}
+                                <h4>No skills entered.</h4>
+                             {{else}}
+                                {{#each result}}
+                                    <p class="d-inline skills">{{skill}}</p>
                             </div>
-
-                            <div class="form-group" style="width: 382px;">
-                                <label>Rate Offered</label>
-                                <input class="form-control" type="number" name="chargeRate">
-                            </div>
-
-                            <div class="form-group d-block" style="width: 382px;">
-                                <label>Skills</label>
-                                <input class="form-control" type="text" name="jobSkills">
-                            </div>
-                            
-                            <button class="btn btn-primary text-center" type="submit" style="width: 152px;margin-top: 2rem;margin-left: 7rem;background-color: #1c1259;color: #F6F7FB;">Create Mission</button>
-                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <!-- DIV OF ACCOMPLISHED MISSION CARDS -->
+            <div class="col-6" style="padding: 0;padding-top: 50px;margin-left: 2rem;margin-right: 5rem;width: 518px;">
+                <p style="font-size: 21px;font-family: Poppins, sans-serif;font-style: normal;">Missions Accomplished<br></p>
+                <div class="row">
+                {{#if error_search}}
+                    <h4>No missions accomplished</h4>
+                {{else}}
+                    {{#each result}}
+                    <div class="col-4">
+                        <div class="card" id="card" style="margin-top: 1rem;border-radius: 6px;height: 300px;">
+                            <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
+                                <h4 class="card-title" style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">{{jobTitle}}</h4>
+                                <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{employer}}</h6>
+                                <p class="card-text" id="card-text" style="margin-top: 2rem;margin-bottom: 2rem;font-family: Poppins, sans-serif;font-weight: normal;">{{jobDesc}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                {{/if}}
+                </div>
+            </div>
+            <!-- DIV OF ACCOMPLISHED MISSION CARDS -->    
         </div>
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
@@ -120,6 +103,8 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+        <script src="assets/js/Simple-Slider.js"></script>
 </body>
 
 </html>

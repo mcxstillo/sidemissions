@@ -6,30 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../assets/css/Navigation-with-Search.css">
 </head>
 
 <body id="page-top" style="background: #f6f7fb;width: 100%;">
-    <div class="container d-inline" style="font-family: Poppins, sans-serif;padding: 4;margin: 0;width: 44%;margin-left: 1rem;margin-right: 1rem;"><img src="assets/img/logo.png" style="height: 70px;margin: 3px;width: 75px;"><a class="navbar-brand" href="#page-top" style="background-color: rgba(28,18,89,0);color: #1c1259;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;">SideMissions</a></div>
-    <div
-        class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 30%;margin-top: 17px;margin-right: 0rem;"><a data-bs-hover-animate="pulse" href="#" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;margin-right: 1rem;">Hi! &lt;name&gt;</a>
+    <div class="container d-inline" style="font-family: Poppins, sans-serif;padding: 4;margin: 0;width: 44%;margin-left: 1rem;margin-right: 1rem;"><img src="../assets/img/logo.png" style="height: 70px;margin: 3px;width: 75px;"><a class="navbar-brand" href="#page-top" style="background-color: rgba(28,18,89,0);color: #1c1259;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;">SideMissions</a></div>
+    <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item dropdown" style="margin-bottom: 10px;"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="background: #ee4266;border-radius: 10px;color: #f6f7fb;width: 38px;height: 38px;"></a>
-                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="/create">First Item</a><a class="dropdown-item" role="presentation" href="/profile">Second Item</a><a class="dropdown-item" role="presentation" href="/manage_job">Third Item</a></div>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{name}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+            <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
+                <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
-            <li class="nav-item" style="border-style: none;"></li>
         </ul>
-        </div>
+    </div>
         <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
             <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-3"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
@@ -48,7 +49,9 @@
         <div class="jumbotron" style="margin-top: 2rem;height: 475px;padding-left: 8rem;padding-bottom: 72px;padding-right: 10rem;background: url(&quot;assets/img/bg1.jpg&quot;) top / cover no-repeat;">
             <h1 class="text-left" style="color: #1c1259;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 26px;margin-top: 40px;">Hello, Agent</h1>
             <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help you explore your talents further, find that extra cash that you need, or look for that designer you need.<br></p>
+           <form method="get" action="search" style="width: 40%; display: inline;">
             <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;"><input type="search" style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;"><button class="btn btn-primary" type="button" style="height: 42px;border-radius: 0;border-top-right-radius: 5px;border-bottom-right-radius: 5px;background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;">Search</button></div>
+           </form>
         </div>
         <div class="row" style="padding-right: 5rem;padding-left: 5rem;">
             <div class="col-4">
@@ -56,7 +59,7 @@
                     <div class="card-body" style="border-radius: 10px;border-style: none;"><img class="navicon" src="assets/img/sticky-notes.png" style="width: 70px;height: 70px;">
                         <h4 class="text-center card-title">Post a Mission</h4>
                         <p class="card-text navdesc">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        <form method="get" action="/create"><button class="btn btn-primary navbutton" type="submit" style="background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;">Go</button></form>
+                        <form method="get" action="create"><button class="btn btn-primary navbutton" type="submit" style="background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;">Go</button></form>
                     </div>
                 </div>
             </div>
@@ -79,39 +82,16 @@
                 </div>
             </div>
         </div>
-        <div class="footer-dark" style="width: 100%;height: 243px;background-color: #0d0733;padding: 25px;margin-top: 4rem;">
-            <footer style="padding: 0;">
+         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
+            <footer style="color: #B9C0DF;">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>Services</h3>
-                            <ul>
-                                <li><a href="#">Web design</a></li>
-                                <li><a href="#">Development</a></li>
-                                <li><a href="#">Hosting</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-3 item">
-                            <h3>About</h3>
-                            <ul>
-                                <li><a href="#">Company</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Careers</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 item text">
-                            <h3>Company Name</h3>
-                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
-                        </div>
-                        <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
-                    </div>
-                    <p class="copyright" style="padding-top: 9px;">Company Name © 2017</p>
+                    <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 </body>
 
