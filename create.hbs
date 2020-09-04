@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>profile</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One&amp;subset=latin-ext,hebrew">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+
+<body style="width: 100%;height: 100%;background-color: rgb(246,247,251);">
+    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="#" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
+    <div
+        class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 1.5rem;margin-right: 0rem;">
+        <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
+            <li class="nav-item" data-bs-hover-animate="pulse"></li>
+            <li class="nav-item" style="border-style: none;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;">LOGIN</a></li>
+            <li class="nav-item" style="border-style: none;color: #F6F7FB;background-color: #EE4266;border-radius: 10px;"><a class="nav-link" data-bs-hover-animate="pulse" href="profile.html" style="color: #F6F7FB;border-style: none;border-radius: 0;font-family: Poppins, sans-serif;">SIGNUP</a></li>
+        </ul>
+        </div>
+        <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
+            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
+                    id="navcol-1" style="border-radius: 20px;">
+                    <ul class="nav navbar-nav d-flex">
+                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col d-xl-flex justify-content-xl-center">
+                    <div class="card" style="width: 985px;margin-top: 2rem;">
+                        <div class="card-body d-xl-flex justify-content-xl-center" style="padding: 25px;">
+
+                            <!--  FORM IS HERE  -->
+                            <form method="post" action="create">
+                                <h1 style="text-align: center;margin: 0;margin-bottom: 1rem;margin-top: 1rem;">Post a Mission</h1>
+                                <div class="form-group d-block" style="width: 382px;">
+                                    <label>Title</label>
+                                    <input class="form-control" type="text" name="jobTitle" style="width: 380px;">
+                                </div>
+                                <div class="form-group" style="width: 382px;">
+                                    <label>Description</label>
+                                    <textarea class="form-control" name="jobDesc" style="width: 380px;"></textarea>
+                                </div>
+                                <div class="form-group d-block" style="width: 382px;">
+                                    <label>Category</label>
+                                    <div class="dropdown">
+                                        <select name="jobCategory">
+                                            <option value="Design">Design</option>
+                                            <option value="Photography">Photography</option>
+                                            <option value="Video">Video</option>
+                                            <option value="Typing">Typing</option>
+                                            <option value="Tutor">Tutor</option>
+                                            <option value="Audio">Audio</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="form-group d-block" style="width: 382px;">
+                                <label>Duration</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" id="formCheck-1" style="margin-left: -10px;" name="jobDuration" value="1-24 Hours">
+                                        <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1-24 Hours</label>
+                                    </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="formCheck-4" style="margin-left: -10px;" name="jobDuration" value="within 3 days">
+                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">within 3 days</label>
+                                </div>
+
+                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-3" style="margin-left: -10px;" name="jobDuration" value="1 week">
+                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1 week</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="formCheck-2" style="margin-left: -10px;" name="jobDuration" value="1 week+">
+                                    <label class="form-check-label" for="formCheck-1" style="margin-left: 11px;">1 week+</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="width: 382px;">
+                                <label>Rate Offered</label>
+                                <input class="form-control" type="number" name="chargeRate">
+                            </div>
+
+                            <div class="form-group d-block" style="width: 382px;">
+                                <label>Skills</label>
+                                <input class="form-control" type="text" name="jobSkills">
+                            </div>
+                            
+                            <button class="btn btn-primary text-center" type="submit" style="width: 152px;margin-top: 2rem;margin-left: 7rem;background-color: #1c1259;color: #F6F7FB;">Create Mission</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 243px;padding: 25px;">
+            <footer style="color: #B9C0DF;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Company Name</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                        </div>
+                        <div class="col item social" style="color: #1c1259;"><a href="#" style="color: #B9C0DF;"><i class="icon ion-social-facebook" style="color: #B9C0DF;"></i></a><a href="#" style="color: #1c1259;"><i class="icon ion-social-twitter" style="color: #B9C0DF;"></i></a><a href="#" style="color: #1c1259;"><i class="icon ion-social-snapchat" style="color: #B9C0DF;"></i></a>
+                            <a
+                                href="#" style="color: #1c1259;"><i class="icon ion-social-instagram" style="color: #B9C0DF;"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright" style="color: #1c1259;">Company Name © 2017</p>
+                </div>
+            </footer>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
