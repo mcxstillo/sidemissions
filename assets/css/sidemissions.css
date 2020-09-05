@@ -6,10 +6,12 @@
 
 #divider {
     height: 0.5px;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 85%;
-    margin-left: 25px;
+    background-color: rgba(33,37,41,0.2);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logerror {
@@ -65,11 +67,37 @@
 }
 
 .card-body {
-    padding-right: 20px;
+    padding: 35px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 3px 3px 10px 1px rgb(232,232,234);
     width: 100%;
+}
+
+.job-card-body {
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 1px rgb(232,232,234);
+    width: 100%;
+}
+
+.card-title {
+    font-family: Poppins, sans-serif;
+    text-align: center;
+}
+
+.card-text {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.applybtn {
+    width: 190px;
+    margin-left: 6rem;
+    margin-top: 2rem;
+    background-color: #eb3b60;
+    border-style: none;
 }
 
 #button:hover {
