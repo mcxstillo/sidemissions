@@ -5,11 +5,12 @@ const path = require("path")
 const exphbs = require("express-handlebars")
 const hbs = require("hbs")
 const app= express()
+const {userModel} = require("./models/user.js")
+const {jobModel} = require("./models/job.js")
 
 const urlencoder = bodyparser.urlencoded({
     extended: false
 })
-
 
 app.use(session({
   secret: "very secret",
@@ -19,6 +20,7 @@ app.use(session({
       maxAge: 14 * 24 * 3600000
   }
 }))
+
 
 
 const mongoose = require('mongoose');
@@ -43,25 +45,25 @@ mongoose.connect('mongodb://localhost/sidemissions', options)
 
 var Schema = mongoose.Schema
 
-const userSchema= new Schema({ 
-  email:String,
-  password:String,
-  firstname: String,
-  lastname: String,
-  cpNumber:Number
-})
+// const userSchema= new Schema({ 
+//   email:String,
+//   password:String,
+//   firstname: String,
+//   lastname: String,
+//   cpNumber:String
+// })
 
-const jobSchema= new Schema({ 
-  title:String,
-  jDesc:String,
-  reward:Number,
-  duration:String,
-  category: String
-})
+// const jobSchema= new Schema({ 
+//   title:String,
+//   jDesc:String,
+//   reward:Number,
+//   duration:String,
+//   category: String
+// })
 
 const db=mongoose.connection
-const userModel = mongoose.model('user', userSchema)
-const jobModel= mongoose.model('job', jobSchema)
+// const userModel = mongoose.model('user', userSchema)
+// const jobModel= mongoose.model('job', jobSchema)
 
 
 app.get("/",async function(req,res){
@@ -78,21 +80,20 @@ app.get("/",async function(req,res){
   var duration= await jobModel.find({})
   var category = await jobModel.find({})
 
-  res.render("login.hbs",{
-    layout: false,
-    email: JSON.parse(JSON.stringify(email)),
-    password: JSON.parse(JSON.stringify(password)),
-    uDesc: JSON.parse(JSON.stringify(uDesc)),
-    cpNumber: JSON.parse(JSON.stringify(cpNumber)),
-
-    title: JSON.parse(JSON.stringify(title)),
-    jDesc: JSON.parse(JSON.stringify(jDesc)),
-    reward: JSON.parse(JSON.stringify(reward)),
-    duration: JSON.parse(JSON.stringify(duration)),
-    category: JSON.parse(JSON.stringify(category))
-  })
   
-})
+  if(req.session.user){
+    // console.log(req.session.user)
+    res.render("index_sesh.hbs",{
+      layout: false, 
+      firstName: req.session.user.firstName
+    })
+  }else{
+    res.render("index.hbs",{
+      layout: false
+    })}
+  })
+
+
   db.once("open",()=>{ 
     console.log("connection Establish")
   })
@@ -100,6 +101,7 @@ app.get("/",async function(req,res){
 app.get("/login", function(req,res){
     res.render("login", {
         layout: false
+        
     })
 })
 
@@ -118,36 +120,112 @@ app.get("/create", function(req,res){
 app.get("/search",function(req,res){
   let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
   
-  jobModel.find({title: search}, function (err, data) {
+  jobModel.find({jobTitle: search},function (err, data) {
+    // console.log(data)
+      res.render("searchresults", {
+        layout: false,
+        searchquery: req.query.search,
+        firstName: req.session.user.firstName,
+        result: JSON.parse(JSON.stringify(data))
+    })
+  }).populate("jobCreator")
+
+  
+})
+
+app.get('/filtered',function(req,res){
+  let search = new RegExp (req.query.search,'gi');
+  let filters = {jobTitle: search};
+  
+  if (!!req.query.min && !!req.query.max)
+      filters['chargeRate'] = {
+          $gte: Number.parseInt(req.query.min),
+          $lte: Number.parseInt(req.query.max)
+      };
+  if (!!req.query.jobDuration) 
+    filters['jobDuration'] = req.query.jobDuration;
+  if (!!req.query.jobCategory) 
+    filters['jobCategory'] = req.query.jobCategory;
+
+    if(req.session.user){
+  jobModel.find(filters,function (err, data) {
     console.log(data)
       res.render("searchresults", {
           layout: false,
+          searchquery: req.query.search,
+          firstName: req.session.user.firstName,
           result: JSON.parse(JSON.stringify(data))
       })
   })
+}
 })
 
 app.get("/viewpage",function(req,res){
-    console.log('viewpage sana')
-      res.render("viewpage", {
-          layout: false,
+
+  let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
+    // console.log('viewpage sana')
+    //   res.render("viewpage", {
+    //       layout: false,
         
+    //   })
+
+      jobModel.find(search,function (err, data) {
+        console.log(data)
+          res.render("viewpage", {
+              layout: false,
+              result: JSON.parse(JSON.stringify(data))
+          })
       })
+})
+
+app.get("/signout",function(req,res){
+  console.log('signout')
+  req.session.destroy();
+  res.redirect("/")
+})
+
+app.get("/categorysearch/:jobCategory",function(req,res){
+  console.log(JSON.stringify(req.params.jobCategory))
+  if(req.session.user){
+  jobModel.find({jobCategory: req.params.jobCategory},function (err, data) {
+  
+      res.render("searchresults", {
+        layout: false,
+        firstName: req.session.user.firstName,
+        result: JSON.parse(JSON.stringify(data))
+    })
+  }).populate("jobCreator")
+  }
+
+})
+
+app.get("/profile",function(req,res){
+
+  if(req.session.user){
+    userModel.findOne({'_id': req.session.user._id},function (err, data) {
+        res.render("profile", {
+          layout: false,
+          firstName: req.session.user.firstName,
+          result: JSON.parse(JSON.stringify(data))
+      })
+    })
+    }
+
 })
 
 app.post("/register",urlencoder,function(req,res){
     let email = req.body.email
-    let password = req.body.pw
-    let firstname = req.body.firstname
-    let lastname = req.body.lastname
-    let cpNumber = req.body.cpNumber
+    let password = req.body.password
+    let firstName = req.body.firstName
+    let lastName = req.body.lastName
+    let contactNum = req.body.contactNum
 
     let doc = new userModel({
       email:email,
       password:password,
-      firstname: firstname,
-      lastname: lastname,
-      cpNumber: cpNumber
+      firstName: firstName,
+      lastName: lastName,
+      contactNum: contactNum
     })
 
 
@@ -176,11 +254,13 @@ app.post("/register",urlencoder,function(req,res){
 
 app.post("/login",urlencoder,function(req,res){
 
-  userModel.findOne({'email': req.body.email, 'password': req.body.pw}, function(err,user){
+  userModel.findOne({'email': req.body.email, 'password': req.body.password}, function(err,user){
     if(user) {
+      req.session.user=user
       console.log("Logged In!")
-      res.render("index.hbs", {
-        layout: false
+      res.render("index_sesh.hbs", {
+        layout: false,
+        firstName: req.session.user.firstName
     })
       // res.redirect("/")
     
@@ -197,22 +277,30 @@ app.post("/login",urlencoder,function(req,res){
 })
 
 app.post("/create",urlencoder,function(req,res){
-  let title = req.body.title
-  let jDesc = req.body.jDesc
-  let reward = req.body.reward
-  let duration = req.body.duration
-  let category = req.body.category
+  let jobTitle = req.body.jobTitle
+  let jobDesc = req.body.jobDesc
+  let chargeRate = req.body.chargeRate
+  let jobDuration = req.body.jobDuration
+  let jobCategory = req.body.jobCategory
+  let jobSkills = req.body.jobSkills
 
-  console.log(req.body)
+  // console.log(req.body)
+
+// console.log(JSON.stringify(req.body.jobSkills))
+  
   let doc = new jobModel({
-      title:title,
-      jDesc:jDesc,
-      reward:reward,
-      duration:duration,
-      category:category
+    jobTitle:jobTitle,
+    jobCreator: req.session.user,
+    jobDesc:jobDesc,
+    chargeRate:chargeRate,
+    jobDuration:jobDuration,
+    jobCategory:jobCategory,
+    jobSkills: jobSkills.split(',')
   })
 
-  console.log(doc)
+  
+  // console.log(doc)
+  // console.log(jobCreator)
 
   doc.save(function(error,title){
       if(error){
@@ -220,12 +308,14 @@ app.post("/create",urlencoder,function(req,res){
       }
       else{
           res.render("create.hbs", {
-            layout: false
+            layout: false,
+            
           })
           console.log(title+ "added")
-
       }
   }) 
+
+  
 })
 
 
