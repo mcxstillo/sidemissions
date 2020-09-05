@@ -19,19 +19,19 @@
 </head>
 
 <body id="page-top" style="background: #f6f7fb;width: 100%;">
-    <div class="container d-inline" style="font-family: Poppins, sans-serif;padding: 4;margin: 0;width: 44%;margin-left: 1rem;margin-right: 1rem;"><img src="assets/img/logo.png" style="height: 70px;margin: 3px;width: 75px;"><a class="navbar-brand" href="#page-top" style="background-color: rgba(28,18,89,0);color: #1c1259;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;">SideMissions</a></div>
+     <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
     <nav
         class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-bottom: 5px;padding-top: 5px;">
         <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-3"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
                 id="navcol-3" style="border-radius: 20px;">
                 <ul class="nav navbar-nav d-flex" style="height: 100%;">
-                    <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
-                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
-                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
-                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
-                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                    <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="login" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="login" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="login" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="login" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="login" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="login" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
                 </ul>
             </div>
         </div>
@@ -40,8 +40,12 @@
             <h1 class="text-left" style="color: #1c1259;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 26px;margin-top: 40px;">Hello, Rookie</h1>
             <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help explore and discover your talents further, earn that extra cash, or look for that assistant you needed.<br></p>
             <div class="row">
-                <div class="col" style="margin-top: 2rem;padding-left: 0;margin-left: 1rem;"><button class="btn d-inline" id="navbutton" type="submit" style="width: 165px;margin-left: 0;border-style: none;border-radius: 5px;height: 40px;margin-right: 2rem;">Sign Up</button><button class="btn d-inline loginbutton" type="submit"
-                        style="width: 165px;border-style: none;border-radius: 5px;height: 40px;margin-left: 0;">Log In</button></div>
+
+                {{!-- LOGIN AND SIGNUP BUTTONS --}}
+                <div class="col" style="margin-top: 2rem;padding-left: 0;margin-left: 1rem;">
+                    <form class="d-xl-flex justify-content-xl-center"method="get" action="register"><button class="btn d-inline" id="navbutton" type="submit" href="register" style="width: 165px;margin-left: 0;border-style: none;border-radius: 5px;height: 40px;margin-right: 2rem;">Sign Up</button></form>
+                    <form class="d-xl-flex justify-content-xl-center"method="get" action="login"><button class="btn d-inline loginbutton" type="submit" href="login" style="width: 165px;border-style: none;border-radius: 5px;height: 40px;margin-left: 0;">Log In</button></form>
+                </div>
             </div>
         </div>
         <div class="row" style="padding-right: 5rem;padding-left: 5rem;">
@@ -75,10 +79,10 @@
                 <form class="d-xl-flex justify-content-xl-center" method="get" action="/login"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/login"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3" style="margin-left: 5rem;">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/manage_job"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/login"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
         </div>
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">

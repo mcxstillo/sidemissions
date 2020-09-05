@@ -120,15 +120,22 @@ app.get("/create", function(req,res){
 app.get("/search",function(req,res){
   let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
   
-  jobModel.find({jobTitle: search},function (err, data) {
-    // console.log(data)
-      res.render("searchresults", {
-        layout: false,
-        searchquery: req.query.search,
-        firstName: req.session.user.firstName,
-        result: JSON.parse(JSON.stringify(data))
+  if(req.session.user){
+    jobModel.find({jobTitle: search},function (err, data) {
+      // console.log(data)
+        res.render("searchresults", {
+          layout: false,
+          searchquery: req.query.search,
+          firstName: req.session.user.firstName,
+          result: JSON.parse(JSON.stringify(data))
+      })
+    }).populate("jobCreator")
+  }else{
+    res.render('index.hbs',{
+      layout: false
     })
-  }).populate("jobCreator")
+  }
+  
 
   
 })
@@ -157,25 +164,49 @@ app.get('/filtered',function(req,res){
           result: JSON.parse(JSON.stringify(data))
       })
   })
-}
+  }else{
+    res.render('index.hbs',{
+      layout: false
+    })
+  }
 })
 
-app.get("/viewpage",function(req,res){
+app.get("/viewpage/:_id",function(req,res){
 
-  let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
-    // console.log('viewpage sana')
-    //   res.render("viewpage", {
-    //       layout: false,
-        
-    //   })
-
-      jobModel.find(search,function (err, data) {
-        console.log(data)
+  if(req.session.user){
+      jobModel.findOne({_id:req.params._id},function (err, data) {
+        // console.log(data.jobCreator.firstName)
           res.render("viewpage", {
               layout: false,
+              firstName: req.session.user.firstName,
+              jobCreatorfirstName: data.jobCreator.firstName,
+              jobCreatorlastName: data.jobCreator.lastName,
+              jobCreatorContactNum: data.jobCreator.contactNum,
+              jobCreatorEmail: data.jobCreator.email,
               result: JSON.parse(JSON.stringify(data))
           })
+          // console.log(result);
+
+
+      }).populate("jobCreator")
+
+
+      // jobModel.find({jobTitle: search},function (err, data) {
+      //   // console.log(data)
+      //     res.render("searchresults", {
+      //       layout: false,
+      //       searchquery: req.query.search,
+      //       firstName: req.session.user.firstName,
+      //       result: JSON.parse(JSON.stringify(data))
+      //   })
+      // }).populate("jobCreator")
+
+
+    }else{
+      res.render('index.hbs',{
+        layout: false
       })
+    }
 })
 
 app.get("/signout",function(req,res){
@@ -195,6 +226,10 @@ app.get("/categorysearch/:jobCategory",function(req,res){
         result: JSON.parse(JSON.stringify(data))
     })
   }).populate("jobCreator")
+  }else{
+    res.render('index.hbs',{
+      layout: false
+    })
   }
 
 })
@@ -206,10 +241,19 @@ app.get("/profile",function(req,res){
         res.render("profile", {
           layout: false,
           firstName: req.session.user.firstName,
+          lastName: req.session.user.lastName,
+          // userDesc: req.session.user.userDesc,
+          email: req.session.user.email,
+          contactNum: req.session.user.contactNum,
           result: JSON.parse(JSON.stringify(data))
       })
     })
-    }
+
+    }else{
+      res.render('index.hbs',{
+        layout: false
+      })
+    } 
 
 })
 
