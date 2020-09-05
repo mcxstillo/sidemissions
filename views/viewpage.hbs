@@ -5,37 +5,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>sidemission</title>
-    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
-    <link rel="stylesheet" href="../../assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../../assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="../../assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="../../assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="../../assets/css/sidemissions.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../assets/css/sidemissions.css">
 </head>
 
 <body style="background-color: #F6F7FB;width: 100%;">
+    {{!-- LOGO AND SIDEMISSIONS --}}
     <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;">
         <a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a>
-        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a>
+        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a>
     </div>
+
+    {{!-- SEARCH BAR --}}
+    <div class="form-group d-inline" style="width: 26%;">
+        <input type="search" class="searchbar" placeholder="Find a mission...">
+        <button class="btn btn-primary" type="button" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+        <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+        </button>
+    </div>
+
+    {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" name="firstName" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
         </ul>
-    </div>
+        </div>
+
+        {{!-- NAV BAR WITH CATEGORIES --}}
         <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
             <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
                     id="navcol-1" style="border-radius: 20px;">
                     <ul class="nav navbar-nav d-flex">
-                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                         <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
                             <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
                             <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
                             <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
@@ -45,38 +58,57 @@
                 </div>
             </div>
         </nav>
-        <div class="container" style="padding: 0px;padding-right: 0;margin-top: 3rem;width: 100%;margin-right: 0;margin-left: 13rem;">
+
+        {{!-- CARD OF JOB CONTENT --}}
+        <div class="container jobcontainer">
             <h1 style="font-size: 32px;font-family: Poppins, sans-serif;margin-top: 3rem;font-weight: bold;margin-bottom: 1rem;margin-left: 3rem;">Mission Details</h1>
             <div class="row d-xl-flex justify-content-xl-center" style="width: 100%;margin-left: 0;margin-right: 0;">
                 <div class="col-6" style="width: 100%;">
-                    <div class="card" style="width: 100%;padding-right: 0px;">
-                        <div class="card-body" style="padding-right: 20px;background-color: #ffffff;box-shadow: 3px 3px 10px 1px rgb(232,232,234);width: 100%;">
+                    <div class="card" style="width: 100%;padding-right: 0px;border-radius: 10px;">
+                        <div class="job-card-body">
                             <!-- TITLE -->
-                            <h4 class="card-title" href="" style="font-family: Poppins, sans-serif;">{{result.jobTitle}}</h4>
+                            <h4 class="card-title">{{result.jobTitle}}</h4>
                             <!-- DESCRIPTION -->
-                            <h6 class="text-muted card-subtitle mb-2" style="border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;">{{result.jobDesc}}</h6>
-                            <p class="card-text"></p>
+                            <p class="card-text text-muted mb-2">{{result.jobDesc}}</p>
+                            <div id="divider"></div>
                             <!-- REWARD -->
-                                <section style="padding-bottom: 25px;margin-top: 0px;border-style: none;border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;"><span style="font-family: Poppins, sans-serif;margin-top: 20px;">{{result.chargeRate}}</span></section>
-                            <!-- DURAITON -->
-                                <section style="padding-bottom: 25px;border-bottom: 1px solid rgb(169,171,173) ;"><span style="font-family: Poppins, sans-serif;">{{result.jobDuration}}</span></section>
+                            <h6>Reward</h6>
+                                <section style ="padding-bottom:5px;margin-top: 0px;border-style: none;border-color: rgb(169,171,173);">
+                                    <span style="font-family: Poppins, sans-serif;margin-top: 20px;">{{result.chargeRate}}</span>
+                                </section>
+                                <div id="divider"></div>
+                            <!-- DURATION -->
+                            <h6>Duration</h6>
+                                <section style="padding-bottom:5px;">
+                                    <span style="font-family: Poppins, sans-serif;">{{result.jobDuration}}</span>
+                                </section>
+                                <div id="divider"></div>
                             <!-- SKILLS --> 
-                                <section></section><span style="font-family: Poppins, sans-serif;">{{result.jobSkills}}</span></div>
+                            <h6>Skills Required</h6>
+                                <section>
+                                    <span style="font-family: Poppins, sans-serif;">{{result.jobSkills}}</span>   
+                                </section>
+                        </div>
                     </div>
                 </div>
-                <div class="col-5" style="width: 100%;margin-left: 3rem;">
-                    <div class="card" style="width: 100%;margin: 0px;margin-top: 0px;padding: 21px;box-shadow: 3px 3px 10px 1px rgb(232,232,234);">
-                        <div class="card-body" style="padding-right: 20px;">
-                            <h4 class="card-title">About the Handler</h4>
-                            <h4 class="card-title">{{jobCreatorfirstName}} {{jobCreatorlastName}}</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Contact Information</h6>
-                            <p class="card-text">{{jobCreatorContactNum}}</p>
-                            <p class="card-text">{{jobCreatorEmail}}</p>
-                            <button class="btn btn-primary" type="button" style="width: 190px;margin-left: 5.5rem;background-color: #eb3b60;border-style: none;">Apply for Mission</button></div>
-                    </div>
+
+        {{!-- CARD OF JOB HANDLER --}}
+        <div class="col-5" style="width: 100%;margin-left: 3rem;">
+             <div class="card" style="width: 100%;margin: 0px;margin-top: 0px;box-shadow: 3px 3px 10px 1px rgb(232,232,234);">
+                <div class="card-body" style="padding-right: 20px;">
+                    <h4 class="card-title">About the Handler</h4>
+                    <h5 class="card-subtitle" style="margin-top: 2rem;margin-bottom: 2rem;">{{jobCreatorfirstName}} {{jobCreatorlastName}}</h5>
+                    <h6 class="text-muted card-subtitle mb-2">Contact Information</h6>
+                    <p class="card-text">{{jobCreatorContactNum}}</p>
+                    <p class="card-text">{{jobCreatorEmail}}</p>
+                    <button class="btn btn-primary applybtn" type="button">Apply for Mission</button>
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+
+        {{!-- FOOTER --}}
          <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
                 <div class="container">
