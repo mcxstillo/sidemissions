@@ -27,15 +27,20 @@ img {
   font-weight: 400;
 }
 
-#footer {
-  position: static;
-  bottom: 0px;
-  margin-top: 4rem;
-}
-
 #card {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.searchbar {
+  width: 310px;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.12);
+  height: 40px;
+  padding: 10px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 8px;
 }
 
 .manage-btn {
@@ -61,3 +66,8 @@ img {
   text-overflow: ellipsis;
 }
 
+#footer {
+  position: static;
+  bottom: 0px;
+  margin-top: 4rem;
+}

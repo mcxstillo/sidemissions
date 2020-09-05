@@ -1,3 +1,17 @@
+.jobDesc {
+    border-color: rgb(169,171,173);
+    margin-top: 1rem;
+    margin-bottom:1rem;
+}
+
+#divider {
+    height: 0.5px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 85%;
+    margin-left: 25px;
+}
+
 .logerror {
     font-size: 1em;
     color: #0d0733;
@@ -14,12 +28,7 @@
     background-color: #F6A2B4;
     border-left: 3px solid red;
     margin-bottom: 2rem;
-}
-
-.regerror span {
-    margin-left: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    padding-left: 1rem;
 }
 
 .nav-link {
@@ -32,6 +41,37 @@
     border-radius: 10px;
 }
 
+.searchbar {
+    width: 310px;
+    border-width: 1px;
+    border-color: rgba(0,0,0,0.12);
+    height: 40px;
+    padding: 10px;
+    margin-top: 0px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+  }
+
+.jobcontainer {
+    height: 100%;
+    max-height: auto;
+    min-height: 500px;
+    width: 100%;
+    padding: 0px;
+    padding-right: 0;
+    margin-top: 3rem;
+    margin-right: 0;
+    margin-left: 13rem;
+}
+
+.card-body {
+    padding-right: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 1px rgb(232,232,234);
+    width: 100%;
+}
+
 #button:hover {
     border-radius: 10px;
     color: #1c1259;
@@ -42,4 +82,4 @@
     position: static;
     bottom: 0px;
     margin-top: 4rem;
-  }
+}

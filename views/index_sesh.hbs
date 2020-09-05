@@ -21,68 +21,96 @@
 </head>
 
 <body id="page-top" style="background: #f6f7fb;width: 100%;">
-    <div class="container d-inline" style="font-family: Poppins, sans-serif;padding: 4;margin: 0;width: 44%;margin-left: 1rem;margin-right: 1rem;"><img src="../assets/img/logo.png" style="height: 70px;margin: 3px;width: 75px;"><a class="navbar-brand" href="#page-top" style="background-color: rgba(28,18,89,0);color: #1c1259;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;">SideMissions</a></div>
+    {{!-- LOGO AND SIDEMISSIONS --}}
+    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;">
+        <a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a>
+        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a>
+    </div>
+
+    {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{name}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" name="firstName" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
         </ul>
-    </div>
+        </div>
+
+        {{!-- NAV BAR WITH CATEGORIES --}}
         <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
-            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-3"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
-                    id="navcol-3" style="border-radius: 20px;">
+                    id="navcol-1" style="border-radius: 20px;">
                     <ul class="nav navbar-nav d-flex">
-                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                         <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        {{!-- JUMBOTRON --}}
         <div class="jumbotron" style="margin-top: 2rem;height: 475px;padding-left: 8rem;padding-bottom: 72px;padding-right: 10rem;background: url(&quot;assets/img/bg1.jpg&quot;) top / cover no-repeat;">
             <h1 class="text-left" style="color: #1c1259;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 26px;margin-top: 40px;">Hello, Agent</h1>
             <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help you explore your talents further, find that extra cash that you need, or look for that designer you need.<br></p>
            <form method="get" action="search" style="width: 40%; display: inline;">
-            <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;"><input type="search" style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;"><button class="btn btn-primary" type="button" style="height: 42px;border-radius: 0;border-top-right-radius: 5px;border-bottom-right-radius: 5px;background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;">Search</button></div>
+            <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;">
+                <input type="search" style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;">
+                <button class="btn btn-primary searchbtn" type="button" >Search</button>
+                </div>
            </form>
         </div>
+
+        {{!-- ROW FOR BUTTONS BELOW CARDS --}}
         <div class="row" style="padding-right: 5rem;padding-left: 5rem;">
             <div class="col-4">
                 <div class="card" style="width: 100%;border-style: none;background: rgba(255,255,255,0.3);">
                     <div class="card-body" style="border-radius: 10px;border-style: none;"><img class="navicon" src="assets/img/sticky-notes.png" style="width: 70px;height: 70px;">
                         <h4 class="text-center card-title">Post a Mission</h4>
-                        <p class="card-text navdesc">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        <form method="get" action="create"><button class="btn btn-primary navbutton" type="submit" style="background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;">Go</button></form>
+                        <p class="card-text navdesc">Post a mission in the mission board if you&nbsp; are currently hiring or looking for someone to commission.<br></p>
                     </div>
                 </div>
             </div>
+
             <div class="col-4">
                 <div class="card" style="width: 100%;border-style: none;background: rgba(255,255,255,0.3);">
                     <div class="card-body" style="border-radius: 10px;border-style: none;"><img class="navicon" src="assets/img/bulletin-board.png" style="width: 70px;height: 70px;">
                         <h4 class="text-center card-title">View Profile</h4>
-                        <p class="card-text navdesc">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        <form method="get" action="/profile"><button class="btn btn-primary navbutton" type="submit" style="background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;">Go</button></form>
+                        <p class="card-text navdesc">View your current account once you have logged in. Agents can edit their account information such as description, linked accounts, and skills.<br></p>
                     </div>
                 </div>
             </div>
+            
             <div class="col-4">
                 <div class="card" style="width: 100%;border-style: none;background: rgba(255,255,255,0.3);">
                     <div class="card-body" style="border-radius: 10px;border-style: none;"><img class="navicon" src="assets/img/user.png" style="width: 70px;height: 70px;">
                         <h4 class="text-center card-title">Mission Log</h4>
-                        <p class="card-text navdesc">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        <form method="get" action="/manage_job"><button class="btn btn-primary navbutton" type="submit" style="background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;">Go</button></form>
+                        <p class="card-text navdesc">Agents can keep track of their mission progress by checking the mission log. The log contains active, ongoing, and finished missions.<br></p>
                     </div>
                 </div>
             </div>
         </div>
-         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
+
+        <div class="row d-xl-flex justify-content-xl-center" style="margin-top: 2rem;">
+            <div class="col-3" style="margin-right: 5rem;">
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/create"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+            </div>
+            <div class="col-3">
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+            </div>
+            <div class="col-3" style="margin-left: 5rem;">
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/manage_job"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+            </div>
+        </div>
+
+        {{!-- FOOTER --}}
+        <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
                 <div class="container">
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
