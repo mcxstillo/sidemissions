@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>sidemission</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/sidemissions.css">
+    <link rel="stylesheet" href="../../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../../assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="../../assets/css/sidemissions.css">
 </head>
 
 <body style="background-color: #F6F7FB;width: 100%;">
@@ -23,7 +23,7 @@
     </div>
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{name}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
@@ -35,12 +35,12 @@
                 <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
                     id="navcol-1" style="border-radius: 20px;">
                     <ul class="nav navbar-nav d-flex">
-                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
-                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,24 +52,27 @@
                     <div class="card" style="width: 100%;padding-right: 0px;">
                         <div class="card-body" style="padding-right: 20px;background-color: #ffffff;box-shadow: 3px 3px 10px 1px rgb(232,232,234);width: 100%;">
                             <!-- TITLE -->
-                            <h4 class="card-title" href="" style="font-family: Poppins, sans-serif;">{{jobTitle}}</h4>
+                            <h4 class="card-title" href="" style="font-family: Poppins, sans-serif;">{{result.jobTitle}}</h4>
                             <!-- DESCRIPTION -->
-                            <h6 class="text-muted card-subtitle mb-2" style="border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;">{{jobDesc}}</h6>
+                            <h6 class="text-muted card-subtitle mb-2" style="border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;">{{result.jobDesc}}</h6>
                             <p class="card-text"></p>
                             <!-- REWARD -->
-                                <section style="padding-bottom: 25px;margin-top: 0px;border-style: none;border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;"><span style="font-family: Poppins, sans-serif;margin-top: 20px;">{{chargeRate}}</span></section>
+                                <section style="padding-bottom: 25px;margin-top: 0px;border-style: none;border-color: rgb(169,171,173);border-bottom-width: 1px;border-bottom-style: solid;"><span style="font-family: Poppins, sans-serif;margin-top: 20px;">{{result.chargeRate}}</span></section>
                             <!-- DURAITON -->
-                                <section style="padding-bottom: 25px;border-bottom: 1px solid rgb(169,171,173) ;"><span style="font-family: Poppins, sans-serif;">{{jobDuration}}</span></section>
+                                <section style="padding-bottom: 25px;border-bottom: 1px solid rgb(169,171,173) ;"><span style="font-family: Poppins, sans-serif;">{{result.jobDuration}}</span></section>
                             <!-- SKILLS --> 
-                                <section></section><span style="font-family: Poppins, sans-serif;">{{jobSkills}}</span></div>
+                                <section></section><span style="font-family: Poppins, sans-serif;">{{result.jobSkills}}</span></div>
                     </div>
                 </div>
                 <div class="col-5" style="width: 100%;margin-left: 3rem;">
                     <div class="card" style="width: 100%;margin: 0px;margin-top: 0px;padding: 21px;box-shadow: 3px 3px 10px 1px rgb(232,232,234);">
                         <div class="card-body" style="padding-right: 20px;">
                             <h4 class="card-title">About the Handler</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button" style="width: 190px;margin-left: 5.5rem;background-color: #eb3b60;border-style: none;">Apply for Mission</button></div>
+                            <h4 class="card-title">{{jobCreatorfirstName}} {{jobCreatorlastName}}</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Contact Information</h6>
+                            <p class="card-text">{{jobCreatorContactNum}}</p>
+                            <p class="card-text">{{jobCreatorEmail}}</p>
+                            <button class="btn btn-primary" type="button" style="width: 190px;margin-left: 5.5rem;background-color: #eb3b60;border-style: none;">Apply for Mission</button></div>
                     </div>
                 </div>
             </div>
