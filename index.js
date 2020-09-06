@@ -112,9 +112,11 @@ app.get("/register", function(req,res){
 })
 
 app.get("/create", function(req,res){
-  res.render("create", {
+  if(req.session.user){
+    res.render("create", {
       layout: false
   })
+  }
 })
 
 app.get("/search",function(req,res){
