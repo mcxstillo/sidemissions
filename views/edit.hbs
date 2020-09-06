@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>profile</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One&amp;subset=latin-ext,hebrew">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+</head>
+
+<body style="background-color: rgb(246,247,251);width: 100%;height: 100%;">
+    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
+    <div
+        class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
+        <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{name}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+            <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
+                <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
+            </li>
+        </ul>
+        </div>
+        <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
+            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
+                    id="navcol-1" style="border-radius: 20px;">
+                    <ul class="nav navbar-nav d-flex">
+                        <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="#" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                        <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="#" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row d-xl-flex justify-content-xl-center" style="width: 100%;">
+            <div class="col-4" style="width: 25%;padding-top: 3rem;margin-left: 6rem;padding-right: 0;padding-left: 0;">
+                <div class="card d-xl-flex" style="width: 95%;">
+                    <div class="card-body" style="width: 100%;padding: 35px;">
+                        <h4 class="card-title" id="sidemissions" style="margin: 1rem;margin-top: 1rem;text-align: center;">Full name</h4>
+                        <h6 class="text-muted card-subtitle mb-2" style="text-align: center;margin: 1rem;margin-top: 1em;margin-bottom: 1em;">Approval Rating: %%</h6>
+                        <div style="background-color: rgba(33,37,41,0);height: 0.5px;margin-top: 2em;margin-bottom: 2em;width: 85%;margin-left: 25px;border-bottom: 1px solid rgba(77,79,81,0.2) ;"></div>
+                        <h4 class="d-inline card-title" style="font-size: 1rem;font-family: Poppins, sans-serif;font-weight: bold;margin-top: 3rem;">Description</h4>
+                        <p class="d-block card-text" style="color: #62646A;border-width: 0;border-style: none;border-bottom-style: solid;border-bottom-color: rgb(0,53,213);font-weight: normal;margin-top: 16px;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                        <div style="background-color: rgba(33,37,41,0);height: 0.5px;margin-top: 2em;margin-bottom: 2em;width: 85%;margin-left: 25px;border-bottom: 1px solid rgba(77,79,81,0.2) ;"></div>
+                        <h4 class="d-inline card-title" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;">Contact Information</h4>
+                        <p class="d-block card-text" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;margin-top: 10px;margin-bottom: 4px;">Phone number</p>
+                        <p class="d-block card-text" id="desc-1" style="color: #62646A;font-style: normal;font-weight: normal;margin-bottom: 10px;">Phone number</p>
+                        <p class="d-block card-text" id="desc-2" style="color: #62646A;font-style: normal;font-weight: normal;margin-top: 15px;margin-bottom: 4px;">Email Address</p>
+                        <p class="d-block card-text" id="desc-3" style="color: #62646A;font-style: normal;font-weight: normal;margin-bottom: 10px;">Phone number</p>
+                        <div style="background-color: rgba(33,37,41,0);height: 0.5px;margin-top: 2em;margin-bottom: 2em;width: 85%;margin-left: 25px;border-bottom: 1px solid rgba(77,79,81,0.2) ;"></div>
+                        <h4 class="card-title" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 18px;">Skills</h4>
+                        <div id="skills-body">
+                            <p class="d-inline skills" style="font-weight: normal;font-size: 15px;background: rgb(255,255,255);text-align: center;padding: 14px;border-radius: 26px;padding-top: 7px;padding-bottom: 7px;border: 1px solid rgba(33,37,41,0.14) ;">Paragraph</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6" style="padding: 0;padding-top: 50px;margin-left: 3rem;margin-right: 5rem;width: 518px;">
+                <div class="row">
+                    <div class="col">
+                        <div class="container">
+                            <div class="card" style="padding: 20px;">
+                                <div class="card-body" style="border-radius: 5px;">
+                                    <form>
+                                        <div class="form-group"><label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Description</label><textarea class="form-control" style="margin-top: 1rem;"></textarea></div>
+                                    </form><button class="btn updatebtn" type="button">Update</button></div>
+                            </div>
+                            <div class="card" style="margin-top: 1rem;padding: 20px;">
+                                <div class="card-body" style="border-radius: 5px;">
+                                    <h1 style="font-size: 20px;font-family: Poppins, sans-serif;font-weight: bold;">Contact Information</h1>
+                                    <form>
+                                        <div class="form-group"><label style="font-family: Poppins, sans-serif;font-weight: normal;font-size: 17px;margin-top: 1rem;">Phone number</label><input class="form-control" type="number"></div>
+                                        <div class="form-group"><label style="font-family: Poppins, sans-serif;font-weight: normal;font-size: 17px;margin-top: 1rem;">Email Address</label><input class="form-control" type="email"></div>
+                                    </form><button class="btn updatebtn" type="button">Update</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="container">
+                            <div class="card" style="padding: 20px;margin-top: 1rem;">
+                                <div class="card-body" style="border-radius: 5px;"><label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label><button class="btn d-inline float-right addbtn" data-toggle="modal" data-target="#modal1" type="button" style="padding-right: 8px;padding-left: 8px;padding-bottom: 4px;padding-top: 4px;"><i class="fas fa-plus"></i></button></div>
+                                <div
+                                    class="modal fade" role="dialog" tabindex="-1" id="modal1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Add a Skill</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                            <div class="modal-body"><input type="text" style="width: 100%;border-width: 1px;border-color: rgba(0,0,0,0.23);"></div>
+                                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn addbtn" type="submit">Save</button></div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
+            <footer style="color: #B9C0DF;">
+                <div class="container">
+                    <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
+                </div>
+            </footer>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/bs-init.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+        <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
