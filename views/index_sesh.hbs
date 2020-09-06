@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
@@ -29,9 +28,8 @@
 
     {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
-        
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <form method="get" action="profile"><li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" name="firstName" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li></form>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" name="firstName" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
@@ -57,13 +55,13 @@
         </nav>
 
         {{!-- JUMBOTRON --}}
-        <div class="jumbotron" style="margin-top: 2rem;height: 475px;padding-left: 8rem;padding-bottom: 72px;padding-right: 10rem;background: url(&quot;assets/img/bg1.jpg&quot;) top / cover no-repeat;">
+        <div class="jumbotron">
             <h1 class="text-left" style="color: #1c1259;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 26px;margin-top: 40px;">Hello, Agent</h1>
             <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help you explore your talents further, find that extra cash that you need, or look for that designer you need.<br></p>
-           <form method="get" action="search" style="width: 40%; display: inline;">
+           <form method="get" action="/search" style="width: 40%; display: inline;">
             <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;">
                 <input type="search" style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;">
-                <button class="btn btn-primary searchbtn" type="button" >Search</button>
+                <button class="btn searchbtn" type="submit" >Search</button>
                 </div>
            </form>
         </div>

@@ -1,5 +1,80 @@
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 750px;
+}
+
 #desc {
   color: #62646A;
+}
+
+.searchbar {
+  width: 310px;
+  border-width: 1px;
+  border-color: rgba(0,0,0,0.12);
+  height: 40px;
+  padding: 10px;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 8px;
+}
+
+.searchbtn {
+  height: 42px;
+  background: #ee4266;
+  color: #F6F7FB;
+  border-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: Poppins, sans-serif;
+  font-weight: normal;
+}
+.searchbtn:hover {
+    background-color: #FFD28C;
+    color: #1C1259;
+}
+
+.addbtn {
+  color: #F6F7FB;
+  background-color: #FF9800;
+  border-radius: 3px;
+}
+
+.addbtn:hover {
+  color: #1C1259;
+  background-color: #FFD28C;
+}
+
+.updatebtn {
+  color: #1c1259;
+  background-color: #FF9800;
+  width: 14%;
+  float: right;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.updatebtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+#divider {
+  height: 0.5px;
+  background-color: rgba(33,37,41,0.2);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-10 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {
@@ -24,23 +99,19 @@ img {
 }
 
 #sidemissions {
+  font-family: 'Poppins';
   font-weight: 400;
+}
+
+#footer {
+  position: static;
+  bottom: 0px;
+  margin-top: 4rem;
 }
 
 #card {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.searchbar {
-  width: 310px;
-  border-width: 1px;
-  border-color: rgba(0,0,0,0.12);
-  height: 40px;
-  padding: 10px;
-  margin-top: 0px;
-  padding-top: 5px;
-  padding-bottom: 8px;
 }
 
 .manage-btn {
@@ -55,6 +126,21 @@ img {
   background-color: #FFD28C;
 }
 
+.mission {
+  margin-top: 1rem;
+}
+
+.modalheading {
+  width: 50%;
+}
+
+.modalsub {
+  font-size: 18px;
+  width: 50%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #card-text {
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -66,8 +152,3 @@ img {
   text-overflow: ellipsis;
 }
 
-#footer {
-  position: static;
-  bottom: 0px;
-  margin-top: 4rem;
-}
