@@ -319,6 +319,22 @@ app.post("/updateprofile",function(req,res){
 })
 
 
+//model.arrayname.push
+app.post("/addskill",function(req,res){
+  let skill = req.body.skill
+
+  console.log(JSON.stringify(req.body))
+ if(req.session.user){
+   userModel.findOne({'_id': req.session.user._id}).updateOne({$push : {skills:  skill}},function(err,data){
+   res.redirect("/editprofile")})
+   }else{
+     res.render('index.hbs',{
+       layout: false
+     })
+   } 
+ 
+})
+
 // app.post("/updatecontacts",function(req,res){
 
 //   let contactNum = req.body.contactNum
