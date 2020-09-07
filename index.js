@@ -12,6 +12,10 @@ const urlencoder = bodyparser.urlencoded({
     extended: false
 })
 
+//newly added paalis na lang if may nagtopak (added for update profile)
+app.use(express.json());
+app.use(bodyparser.urlencoded())
+
 app.use(session({
   secret: "very secret",
   resave: false,
@@ -45,25 +49,46 @@ mongoose.connect('mongodb://localhost/sidemissions', options)
 
 var Schema = mongoose.Schema
 
-// const userSchema= new Schema({ 
-//   email:String,
-//   password:String,
-//   firstname: String,
-//   lastname: String,
-//   cpNumber:String
-// })
-
-// const jobSchema= new Schema({ 
-//   title:String,
-//   jDesc:String,
-//   reward:Number,
-//   duration:String,
-//   category: String
-// })
 
 const db=mongoose.connection
 // const userModel = mongoose.model('user', userSchema)
 // const jobModel= mongoose.model('job', jobSchema)
+
+
+app.get('/populate',function(err,data){
+  userModel.insertMany([{
+    email:'camillecay@gmail.com',
+    password:'cam',
+    firstName: 'Camille',
+    lastName: 'Cay',
+    contactNum:'09192838102',
+    userDesc:'i am camille and i need someone to fix my keyboard',
+    skills:['making coffee','watching netflix','crying'],
+    upvote: 5,
+    downvote:2
+  },{
+    email:'fildricchu@gmail.com',
+    password:'chu',
+    firstName: 'Fildric',
+    lastName: 'Chu',
+    contactNum:'09192258102',
+    userDesc:'i am fildric and i need someone try my food',
+    skills:['making food','watching food channels','cooking'],
+    upvote: 25,
+    downvote:18
+  },{
+    email:'maiacastillo@gmail.com',
+    password:'cam',
+    firstName: 'Maia',
+    lastName: 'Castillo',
+    contactNum:'09192838102',
+    userDesc:'i am maia and i am good at designing',
+    skills:['css','bootstrap','html'],
+    upvote: 16,
+    downvote:87
+  }
+])
+})
 
 
 app.get("/",async function(req,res){
@@ -91,6 +116,7 @@ app.get("/",async function(req,res){
     res.render("index.hbs",{
       layout: false
     })}
+
   })
 
 
@@ -106,6 +132,7 @@ app.get("/login", function(req,res){
 })
 
 app.get("/register", function(req,res){
+
     res.render("register", {
         layout: false
     })
@@ -114,10 +141,19 @@ app.get("/register", function(req,res){
 app.get("/create", function(req,res){
   if(req.session.user){
     res.render("create", {
-      layout: false
+      layout: false,
+      firstName: req.session.user.firstName
+
   })
+  }else{
+    res.render('index.hbs',{
+      layout: false
+    })
   }
+  
 })
+
+
 
 app.get("/search",function(req,res){
   let search = new RegExp (req.query.search,'gi')//g=global i=case insensitive
@@ -130,6 +166,7 @@ app.get("/search",function(req,res){
           searchquery: req.query.search,
           firstName: req.session.user.firstName,
           result: JSON.parse(JSON.stringify(data))
+          
       })
     }).populate("jobCreator")
   }else{
@@ -137,9 +174,7 @@ app.get("/search",function(req,res){
       layout: false
     })
   }
-  
 
-  
 })
 
 app.get('/filtered',function(req,res){
@@ -177,7 +212,6 @@ app.get("/viewpage/:_id",function(req,res){
 
   if(req.session.user){
       jobModel.findOne({_id:req.params._id},function (err, data) {
-        // console.log(data.jobCreator.firstName)
           res.render("viewpage", {
               layout: false,
               firstName: req.session.user.firstName,
@@ -187,22 +221,9 @@ app.get("/viewpage/:_id",function(req,res){
               jobCreatorEmail: data.jobCreator.email,
               result: JSON.parse(JSON.stringify(data))
           })
-          // console.log(result);
-
 
       }).populate("jobCreator")
-
-
-      // jobModel.find({jobTitle: search},function (err, data) {
-      //   // console.log(data)
-      //     res.render("searchresults", {
-      //       layout: false,
-      //       searchquery: req.query.search,
-      //       firstName: req.session.user.firstName,
-      //       result: JSON.parse(JSON.stringify(data))
-      //   })
-      // }).populate("jobCreator")
-
+      
 
     }else{
       res.render('index.hbs',{
@@ -244,7 +265,7 @@ app.get("/profile",function(req,res){
           layout: false,
           firstName: req.session.user.firstName,
           lastName: req.session.user.lastName,
-          // userDesc: req.session.user.userDesc,
+          userDesc: req.session.user.userDesc,
           email: req.session.user.email,
           contactNum: req.session.user.contactNum,
           result: JSON.parse(JSON.stringify(data))
@@ -257,6 +278,125 @@ app.get("/profile",function(req,res){
       })
     } 
 
+})
+
+app.get("/editprofile",function(req,res){
+  
+  if(req.session.user){
+    userModel.findOne({'_id': req.session.user._id},function (err, data) {
+      // console.log(jobCreator)
+        res.render("editprofile", {
+          layout: false,
+          firstName: req.session.user.firstName,
+          lastName: req.session.user.lastName,
+          userDesc: req.session.user.userDesc,
+          contactNum: req.session.user.contactNum,
+          email: req.session.user.email,
+          jobSkills: req.session.user.jobSkills,
+          result: JSON.parse(JSON.stringify(data))
+      })
+    })
+    }else{
+      res.render('index.hbs',{
+        layout: false
+      })
+    } 
+})
+
+app.post("/updateprofile",function(req,res){
+   let userDesc = req.body.userDesc
+   let contactNum = req.body.contactNum
+   console.log(JSON.stringify(req.body))
+  if(req.session.user){
+    userModel.findOne({'_id': req.session.user._id}).updateOne({$set : {userDesc:  userDesc,contactNum: contactNum}},function(err,data){
+    res.redirect("/editprofile")})
+    }else{
+      res.render('index.hbs',{
+        layout: false
+      })
+    } 
+  
+})
+
+
+// app.post("/updatecontacts",function(req,res){
+
+//   let contactNum = req.body.contactNum
+//   console.log(JSON.stringify(req.body))
+//  if(req.session.user){
+//    userModel.findOne({'_id': req.session.user._id}).updateOne({$set : {contactNum:  contactNum}},function(err,data){
+//      console.log(req.body)
+//      res.render("editprofile", {
+//          layout: false,
+//          firstName: req.session.user.firstName,
+//          lastName: req.session.user.lastName,
+//          userDesc: req.session.user.userDesc,
+//          contactNum: contactNum,
+//          email: req.session.user.email,
+//          jobSkills: req.session.user.jobSkills,
+//          result: JSON.parse(JSON.stringify(data))
+//      })
+//    })
+//    }else{
+//      res.render('index.hbs',{
+//        layout: false
+//      })
+//    } 
+ 
+// })
+
+// app.post("/addskill",function(req,res){
+ 
+
+//   let skill = new skill({
+//     skill: req.body.skill
+//   })
+
+//  if(req.session.user){
+//       userModel.skills.push(skill);
+//   userModel.save(done);
+//    }else{
+//      res.render('index.hbs',{
+//        layout: false
+//      })
+//    } 
+ 
+// })
+
+app.get("/manage_posts",function(req,res){
+  
+  if(req.session.user){
+    jobModel.find({jobCreator: req.session.user._id},function (err, data) {
+      // console.log(jobCreator)
+        res.render("manage_posts", {
+          layout: false,
+          firstName: req.session.user.firstName,
+          result: JSON.parse(JSON.stringify(data))
+      })
+    })
+    }else{
+      res.render('index.hbs',{
+        layout: false
+      })
+    } 
+})
+
+app.get("/mission_log",function(req,res){
+  
+  if(req.session.user){
+    jobModel.find({jobCreator: req.session.user._id},function (err, data) {
+      // console.log(jobCreator)
+        res.render("mission_log", {
+          layout: false,
+          firstName: req.session.user.firstName,
+          result: JSON.parse(JSON.stringify(data))
+      })
+    })
+    }else{
+      res.render('index.hbs',{
+        layout: false
+      })
+    } 
 })
 
 app.post("/register",urlencoder,function(req,res){
@@ -284,7 +424,10 @@ app.post("/register",urlencoder,function(req,res){
         else{
           console.log(user+ "added????")
         
-          res.redirect("/")
+          res.render("login.hbs", {
+            layout: false,     
+            
+          })
         }
       })
     }else {
@@ -308,8 +451,7 @@ app.post("/login",urlencoder,function(req,res){
         layout: false,
         firstName: req.session.user.firstName
     })
-      // res.redirect("/")
-    
+
     }else {
       console.log("Email and Password does not match")
       res.render("login.hbs", {
@@ -341,27 +483,27 @@ app.post("/create",urlencoder,function(req,res){
     chargeRate:chargeRate,
     jobDuration:jobDuration,
     jobCategory:jobCategory,
-    jobSkills: jobSkills.split(',')
+    jobSkills: jobSkills.split(', ')
   })
 
   
-  // console.log(doc)
-  // console.log(jobCreator)
+      // console.log(doc)
+      // console.log(jobCreator)
 
-  doc.save(function(error,title){
-      if(error){
-          return console.error(error)
-      }
-      else{
-          res.render("create.hbs", {
-            layout: false,
+      doc.save(function(error,title){
+        if(error){
+            return console.error(error)
+        }
+        else{
+            res.render("create.hbs", {
+              layout: false,
             
-          })
-          console.log(title+ "added")
-      }
-  }) 
+            })
+            console.log(title+ "added")
+        }
+      }) 
+      
 
-  
 })
 
 
