@@ -437,7 +437,7 @@ app.get("/manage_posts",function(req,res){
         return console.error(error)
       }else{
         if(Object.keys(data).length === 0){
-        res.render("searchresults", {
+        res.render("manage_posts", {
           layout: false,     
           error_search: "No posted jobs",
           firstName: req.session.user.firstName
@@ -471,7 +471,7 @@ app.get("/mission_log",function(req,res){
         //   firstName: req.session.user.firstName,
         //   result: JSON.parse(JSON.stringify(data))
         //   })
-        res.render("searchresults", {
+        res.render("mission_log", {
           layout: false,     
           error_search: "No Active Missions",
           firstName: req.session.user.firstName
