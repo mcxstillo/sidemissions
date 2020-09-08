@@ -34,7 +34,7 @@ Once the server is running, it will be available at localhost:3000. This will sh
 To register, fill out the necessary input text fields in the form and press the "Register" button. You may then proceed to log in with the email and password.
 
 If you chose to Login first, you may enter any of the credentials below:
-| username | password |
+| E-mail | Password |
 | --- | --- |
 
 Once logged in, you will be redirected to a different version of the homepage only visible to logged in users. The page will now have legit routes assigned to navigation buttons such as the categories for quick searches based on categories. The jumbotron will also have a giant search bar for the user to enter any query they wish to look for. The cards seen on the bottom of the page contains navigation links to other parts of the page such as creating a job, viewing the current user's profile, and viewing their mission log. From this page, the next step is up to the preference of the user depending on what they wish to do.
