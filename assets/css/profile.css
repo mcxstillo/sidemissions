@@ -8,6 +8,10 @@ body {
   color: #62646A;
 }
 
+a {
+  color: #1C1259;
+}
+
 .searchbar {
   width: 310px;
   border-width: 1px;
