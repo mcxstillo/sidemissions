@@ -5,27 +5,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>profile</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One&amp;subset=latin-ext,hebrew">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="../../assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="../../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="../../assets/css/profile.css">
 </head>
 
+    {{!-- <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css"> --}}
+
 <body style="background-color: rgb(246,247,251);width: 100%;height: 100%;">
-    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
-    <div
-        class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
+    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;">
+          <a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a>
+        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
+ {{!-- SEARCH BAR --}}
+    <div class="form-group d-inline" style="width: 26%;">
+        <form method="get" action="/search" style="display:inline;">
+            <input type="search"name="search" class="searchbar" placeholder="Find a mission...">
+            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+            <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+            </button>
+        </form>
+    </div>
+
+
+    <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+                 <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
@@ -109,7 +125,7 @@
                                     <div class="card-body" style="border-radius: 5px;">
                                         <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label>
                                         <button class="btn d-inline float-right addbtn" data-toggle="modal" data-target="#modal1" type="button" style="padding-right: 8px;padding-left: 8px;padding-bottom: 4px;padding-top: 4px;">
-                                            <i class="fas fa-plus"></i>
+                                            <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 <div
@@ -121,7 +137,7 @@
                                                 <h4 class="modal-title">Add a Skill</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">×</span></button></div>
                                             <div class="modal-body">
-                                                <input type="text" name="skill" style="width: 100%;border-width: 1px;border-color: rgba(0,0,0,0.23);">
+                                                <input type="text" placeholder="(ex. editing, typing)"name="skill" style="width: 100%;border-width: 1px;border-color: rgba(0,0,0,0.23);">
                                             </div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-light" type="button" data-dismiss="modal">Close</button>

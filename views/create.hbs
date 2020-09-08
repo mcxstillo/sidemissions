@@ -24,12 +24,14 @@
         <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a>
     </div>
 
-    {{!-- SEARCH BAR --}}
+   {{!-- SEARCH BAR --}}
     <div class="form-group d-inline" style="width: 26%;">
-        <input type="search" class="searchbar" placeholder="Find a mission...">
-        <button class="btn btn-primary" type="button" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+        <form method="get" action="/search" style="display:inline;">
+            <input type="search"name="search" class="searchbar" placeholder="Find a mission...">
+            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
             <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
-        </button>
+            </button>
+        </form>
     </div>
     
     {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
@@ -37,7 +39,7 @@
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_post" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
@@ -67,7 +69,7 @@
                         <div class="card-body d-xl-flex justify-content-xl-center" style="padding: 25px;">
 
                             <!--  FORM IS HERE  -->
-                            <form method="post" action="create">
+                            <form method="post" action="/create">
                                 <h1 style="text-align: center;margin: 0;margin-bottom: 1rem;margin-top: 1rem;">Post a Mission</h1>
                                 <div class="form-group d-block" style="width: 382px;">
                                     <label>Title</label>
@@ -123,6 +125,7 @@
                             </div>
                             
                             <button class="btn btn-primary text-center" type="submit" style="width: 152px;margin-top: 2rem;margin-left: 7rem;background-color: #1c1259;color: #F6F7FB;">Create Mission</button>
+                        
                         </form>
                     </div>
                 </div>

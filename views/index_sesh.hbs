@@ -61,7 +61,7 @@
             <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help you explore your talents further, find that extra cash that you need, or look for that designer you need.<br></p>
            <form method="get" action="/search" style="width: 40%; display: inline;">
             <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;">
-                <input type="search" style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;">
+                <input type="search" name="search" placeholder="Find a mission..." style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;">
                 <button class="btn searchbtn" type="submit" >Search</button>
                 </div>
            </form>
@@ -71,7 +71,8 @@
         <div class="row" style="padding-right: 5rem;padding-left: 5rem;">
             <div class="col-4">
                 <div class="card" style="width: 100%;border-style: none;background: rgba(255,255,255,0.3);">
-                    <div class="card-body" style="border-radius: 10px;border-style: none;"><img class="navicon" src="assets/img/sticky-notes.png" style="width: 70px;height: 70px;">
+                    <div class="card-body" style="border-radius: 10px;border-style: none;">
+                        <img class="navicon" src="assets/img/sticky-notes.png" style="width: 70px;height: 70px;">
                         <h4 class="text-center card-title">Post a Mission</h4>
                         <p class="card-text navdesc">Post a mission in the mission board if you&nbsp; are currently hiring or looking for someone to commission.<br></p>
                     </div>
@@ -99,7 +100,8 @@
 
         <div class="row d-xl-flex justify-content-xl-center" style="margin-top: 2rem;">
             <div class="col-3" style="margin-right: 5rem;">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/create"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="d-xl-flex justify-content-xl-center" method="get" action="/create">
+                <button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3">
                 <form class="d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>

@@ -28,12 +28,13 @@
 
     {{!-- SEARCH BAR --}}
     <div class="form-group d-inline" style="width: 26%;">
-        <input type="search" class="searchbar" placeholder="Find a mission...">
-        <button class="btn btn-primary" type="button" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
-        <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
-        </button>
+        <form method="get" action="/search" style="display:inline;">
+            <input type="search" name="search" class="searchbar" placeholder="Find a mission...">
+            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+            <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+            </button>
+        </form>
     </div>
-
     {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
     <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">

@@ -26,12 +26,14 @@
         <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 15px;font-weight: normal;font-style: normal;">SideMissions</a>
     </div>
 
-    {{!-- SEARCH BAR --}}
+   {{!-- SEARCH BAR --}}
     <div class="form-group d-inline" style="width: 26%;">
-        <input type="search" class="searchbar" placeholder="Find a mission...">
-        <button class="btn btn-primary" type="button" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
-        <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
-        </button>
+        <form method="get" action="/search" style="display:inline;">
+            <input type="search"name="search" class="searchbar" placeholder="Find a mission...">
+            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+            <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+            </button>
+        </form>
     </div>
 
     {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
@@ -68,8 +70,12 @@
             <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">Manage Posts</h1>
             <div style="margin-top: 2rem;">
                 <ul class="nav nav-tabs">
-                    <li class="nav-item" style="margin-right: 1rem;margin-left: 1rem;"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-1" style="color: #1c1259;font-family: Poppins, sans-serif;font-weight: bold;">Pending</a></li>
-                    <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-2" style="margin-right: 1rem;margin-left: 1rem;color: #1c1259;font-family: Poppins, sans-serif;font-weight: bold;">Closed</a></li>
+                    <li class="nav-item" style="margin-right: 1rem;margin-left: 1rem;">
+                        <a class="nav-link" role="tab" data-toggle="tab" href="#tab-1" style="color: #1c1259;font-family: Poppins, sans-serif;font-weight: bold;">Closed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" role="tab" data-toggle="tab" href="#tab-2" style="margin-right: 1rem;margin-left: 1rem;color: #1c1259;font-family: Poppins, sans-serif;font-weight: bold;">Pending</a>
+                    </li>
                 </ul>
 
                 {{!-- TAB CONTENT  --}}
@@ -86,8 +92,9 @@
                                         <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
                                         <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 5rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                            <button class="btn updatebtn" data-toggle="modal" data-target="#{{modal}}" type="button">View Applicants</button>
+                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
+                                            
+                                            <button class="btn updatebtn" type="button" style="background: #ffd28c;">Pending</button>
                                                 
                                                 {{!-- MODAL FOR APPLICANTS --}} 
                                                 {{!-- WALA PA HBS TAGS YUNG PAPALITAN DITO --}}
@@ -134,8 +141,8 @@
                                         <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
                                         <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 5rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                            <button class="btn updatebtn" type="button" style="background: #ffd28c;">Pending</button>
+                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
+                                            <button class="btn updatebtn" data-toggle="modal" data-target="#{{modal}}" type="button">View Applicants</button>
                                     </div>
                                 </div>
                             </div>
