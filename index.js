@@ -225,7 +225,8 @@ app.get("/search",function(req,res){
           // console.log("No results found")
           res.render("searchresults", {
             layout: false,     
-            error_search: "No Results Found"
+            error_search: "No Results Found",
+            firstName: req.session.user.firstName
           })
         }else{
           // console.log(data)
@@ -435,20 +436,26 @@ app.get("/manage_posts",function(req,res){
       if(err){
         return console.error(error)
       }else{
-        res.render("manage_posts", {
+        if(Object.keys(data).length === 0){
+        res.render("searchresults", {
+          layout: false,     
+          error_search: "No posted jobs",
+          firstName: req.session.user.firstName
+          })
+        }else{
+          res.render("manage_posts", {
           layout: false,
           firstName: req.session.user.firstName,
           result: JSON.parse(JSON.stringify(data))
-        })
+          })
+        }
       }
+    }
+  )}else{
+    res.render('index.hbs',{
+      layout: false
     })
-    }else{
-      res.render('index.hbs',{
-        layout: false
-      })
-    } 
-  }
-)
+  } })
 
 
 //for MP3
@@ -459,11 +466,16 @@ app.get("/mission_log",function(req,res){
       if(err){
         return console.error(error)
       }else{
-        res.render("mission_log", {
-          layout: false,
-          firstName: req.session.user.firstName,
-          result: JSON.parse(JSON.stringify(data))
-          })
+        // res.render("mission_log", {
+        //   layout: false,
+        //   firstName: req.session.user.firstName,
+        //   result: JSON.parse(JSON.stringify(data))
+        //   })
+        res.render("searchresults", {
+          layout: false,     
+          error_search: "No Active Missions",
+          firstName: req.session.user.firstName
+        })
       }}
       )
     }else{
