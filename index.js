@@ -217,16 +217,26 @@ app.get("/search",function(req,res){
   
   if(req.session.user){
     jobModel.find({jobTitle: search},function (err, data) {
+      
       if(err){
         return console.error(error)
       }else{
-        res.render("searchresults", {
-          layout: false,
-          search: req.query.search,
-          firstName: req.session.user.firstName,
-          result: JSON.parse(JSON.stringify(data))
-          
-      })
+        if(Object.keys(data).length === 0){
+          // console.log("No results found")
+          res.render("searchresults", {
+            layout: false,     
+            error_search: "No Results Found"
+          })
+        }else{
+          // console.log(data)
+          res.render("searchresults", {
+            layout: false,
+            search: req.query.search,
+            firstName: req.session.user.firstName,
+            result: JSON.parse(JSON.stringify(data))
+        })
+        
+        }
      } 
     }).populate("jobCreator")
   }else{
@@ -440,6 +450,8 @@ app.get("/manage_posts",function(req,res){
   }
 )
 
+
+//for MP3
 app.get("/mission_log",function(req,res){
   
   if(req.session.user){
@@ -485,7 +497,7 @@ app.post("/register",urlencoder,function(req,res){
          return console.error(error)
         else{
           console.log(user+ "added????")
-        
+    
           res.render("login.hbs", {
             layout: false,     
             
