@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="../assets/css/home.css">
@@ -31,9 +32,9 @@
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
+                <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
             </li>
         </ul>
     </div>
@@ -56,15 +57,50 @@
         </nav>
 
         {{!-- JUMBOTRON --}}
-        <div class="jumbotron">
-            <h1 class="text-left" style="color: #1c1259;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 26px;margin-top: 40px;">Hello, Agent</h1>
-            <p style="color: #1c1259;font-family: Poppins, sans-serif;width: 585px;">SideMissions is dedicated to help you in looking for part-time jobs to help you explore your talents further, find that extra cash that you need, or look for that designer you need.<br></p>
-           <form method="get" action="/search" style="width: 40%; display: inline;">
-            <div class="form-group" style="padding-top: 0px;margin-top: 3rem;margin-bottom: 5rem;">
-                <input type="search" name="search" placeholder="Find a mission..." style="width: 370px;height: 42px;padding-top: -3px;border: 1px solid rgba(0,0,0,0.26);padding-bottom: 5px;">
-                <button class="btn searchbtn" type="submit" >Search</button>
+        <div class="jumbotron" style="margin-top: 2rem;height: 475px;padding-left: 4rem;background: url(&quot;assets/img/bg1.jpg&quot;) top / cover no-repeat;padding-top: 8rem;margin-bottom: 2rem;padding-right: 4rem;padding-bottom: 8rem;">
+            <h1 class="greeting" style="margin-top: 0;padding-top: 15px;">Welcome back, Agent</h1>
+            <div class="d-xl-flex justify-content-xl-center search">
+                {{!-- <form method="get" action="search"> --}}
+                <div style="height: 75px;width: 285px;">
+                    <label class="d-xl-flex justify-content-xl-end align-items-xl-center" style="background: #f6f7fb;height: 75px;width: 285px;border-top-left-radius: 50px;border-bottom-left-radius: 50px;margin-bottom: 0;">
+                        <input type="search" class="searchbar" style="border-style: none;width: 250px;" placeholder="Find a mission">
+                    </label>
                 </div>
-           </form>
+                <div style="background: #f6f7fb;height: 75px;">
+                    <label class="d-xl-flex justify-content-xl-end align-items-xl-center" style="background: #f6f7fb;height: 74px;margin-bottom: 0;margin-right: 1rem;margin-left: 1rem;border-right-style: none;border-left-style: none;">
+                        <select class="dropdown" name="jobCategory">
+                            <option value="" disabled selected hidden>Category</option>
+                            <option value="All">All</option> {{!-- idk ano dapat value nito if all ahuhu --}}
+                            <option value="Design" >Design</option>
+                            <option value="Photography">Photography</option>
+                            <option value="Video">Video</option>
+                            <option value="Typing">Typing</option>
+                            <option value="Tutor">Tutor</option>
+                            <option value="Audio">Audio</option>
+                        </select>
+                    </label>
+                </div>
+            <div style="background: #f6f7fb;height: 75px;">
+                <label class="d-xl-flex justify-content-xl-end align-items-xl-center" style="background: #f6f7fb;height: 75px;margin-right: 1rem;margin-left: 1rem;">
+                        <select class="dropdown" name="jobDuration">
+                            <option value="" disabled selected hidden>Duration</option>
+                            <option value="All">All</option>
+                            <option value="1-24 Hours" >1-24 Hours</option>
+                            <option value="within 3 days">within 3 days</option>
+                            <option value="1 week">1 week</option>
+                            <option value="1 week+">1 week+</option>
+                        </select>
+                </label>
+                </div>
+            <div>
+                <label class="d-xl-flex justify-content-xl-end align-items-xl-center" style="background: #f6f7fb;height: 75px;width: 100px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;padding-right: 1rem;">
+                    <button class="btn" type="button" style="height: 47px;border-radius: 50%;background: #ee4266;border-style: none;font-family: Poppins, sans-serif;font-weight: normal;color: #F6F7FB;width: 47px;margin-left: 2rem;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </label>
+            </div>
+            {{!-- </form> --}}
+        </div>
         </div>
 
         {{!-- ROW FOR BUTTONS BELOW CARDS --}}
@@ -100,14 +136,14 @@
 
         <div class="row d-xl-flex justify-content-xl-center" style="margin-top: 2rem;">
             <div class="col-3" style="margin-right: 5rem;">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/create">
+                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/create">
                 <button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3" style="margin-left: 5rem;">
-                <form class="d-xl-flex justify-content-xl-center" method="get" action="/mission_log"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/mission_log"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
         </div>
 

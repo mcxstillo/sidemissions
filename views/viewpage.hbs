@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
@@ -27,7 +28,7 @@
      {{!-- SEARCH BAR --}}
     <div class="form-group d-inline" style="width: 26%;">
         <form method="get" action="/search" style="display:inline;">
-            <input type="search"name="search" class="searchbar" placeholder="Find a mission...">
+            <input type="search"name="search" class="searchbar" placeholder="Find a mission">
             <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
             <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
             </button>
@@ -38,9 +39,9 @@
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
+                <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
             </li>
         </ul>
     </div>
@@ -75,25 +76,30 @@
                             <p class="card-text text-muted mb-2">{{result.jobDesc}}</p>
                             <div id="divider"></div>
                             <!-- REWARD -->
-                            <h6>Reward</h6>
-                                <section style ="padding-bottom:5px;margin-top: 0px;border-style: none;border-color: rgb(169,171,173);">
+                            <i class="icon la la-money"></i>
+                            <h6 style="display: inline;">Reward</h6>
+                                <section style ="padding-bottom:5px;margin-top: 0.5rem;border-style: none;border-color: rgb(169,171,173);">
                                     <span style="font-family: Poppins, sans-serif;margin-top: 20px;">{{result.chargeRate}}</span>
                                 </section>
                                 <div id="divider"></div>
                             <!-- DURATION -->
-                            <h6>Duration</h6>
-                                <section style="padding-bottom:5px;">
+                            <i class="icon fa fa-clock-o"></i>
+                            <h6 style="display: inline;">Duration</h6>
+                                <section style="margin-top: 0.5rem; padding-bottom:5px;">
                                     <span style="font-family: Poppins, sans-serif;">{{result.jobDuration}}</span>
                                 </section>
                                 <div id="divider"></div>
-                            <h6>Category</h6>
-                                <section style="padding-bottom:5px;">
+                            <!-- CATEGORY -->    
+                            <i class="icon la la-list"></i>    
+                            <h6 style="display: inline;">Category</h6>
+                                <section style="margin-top: 0.5rem; padding-bottom:5px;">
                                     <span style="font-family: Poppins, sans-serif;">{{result.jobCategory}}</span>
                                 </section>
                                 <div id="divider"></div>
                             <!-- SKILLS --> 
-                            <h6>Skills Required</h6>
-                                <section>
+                            <i class="icon la la-gears"></i>  
+                            <h6 style="display: inline;">Skills Required</h6>
+                                <section style="margin-top: 0.5rem; padding-bottom:5px;">
                                     <span style="font-family: Poppins, sans-serif;">{{result.jobSkills}}</span>   
                                 </section>
                         </div>
@@ -107,14 +113,21 @@
                     <h4 class="card-title">About the Handler</h4>
                     <h5 class="card-subtitle" style="margin-top: 2rem;margin-bottom: 2rem;">{{jobCreatorfirstName}} {{jobCreatorlastName}}</h5>
                     <h6 class="text-muted card-subtitle mb-2">Contact Information</h6>
-                    <p class="card-text">{{jobCreatorContactNum}}</p>
-                    <p class="card-text">{{jobCreatorEmail}}</p>
+                    <i class="icontact fa fa-phone"></i>
+                    <p class="card-text" style="display: inline;">{{jobCreatorContactNum}}</p><br>
+                    <i class="icontact icon ion-android-mail"></i>
+                    <p class="card-text" style="display: inline;">{{jobCreatorEmail}}</p>
                     <button class="btn applybtn" type="button">Apply for Mission</button>
                 </div>
             </div>
         </div>
         </div>
         </div>
+
+        {{!-- FIXED POST MISSION BUTTON --}}
+        <form method="get" action="/create">
+            <button class="post" type="submit"><i class="fa fa-plus" style="margin-right: 0.5rem;font-size: 14px;"></i>Post a Mission</button>
+        </form>
 
         {{!-- FOOTER --}}
          <div id="footer" class="footer-dark">

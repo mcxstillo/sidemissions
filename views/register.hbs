@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Post a Mission</title>
+    <title>Register</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -49,7 +50,7 @@
             </div>
         </nav>
         <div class="register-photo" style="background-color: #F6F7FB;">
-            <div class="form-container">
+            <div class="form-container" style="width: 40%;">
                 <form method="post">
                     <h2 class="text-center" style="color: #EE4266;font-family: Poppins, sans-serif;font-weight: bold;">Create your ID, Rookie.</h2>
                     <div class="regerror">{{emailerror}}</div>
@@ -58,7 +59,11 @@
                     <div class="form-group"><input class="form-control" type="text" name="firstName" placeholder="First Name" required></div>
                     <div class="form-group"><input class="form-control" type="text" name="lastName" placeholder="Last Name" required></div>
                     <div class="form-group"><input class="form-control" type="number" name="contactNum" placeholder="Contact Number" required></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div><a class="login" href="/login" style="margin-left: 262px;">Already have an account? Login here.</a></form>
+                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Sign Up</button></div>
+                    <div style="text-align:center;">
+                        <a class="login" href="/login">Already have an account? Login here.</a>
+                    </div>
+                </form>
             </div>
         </div>
 

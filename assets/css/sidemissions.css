@@ -20,17 +20,30 @@
     padding-bottom: 5px;
 }
 
-.signout {
-    color: #F6F7FB;
-    background: #ee4266;
-    font-family: Poppins, sans-serif;font-size: 13px;
+.icon {
+    font-size: 21px;
+    color: #FF9800;
+    margin-right: 0.5rem;
+}
+
+.icontact {
+    font-size: 20px;
+    color: #727171;
+    margin-right: 0.5rem;
+}
+
+.signoutbtn {
+    color: #1C1259;
+    background: #FF9800;
+    font-family: Poppins, sans-serif;
+    font-size: 13px;
     border-style: none;
     margin-top: -3px;
     padding-right: 16px
     ;padding-left: 16px;
 }
 
-.signout:hover {
+.signoutbtn:hover {
     color: #1c1259;
     background-color: #FFD28C;
 }
@@ -61,7 +74,7 @@
 .loginbutton {
     background-color: #EE4266;
     color: #F6F7FB;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .searchbar {
@@ -74,6 +87,10 @@
     padding-top: 5px;
     padding-bottom: 8px;
   }
+
+.form-container {
+    width: 45%;
+}
 
 .jobcontainer {
     height: 100%;
@@ -141,4 +158,23 @@
     position: static;
     bottom: 0px;
     margin-top: 4rem;
+}
+
+.post {
+    position: fixed; 
+    bottom: 30px; 
+    right: 40px;
+    z-index: 99; 
+    background-color: #EE4266; 
+    color: #F6F7FB;
+    padding: 15px; 
+    border: none;
+    border-radius: 30px; 
+    font-size: 16px; 
+    font-family: Poppins, sans-serif;
+  }
+  
+.post:hover {
+    background-color: #FFD28C;
+    color: #1C1259;
 }

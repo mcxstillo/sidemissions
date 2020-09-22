@@ -6,6 +6,21 @@ body {
 
 #desc {
   color: #62646A;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-left: 0.5rem;
+}
+
+label {
+  font-family: Poppins, sans-serif;
+}
+
+h4 {
+  font-size: 1rem;
+  margin-bottom:10px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
 }
 
 a {
@@ -33,6 +48,7 @@ a {
   font-family: Poppins, sans-serif;
   font-weight: normal;
 }
+
 .searchbtn:hover {
     background-color: #FFD28C;
     color: #1C1259;
@@ -63,6 +79,30 @@ a {
 .updatebtn:hover {
   background-color: #FFD28C;
   color: #1C1259;
+}
+
+.signoutbtn {
+  background: #FF9800;
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+  border-style: none;
+  margin-top: -3px;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.createbtn {
+  font-family: Poppins, sans-serif;
+  width: 152px;
+  margin-top: 2rem;
+  margin-left: 7rem;
+  background-color: #1c1259;
+  color: #F6F7FB;
+}
+
+.createbtn:hover {
+  color: #1C1259;
+  background-color: #FFD28C;
 }
 
 #divider {
@@ -105,12 +145,6 @@ img {
 #sidemissions {
   font-family: 'Poppins';
   font-weight: 400;
-}
-
-#footer {
-  position: static;
-  bottom: 0px;
-  margin-top: 4rem;
 }
 
 #card {
@@ -156,3 +190,57 @@ img {
   text-overflow: ellipsis;
 }
 
+.post {
+  position: fixed; 
+  bottom: 30px; 
+  right: 40px;
+  z-index: 99; 
+  background-color: #EE4266; 
+  color: #F6F7FB;
+  padding: 15px; 
+  border: none;
+  border-radius: 30px; 
+  font-size: 16px; 
+  font-family: Poppins, sans-serif;
+}
+
+.post:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.dropdown {
+  background-color: #F6F7FB;
+  color: #1c1259;
+  width: 146px;
+  height: 2.5rem;
+  padding: 6px;
+  border-style: solid;
+  border-color: rgba(28,18,89,0.16);
+  border-radius: 3px;
+}
+
+.durationbtn {
+  color:#F6F7FB;
+  background-color:#FF9800;
+  font-size: 15px;
+  font-family: Poppins, sans-serif;
+}
+
+.durationbtn:hover {
+  color: #1C1259;
+  background-color: #FFD28C;
+}
+
+.durationbtn:checked {
+  color:#1C1259;
+  background-color:#FFD28C;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+#footer {
+  position: static;
+  bottom: 0px;
+  margin-top: 4rem;
+}

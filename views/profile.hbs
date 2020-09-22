@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="../assets/css/Contact-Form-Clean.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
@@ -29,7 +30,7 @@
   {{!-- SEARCH BAR --}}
     <div class="form-group d-inline" style="width: 26%;">
         <form method="get" action="/search" style="display:inline;">
-            <input type="search"name="search" class="searchbar" placeholder="Find a mission...">
+            <input type="search"name="search" class="searchbar" placeholder="Find a mission">
             <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
             <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
             </button>
@@ -41,9 +42,9 @@
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
             <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
+                <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
             </li>
         </ul>
     </div>
@@ -66,7 +67,7 @@
         </nav>
 
         {{!-- NAME SECTION --}}
-        <div class="container d-xl-flex justify-content-xl-center" style="margin-top: 3rem;">
+        <div class="container d-xl-flex justify-content-xl-center" style="min-height:500px;margin-top: 3rem;">
             <div class="card d-xl-flex" style="width: 95%;">
                 <div class="card-body" style="width: 100%;padding: 35px;">
                     <img >
@@ -82,18 +83,18 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col">
-                                <h4 class="d-inline" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;">Approval Rating</h4>
+                                <h4>Approval Rating</h4>
                                 <h1 style="margin-top: 1rem;">%%</h1>
                                 <div id="divider"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 20px;padding-top: 0;">
-                                <h4 class="d-inline" style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;">Contact Information</h4>
-                                <p class="d-block" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;margin-top: 10px;margin-bottom: 4px;">Phone number</p>
-                                <p class="d-block" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;margin-bottom: 10px;">{{result.contactNum}}</p>
-                                <p class="d-block" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;margin-top: 10px;margin-bottom: 4px;">Email Address</p>
-                                <p class="d-block" id="desc" style="color: #62646A;font-style: normal;font-weight: normal;margin-bottom: 10px;">{{email}}</p>
+                                <h4>Contact Information</h4><br>
+                                <i class="icontact fa fa-phone"></i>
+                                <p id="desc" style="display: inline;">{{result.contactNum}}</p><br>
+                                <i class="icontact icon ion-android-mail"></i>
+                                <p id="desc" style="display: inline;">{{email}}</p>
                             </div>
                         </div>
                     </div>
@@ -102,14 +103,14 @@
                     <div class="col" style="margin-left: 1rem;">
                         <div class="row">
                             <div class="col">
-                                <h4 class="d-inline" style="font-size: 1rem;font-family: Poppins, sans-serif;font-weight: bold;margin-top: 3rem;">Description</h4>
+                                <h4>Description</h4>
                                 <p class="d-block" style="color: #62646A;border-width: 0;border-style: none;border-bottom-style: solid;border-bottom-color: rgb(0,53,213);font-weight: normal;margin-top: 16px;">{{result.userDesc}}</p>
                                 <div id="divider"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h4 style="font-size: 1rem;margin-top: 15px;font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 18px;">Skills</h4>
+                                <h4>Skills</h4>
                                 {{#if error_search}}
                                     <h4>No skills entered.</h4>
                                 {{else}}
@@ -124,6 +125,11 @@
             </div>
         </div>
         </div>
+
+        {{!-- FIXED POST MISSION BUTTON --}}
+        <form method="get" action="/create">
+            <button class="post" type="submit"><i class="fa fa-plus" style="margin-right: 0.5rem;font-size: 14px;"></i>Post a Mission</button>
+        </form>
 
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">

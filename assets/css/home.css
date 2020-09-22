@@ -11,7 +11,7 @@ html body {
   margin-bottom: 2rem;
 }
 
-form {
+.gobtn {
   display: inline;
 }
 
@@ -42,6 +42,22 @@ form {
   border-style: none;
   font-family: Poppins, sans-serif;
   font-weight: normal;
+}
+
+.signoutbtn {
+  color: #1C1259;
+  background: #FF9800;
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+  border-style: none;
+  margin-top: -3px;
+  padding-right: 16px
+  ;padding-left: 16px;
+}
+
+.signoutbtn:hover {
+  color: #1c1259;
+  background-color: #FFD28C;
 }
 
 .searchbar {
@@ -92,6 +108,68 @@ form {
   margin-bottom: 25px;
   margin-left: 45px;
   margin-right: 9px;
+}
+
+.post {
+  position: fixed; 
+  bottom: 30px; 
+  right: 40px;
+  z-index: 99; 
+  background-color: #EE4266; 
+  color: #F6F7FB;
+  padding: 15px; 
+  border: none;
+  border-radius: 30px; 
+  font-size: 16px; 
+  font-family: Poppins, sans-serif;
+}
+
+.post:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.greeting {
+  color: #1c1259;
+  font-size: 60px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  margin-bottom: 26px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.dropdown {
+  display: inline;
+  background-color: #F6F7FB;
+  color: #1c1259;
+  width: 146px;
+  height: 2.5rem;
+  padding: 6px;
+  border: solid 0px rgba(0,0,0,0.11);
+}
+
+.search {
+  display: block;
+  padding-top: 0px;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  margin-left: auto;
+}
+
+.searchbar {
+  width: 270px;
+  height: 42px;
+  padding-top: -3px;
+  border: 1px solid rgba(0,0,0,0.26);
+  padding-bottom: 5px;
+}
+
+.searchbg {
+  height: 74px;
+  background-color: #F6F7FB;
+  border-radius: 31px;
+  padding-top: 0px;
 }
 
 #footer {
