@@ -117,7 +117,9 @@
                     <p class="card-text" style="display: inline;">{{jobCreatorContactNum}}</p><br>
                     <i class="icontact icon ion-android-mail"></i>
                     <p class="card-text" style="display: inline;">{{jobCreatorEmail}}</p>
-                    <button class="btn applybtn" type="button">Apply for Mission</button>
+                    <form method="post" action="/apply/{{{result._id}}}">
+                    <button class="btn applybtn" type="submit">Apply for Mission</button>
+                    </form>
                 </div>
             </div>
         </div>
