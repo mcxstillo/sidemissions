@@ -23,8 +23,20 @@ h4 {
   font-weight: bold;
 }
 
+.error {
+  display:block;
+  margin-top: 3rem;
+}
+
 a {
   color: #1C1259;
+}
+
+.container {
+  margin-top: 2rem;
+  height: 100%;
+  max-height: auto;
+  min-height: 500px;
 }
 
 .searchbar {

@@ -65,12 +65,12 @@
         </nav>
 
 
-        <div class="container" style="margin-top: 2rem;height: 100%;max-height: auto;min-height: 500px;">
+        <div class="container">
             <h1 style="font-family: Poppins, sans-serif;font-weight: bold;">Mission Log</h1>
 
         {{!-- MISSION LOG --}}
          {{#if error_search}}
-                    <h4>You have no active jobs.</h4>
+                <h3 class="error">You have no active jobs.</h3>
             {{else}}
                 {{#each result}}
             <div class="row mission">
@@ -100,7 +100,7 @@
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>

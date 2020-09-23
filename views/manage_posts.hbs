@@ -83,7 +83,7 @@
                     <div class="tab-pane" role="tabpanel" id="tab-1" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
                          
                       {{#if error_search}}
-                        <h4>You have not posted any missions yet.</h4>  
+                        <h3 class="error">You have not posted any missions yet.</h3>  
                             {{#each result}}
                         <div class="row">
                             <div class="col">
@@ -131,7 +131,7 @@
                     <div class="tab-pane active" role="tabpanel" id="tab-2" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
                     {{!-- ACTIVE TABS --}}
                     {{#if error_search}}
-                        <h4>No active jobs.</h4>
+                        <h3 class="error">No active jobs.</h3>
                     {{else}}
                         {{#each result}}    
                         <div class="row">
