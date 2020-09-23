@@ -96,11 +96,8 @@ html body {
 .categorylbl {
   display: inline;
   background: #f6f7fb;
-  height: 75px;
-  width: 285px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  margin-bottom: 0;
 }
 
 .category {

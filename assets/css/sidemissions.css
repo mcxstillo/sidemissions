@@ -120,6 +120,18 @@
     width: 100%;
 }
 
+.skills {
+    font-weight: normal;
+    font-size: 15px;
+    background: rgb(255,255,255);
+    text-align: center;
+    padding: 14px;
+    border-radius: 26px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 1px solid rgba(33,37,41,0.14);
+}
+
 .card-title {
     font-family: Poppins, sans-serif;
     text-align: center;
@@ -178,3 +190,39 @@
     background-color: #FFD28C;
     color: #1C1259;
 }
+
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #eed3d7;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 21px;
+    /* Each alert has its own width */
+    float: left;
+    clear: right;
+    background-color: white;
+  }
+  
+  .alert-red {
+    color: white;
+    background-color: #DA4453;
+  }
+  .alert-green {
+    color: white;
+    background-color: #37BC9B;
+  }
+  .alert-blue {
+    color: white;
+    background-color: #4A89DC;
+  }
+  .alert-yellow {
+    color: white;
+    background-color: #F6BB42;
+  }
+  .alert-orange {
+    color:white;
+    background-color: #E9573F;
+  }

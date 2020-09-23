@@ -92,21 +92,33 @@
                                         </select>
                                     </div>
                                 </div>
-                                
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
                             <label style="display:block;">Duration</label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom:1rem;width: 382px;">
-                                <label class="btn durationbtn">
+                                <label class="btn durationbtn" name="duration">
                                     <input type="radio" name="jobDuration" value="1-24 Hours" autocomplete="off" style="visibility: hidden;" checked> 1-24 Hours
                                 </label>
-                                <label class="btn durationbtn">
+                                <label class="btn durationbtn" name="duration">
                                     <input type="radio" name="jobDuration" value="within 3 days" autocomplete="off" style="visibility: hidden;"> within 3 days
                                 </label>
-                                <label class="btn durationbtn">
+                                <label class="btn durationbtn" name="duration">
                                     <input type="radio" name="jobDuration" value="1 week" autocomplete="off" style="visibility: hidden;"> 1 week
                                 </label>
-                                <label class="btn durationbtn">
+                                <label class="btn durationbtn" name="duration">
                                     <input type="radio" name="jobDuration" value="1 week+" autocomplete="off" style="visibility: hidden;"> 1 week+
                                 </label>
+
+                            <script>
+                                $(document).ready(function() {    
+                                        var buttons = $("input:radio").click(function() {
+                                        $(this).parent().toggleClass('select');  
+                                        buttons.not(this).parent().removeClass('select');            
+                                    });                                  
+                                })
+                            </script>
+                                
                             </div>
 
                             <div class="form-group" style="width: 382px;">
@@ -131,11 +143,12 @@
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
         </div>
+        
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>

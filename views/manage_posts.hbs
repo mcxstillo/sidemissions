@@ -67,7 +67,7 @@
         
         {{!-- MANAGE POSTS HEADING + TAB LINKS--}}
         <div class="container" style="margin-top: 2rem;height: 100%;max-height: auto;min-height: 500px;">
-            <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">Manage Posts</h1>
+            <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">Manage Missions</h1>
             <div style="margin-top: 2rem;">
                 <ul class="nav nav-tabs">
                     <li class="nav-item" style="margin-right: 1rem;margin-left: 1rem;">
@@ -83,7 +83,7 @@
                     <div class="tab-pane" role="tabpanel" id="tab-1" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
                          
                       {{#if error_search}}
-                        <h3 class="error">You have not posted any missions yet.</h3>  
+                        <h4 class="error">You have not posted any missions yet.</h4>  
                             {{#each result}}
                         <div class="row">
                             <div class="col">
@@ -95,30 +95,7 @@
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
                                         <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                             
-                                            <button class="btn updatebtn" type="button" style="background: #ffd28c;">Pending</button>
-                                                
-                                                {{!-- MODAL FOR APPLICANTS --}} 
-                                                {{!-- WALA PA HBS TAGS YUNG PAPALITAN DITO --}}
-                                                <div class="modal fade" role="dialog" tabindex="-1" id="{{modal}}">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Applicants</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                            <div class="modal-body">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        {{!-- APPLICANT --}}
-                                                                        {{!-- WALA PA HBS TAGS YUNG INFO DITO (APPLICANTS) --}}
-                                                                        <h4 class="card-title modalheading">Fullname</h4>
-                                                                        <h6 class="text-muted card-subtitle modalsub">number</h6><button class="btn d-inline float-right updatebtn" type="button" style="width: 6rem;">Accept</button>
-                                                                        <h6 class="text-muted card-subtitle modalsub">email</h6>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <button class="btn updatebtn" type="button">View Applicants</button>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +108,7 @@
                     <div class="tab-pane active" role="tabpanel" id="tab-2" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
                     {{!-- ACTIVE TABS --}}
                     {{#if error_search}}
-                        <h3 class="error">No active jobs.</h3>
+                        <h4 class="error">No active jobs.</h4>
                     {{else}}
                         {{#each result}}    
                         <div class="row">
@@ -143,7 +120,9 @@
                                         <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
                                         <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                            <button class="btn updatebtn" data-toggle="modal" data-target="#{{modal}}" type="button">View Applicants</button>
+                                        <form method="get" action="/applicants">
+                                            <button class="btn updatebtn" type="submit">View Applicants</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +142,7 @@
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
@@ -173,6 +152,7 @@
         <script src="assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
         <script src="assets/js/Simple-Slider.js"></script>
+        <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>

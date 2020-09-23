@@ -16,13 +16,6 @@ label {
   font-family: Poppins, sans-serif;
 }
 
-h4 {
-  font-size: 1rem;
-  margin-bottom:10px;
-  font-family: Poppins, sans-serif;
-  font-weight: bold;
-}
-
 .error {
   display:block;
   margin-top: 3rem;
@@ -244,10 +237,10 @@ img {
   background-color: #FFD28C;
 }
 
-.durationbtn:checked {
+.select {
   color:#1C1259;
   background-color:#FFD28C;
-  font-size: 14px;
+  font-size: 15px;
   font-family: Poppins, sans-serif;
 }
 

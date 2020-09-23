@@ -100,7 +100,9 @@
                             <i class="icon la la-gears"></i>  
                             <h6 style="display: inline;">Skills Required</h6>
                                 <section style="margin-top: 0.5rem; padding-bottom:5px;">
-                                    <span style="font-family: Poppins, sans-serif;">{{result.jobSkills}}</span>   
+                                    {{#each result.skills}}
+                                        <p class="d-inline skills">{{result.jobSkills}}</p>
+                                    {{/each}}  
                                 </section>
                         </div>
                     </div>
@@ -117,7 +119,16 @@
                     <p class="card-text" style="display: inline;">{{jobCreatorContactNum}}</p><br>
                     <i class="icontact icon ion-android-mail"></i>
                     <p class="card-text" style="display: inline;">{{jobCreatorEmail}}</p>
-                    <button class="btn applybtn" type="button">Apply for Mission</button>
+                    {{!-- NEED HBS FOR DISPLAYED BUTTON --}}
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <button class="btn applybtn" type="button" id="applybtn">Apply for Mission</button>
+                    <script>
+                        $(document).ready(function() {
+                            $('#applybtn').click(function() {
+                                ohSnap('Application Sent', {color: 'green'})
+                            })
+                        })
+                    </script>
                 </div>
             </div>
         </div>
@@ -136,11 +147,14 @@
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
-        </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
-        
+        </div>  
+
+        <div id="ohsnap"></div>
+
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bs-init.js"></script>   
+        <script src="../assets/js/ohsnap.js"></script>
 </body>
 
 </html>
