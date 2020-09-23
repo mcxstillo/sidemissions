@@ -27,6 +27,6 @@ router.post('/register', controller.postRegister)
 router.post('/login', controller.postLogin)
 router.post('/create', controller.postCreate)
 router.post('/register', controller.postRegister)
-
+router.post('/deletepost', controller.postDeletePost)
 
 module.exports = router

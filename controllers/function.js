@@ -420,11 +420,6 @@ const controllers = {
             if(err){
             return console.error(error)
             }else{
-            // res.render("mission_log", {
-            //   layout: false,
-            //   firstName: req.session.user.firstName,
-            //   result: JSON.parse(JSON.stringify(data))
-            //   })
             res.render("mission_log", {
                 layout: false,     
                 error_search: "No Active Missions",
@@ -533,6 +528,18 @@ const controllers = {
     
         }
         
+    },
+    postDeletePost: function(req,res){
+        let id=  req.body.delID
+        jobModel.deleteOne({_id:id},function (err) {
+            if (err)
+            return console.error(err)
+            else
+            console.log('Successfully Delete')
+            // next();
+        }).then(
+            res.send('kahit nao')
+        )
     }
 
 }
