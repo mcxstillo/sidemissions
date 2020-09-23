@@ -73,12 +73,12 @@ a {
 .updatebtn {
   color: #1c1259;
   background-color: #FF9800;
-  width: 14%;
+  height:35px;
+  width: 11%;
   float: right;
   font-family: 'Poppins';
   font-size: 14px;
   font-weight: 400;
-  margin-top: 1rem;
 }
 
 .updatebtn:hover {
@@ -110,6 +110,31 @@ a {
   background-color: #FFD28C;
 }
 
+.deletebtn {
+  color: #F6F7FB;
+  background-color:#ee4266;
+  height: 35px;
+  width: 5%;
+  float: right;
+  font-family: 'Poppins';
+  margin-right: 1rem;
+}
+
+.deletebtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.trashicon {
+  color: #F6F7FB;
+  font-size: 22px;
+}
+
+.trashicon:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
 #divider {
   height: 0.5px;
   background-color: rgba(33,37,41,0.2);
@@ -127,7 +152,11 @@ a {
 }
 
 p {
-  font-weight: 600;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 400;
 }
 
 .skills {

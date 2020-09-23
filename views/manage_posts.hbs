@@ -95,30 +95,7 @@
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
                                         <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                         
-                                            <button class="btn updatebtn" type="submit" style="background: #ffd28c;">Pending</button>
-                                                
-                                                {{!-- MODAL FOR APPLICANTS --}} 
-                                                {{!-- WALA PA HBS TAGS YUNG PAPALITAN DITO --}}
-                                                <div class="modal fade" role="dialog" tabindex="-1" id="{{modal}}">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Applicants</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                            <div class="modal-body">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        {{!-- APPLICANT --}}
-                                                                        {{!-- WALA PA HBS TAGS YUNG INFO DITO (APPLICANTS) --}}
-                                                                        <h4 class="card-title modalheading">Full Name</h4>
-                                                                        <h6 class="text-muted card-subtitle modalsub">number</h6><button class="btn d-inline float-right updatebtn" type="button" style="width: 6rem;">Accept</button>
-                                                                        <h6 class="text-muted card-subtitle modalsub">email</h6>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <button class="btn updatebtn" type="submit" style="background: #ffd28c;">Pending</button>
                                     </div>
                                 </div>
                             </div>
@@ -141,14 +118,11 @@
                                          <h4 class="card-title" name="jobTitle"  style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
                                         <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
                                         <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
-                                        <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
+                                        <p class="d-inline" style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
+                                        <p class="d-inline"><i class="la la-money" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 1rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                            
-                                
-                                            <button class="btn deletebtn" id="{{_id}}"data-toggle="modal" data-target="#{{modal}}" type="submit">Delete</button>
-                                        
-                                          
-                                            <button class="btn updatebtn" data-toggle="modal" data-target="#{{modal}}" type="submit">View Applicants</button>
+                                        <button class="btn updatebtn" data-toggle="modal" data-target="#{{modal}}" type="submit">Applicants</button>
+                                        <button class="btn deletebtn" id="{{_id}}" type="submit"><i class="la la-trash d-inline-block trashicon"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +142,7 @@
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
