@@ -114,9 +114,12 @@
                                 {{#if error_search}}
                                     <h4>No skills entered.</h4>
                                 {{else}}
+                                    <div>
                                     {{#each result.skills}}
-                                        <p class="d-inline skills">{{this}}</p>
+                                    
+                                        <h6 class="text-muted card-subtitle mb-2 skills" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif; display: inline-block;">{{this}}</h6>
                                     {{/each}}
+                                    </div>
                             {{/if}}
                             </div>
                         </div>
@@ -134,7 +137,7 @@
         {{!-- FOOTER --}}
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>

@@ -112,7 +112,7 @@
         <div class="col-5" style="width: 100%;margin-left: 3rem;">
              <div class="card" style="width: 100%;margin: 0px;margin-top: 0px;box-shadow: 3px 3px 10px 1px rgb(232,232,234);">
                 <div class="card-body" style="padding-right: 20px;">
-                    <h4 class="card-title">About the Handler</h4>
+                    <h4 class="card-title" style="font-weight: bold;">About the Handler</h4>
                     <h5 class="card-subtitle" style="margin-top: 2rem;margin-bottom: 2rem;">{{jobCreatorfirstName}} {{jobCreatorlastName}}</h5>
                     <h6 class="text-muted card-subtitle mb-2">Contact Information</h6>
                     <i class="icontact fa fa-phone"></i>
@@ -125,13 +125,6 @@
                   <form method="post" action="/apply/{{{result._id}}}">
                     <button class="btn applybtn" id="applybtn"type="submit">Apply for Mission</button>
                     </form>
-                    <script>
-                        $(document).ready(function() {
-                            $('#applybtn').click(function() {
-                                ohSnap('Application Sent', {color: 'green'})
-                            })
-                        })
-                    </script>
                 </div>
             </div>
         </div>

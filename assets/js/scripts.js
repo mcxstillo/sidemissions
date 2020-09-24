@@ -1,4 +1,23 @@
 $(document).ready(function(){
+
+    // CREATE DURATION BUTTONS
+    var buttons = $("input:radio").click(function() {
+        $(this).parent().toggleClass('select');  
+        buttons.not(this).parent().removeClass('select');            
+    }); 
+
+    // function char70() {
+    //     var str = document.getElementById("userDesc");
+    //     var res = str.substring(0, 70);
+    //     document.getElementById("userDesc").innerHTML = res;
+    // }
+
+    // APPLICATION OHSNAP
+    $('#applybtn').click(function() {
+        ohSnap('Application Sent', {color: 'green'})
+    })
+
+    // DELETE POSTED JOB
     $("button.deletebtn").click(function(){
         let id = $(this).attr("id"), row = $(this).closest(".row")
         $.ajax({
