@@ -145,16 +145,16 @@ const controllers = {
         }
     },
     getHome: async function(req,res){
-        var email= await userModel.find({})
-        var password= await userModel.find({})
-        var name= await userModel.find({})
-        var cpNumber= await userModel.find({})
-        var uDesc= await userModel.find({})
-        var title= await jobModel.find({})
-        var jDesc= await jobModel.find({})
-        var reward= await jobModel.find({})
-        var duration= await jobModel.find({})
-        var category = await jobModel.find({})
+        // var email= await userModel.find({})
+        // var password= await userModel.find({})
+        // var name= await userModel.find({})
+        // var cpNumber= await userModel.find({})
+        // var uDesc= await userModel.find({})
+        // var title= await jobModel.find({})
+        // var jDesc= await jobModel.find({})
+        // var reward= await jobModel.find({})
+        // var duration= await jobModel.find({})
+        // var category = await jobModel.find({})
       
         
       if(req.session.user){
@@ -502,7 +502,7 @@ const controllers = {
       let jobDuration = req.body.jobDuration
       let jobCategory = req.body.jobCategory
       let jobSkills = req.body.jobSkills
-    
+   
         
       let doc = new jobModel({
         jobTitle:jobTitle,
@@ -511,7 +511,8 @@ const controllers = {
         chargeRate:chargeRate,
         jobDuration:jobDuration,
         jobCategory:jobCategory,
-        jobSkills: jobSkills.split(', ')
+        jobSkills: jobSkills.split(', '),
+        approvedUser: null
       })
     
         if(req.session.user){
@@ -556,13 +557,12 @@ const controllers = {
                         layout: false,
                         firstName: req.session.user.firstName,
                         skills: users.skills,
+                        jobID: data._id,
                         result: JSON.parse(JSON.stringify(users))
                     })
                 })
 
              } })
-            
-      
           }else{
             res.render('index.hbs',{
               layout: false
@@ -571,24 +571,30 @@ const controllers = {
     },
     postAcceptApplicant: function(req,res){
       if(req.session.user){
-        jobModel.findOne({_id:req.params._id}).updateOne({$set : {approvedUser: req.session.user._id}},function (err) {
+        console.log(req.body)
+        jobModel.findOne({_id:req.body.jobID}).updateOne({$set : {approvedUser: req.body.id}},function (err) {
+          console.log(req.body)
           if(err){
             return console.log(err)
           }else{
-            res.redirect('/manage_posts')
+            res.render("/manage_posts",{
+              layout: false,
+              firstName: req.session.user.firstName,
+              skills: users.skills,
+              jobID: req.body.jobID,
+              result: JSON.parse(JSON.stringify(users))
+            })
             }
          })
-       
+        
+        console.log('Successfully Approved')
       }else{
         res.render('index.hbs',{
           layout: false
         })
       }
-
-
-
     }
-
+    
 }
 
 

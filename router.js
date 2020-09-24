@@ -30,6 +30,6 @@ router.post('/register', controller.postRegister)
 router.post('/deletepost', controller.postDeletePost)
 
 router.get('/applicants/:_id', controller.getViewApplicants)
-router.post('/acceptapplicants/:_id', controller.postAcceptApplicant)
+router.post('/accepteduser', controller.postAcceptApplicant)
 
 module.exports = router

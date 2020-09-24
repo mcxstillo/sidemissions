@@ -87,18 +87,17 @@
                             <p class="card-text" style="margin-top: 2rem;margin-bottom: 2rem;font-family: Poppins, sans-serif;font-weight: normal;"{{this.contactNumber}}</p>
                             <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;font-weight: normal;font-family: Poppins, sans-serif;font-size: 14px;margin-bottom: 0px;padding-bottom: 0px;">Sample duration</span></p>
                             <p><i class="la la-money" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 13px;font-family: Poppins, sans-serif;font-weight: normal;font-size: 14px;">Sample duration</span></p>
-                            <form method="post" action="/acceptapplicant/:id">
-                                <button class="btn updatebtn" type="submit">Accept</button>
+                            <form method="post" action="/accepteduser">
+                                <button id="{{_id}}" class="btn accept" type="button">Accept</button>
                             </form>
                           
-                            <button class="btn updatebtn" type="submit">View Profile</button>
-                            
-                         
                         </div>
                     </div>
                 </div>
             </div>
             {{/each}}
+
+             <input type="hidden" id="jobID" value="{{jobID}}"></input>
         {{/if}}
         </div>
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
@@ -108,11 +107,12 @@
                 </div>
             </footer>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-        <script src="assets/js/Simple-Slider.js"></script>
+        <script src="../assets/js/Simple-Slider.js"></script>
+        <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>

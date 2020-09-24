@@ -17,4 +17,26 @@ $(document).ready(function(){
             }
         });
     });
+
+    $("button.accept").click(function(){
+        let id = $(this).attr("id")
+        let jobID = $('input#jobID').attr("value")
+        console.log(id)
+        console.log(jobID)
+        $.ajax({
+            method: "POST",
+            url: "/accepteduser",
+            data: {
+                jobID: jobID,
+                id:id
+            },
+            success: function(){
+                console.log('yay')
+            },
+            error: function(res){
+                // alert(res)
+                console.log('ERROR! Acceptance Did Not Push Through')
+            }
+        });
+    });
 });
