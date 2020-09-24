@@ -97,27 +97,39 @@
                                                 <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
                                                 <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                                 
-                                                    <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
+                                                <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
                                                         
-                                                <div class="modal fade" role="dialog" tabindex="-1">
-                                                    <div class="modal-dialog" role="document">
+                                                <div class="modal fade" role="dialog" tabindex="-1" id="{{_id}}">
+                                                    <div class="modal-dialog" role="document" style="resize: none;">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Rate your Agent</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                                             <div class="modal-body">
                                                                 <div class="row">
-                                                                    <div class="col justify-content-xl-center" style="padding-top: 15px;"><i class="fa fa-thumbs-up d-block" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
-                                                                        <p id="" class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Good</p>
+                                                                    <div class="col" style="padding-top: 15px;text-align: center;">
+                                                                        <label class="btn">
+                                                                            <i id="likebtn" name="rating" class="fa fa-thumbs-up d-block like"></i>
+                                                                            <input class="" type="radio" name="rating" id="like" autocomplete="off" style="visibility: hidden;" checked>
+                                                                        </label>
+                                                                        <div class="row" style="display: block; margin-left: auto;margin-right: auto;">
+                                                                            <p style="text-align: center;font-family: Poppins, sans-serif;">Good</p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col" style="padding-top: 15px;"><i class="fa fa-thumbs-down d-xl-flex justify-content-xl-center" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
-                                                                        <p class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Bad</p>
+                                                                    <div class="col" style="padding-top: 15px;text-align: center;">
+                                                                        <label class="btn">
+                                                                            <i id="dislikebtn" name="rating" class="fa fa-thumbs-down d-xl-flex justify-content-xl-center dislike"></i>
+                                                                            <input class="" type="radio" name="rating" id="dislike" autocomplete="off" style="visibility: hidden;">
+                                                                        </label>
+                                                                        <div class="row" style="display: block; margin-left: auto;margin-right: auto;">
+                                                                            <p style="text-align: center;font-family: Poppins, sans-serif;">Bad</p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer"><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Cancel</button><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Complete</button></div>
                                                         </div>
                                                     </div>
-                                                </div>                                
+                                                </div>                          
                                             </div>
                                         </div>
                                     </div>
