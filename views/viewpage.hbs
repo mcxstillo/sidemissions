@@ -100,8 +100,8 @@
                             <i class="icon la la-gears"></i>  
                             <h6 style="display: inline;">Skills Required</h6>
                                 <section style="margin-top: 0.5rem; padding-bottom:5px;">
-                                    {{#each result.skills}}
-                                        <p class="d-inline skills">{{result.jobSkills}}</p>
+                                    {{#each result.jobSkills}}
+                                        <p class="d-inline skills">{{this}}</p>
                                     {{/each}}  
                                 </section>
                         </div>
@@ -121,7 +121,10 @@
                     <p class="card-text" style="display: inline;">{{jobCreatorEmail}}</p>
                     {{!-- NEED HBS FOR DISPLAYED BUTTON --}}
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                    <button class="btn applybtn" type="button" id="applybtn">Apply for Mission</button>
+
+                  <form method="post" action="/apply/{{{result._id}}}">
+                    <button class="btn applybtn" id="applybtn"type="submit">Apply for Mission</button>
+                    </form>
                     <script>
                         $(document).ready(function() {
                             $('#applybtn').click(function() {

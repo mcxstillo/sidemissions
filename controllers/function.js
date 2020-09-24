@@ -540,6 +540,53 @@ const controllers = {
         }).then(
             res.send('kahit nao')
         )
+    },
+    getViewApplicants: function(req,res){
+      
+        if(req.session.user){
+            jobModel.findOne({_id:req.params._id},function (err, data) {
+                console.log(data.jobApplicants)
+              if(err){
+                return console.error(err)
+              }else{
+                userModel.find({"_id": data.jobApplicants},function(err,users){
+                    // console.log(users.firstName)
+                    // let skills = req.body.skill.split(', ')
+                    res.render("applications", {
+                        layout: false,
+                        firstName: req.session.user.firstName,
+                        skills: users.skills,
+                        result: JSON.parse(JSON.stringify(users))
+                    })
+                })
+
+             } })
+            
+      
+          }else{
+            res.render('index.hbs',{
+              layout: false
+            })
+          }
+    },
+    postAcceptApplicant: function(req,res){
+      if(req.session.user){
+        jobModel.findOne({_id:req.params._id}).updateOne({$set : {approvedUser: req.session.user._id}},function (err) {
+          if(err){
+            return console.log(err)
+          }else{
+            res.redirect('/manage_posts')
+            }
+         })
+       
+      }else{
+        res.render('index.hbs',{
+          layout: false
+        })
+      }
+
+
+
     }
 
 }

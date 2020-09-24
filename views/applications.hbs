@@ -5,28 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>profile</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Suez+One&amp;subset=latin-ext,hebrew">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/line-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/line-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="../assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
 </head>
 
 <body style="background-color: #F6F7FB;">
-    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="#" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
+    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;"><img class="d-inline" src="../assets/img/logo.png" style="width: 30;height: 30;padding: 0px;margin-top: 0.75em;margin-bottom: 0.75em;"><a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="#" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Suez One', serif;padding-top: 8px;font-weight: normal;font-style: normal;">SideMissions</a></div>
     <div
         class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 2rem;margin-right: 0rem;">
         <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{name}}!</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_job" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Posts</a></li>
             <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
                 <form method="get" action="/signout"><button class="btn btn-primary" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;">Signout</button></form>
             </li>
@@ -69,7 +69,7 @@
             </div>
         </div>
         </div>
-
+        {{!-- {{result.jobApplicants}} --}}
         {{#if error_search}}
             <h3 class="error">This job has no applicants yet.</h3>  
         {{else}}
@@ -78,13 +78,22 @@
                 <div class="col">
                     <div class="card" id="card-1" style="margin-top: 1rem;border-radius: 6px;">
                         <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
-                            <h4 class="card-title" style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">Mission Title</h4>
-                            <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">Name ng nag&nbsp; post</h6>
-                            <p class="card-text" style="margin-top: 2rem;margin-bottom: 2rem;font-family: Poppins, sans-serif;font-weight: normal;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. yes job description yay</p>
+                            <h4 class="card-title" style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">{{this.firstName}} {{this.lastName}}</h4>
+                              <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">Skills: </h6>
+                            {{#each skills}}
+                                <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif; display: inline-block;">{{this}}</h6>
+                            {{/each}}
+                              <h6 class="text-muted card-subtitle mb-2" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif; display: inline-block;">{{this.userDesc}}</h6>
+                            <p class="card-text" style="margin-top: 2rem;margin-bottom: 2rem;font-family: Poppins, sans-serif;font-weight: normal;"{{this.contactNumber}}</p>
                             <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;font-weight: normal;font-family: Poppins, sans-serif;font-size: 14px;margin-bottom: 0px;padding-bottom: 0px;">Sample duration</span></p>
                             <p><i class="la la-money" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 13px;font-family: Poppins, sans-serif;font-weight: normal;font-size: 14px;">Sample duration</span></p>
-                            <button class="btn updatebtn" type="submit">Accept</button>
+                            <form method="post" action="/acceptapplicant/:id">
+                                <button class="btn updatebtn" type="submit">Accept</button>
+                            </form>
+                          
                             <button class="btn updatebtn" type="submit">View Profile</button>
+                            
+                         
                         </div>
                     </div>
                 </div>
@@ -94,7 +103,7 @@
         </div>
         <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
             <footer style="color: #B9C0DF;">
-                <div class="container">
+                <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
                 </div>
             </footer>
