@@ -84,41 +84,45 @@
                          
                       {{#if error_search}}
                         <h4>You have not posted any missions yet.</h4>  
+                        {{else}}
                             {{#each result}}
-                        <div class="row">
-                            <div class="col">
-                                <div class="card" id="card" style="margin-top: 1rem;border-radius: 6px;">
-                                    <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
-                                        <h4 class="card-title" name="jobTitle"  style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
-                                        <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
-                                        <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
-                                        <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                        
-                                            <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
+                                {{#if approvedUser}}
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card" id="card" style="margin-top: 1rem;border-radius: 6px;">
+                                            <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
+                                                <h4 class="card-title" name="jobTitle"  style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
+                                                <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
+                                                <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
+                                                <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
+                                                <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                                 
-                                        <div class="modal fade" role="dialog" tabindex="-1">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Rate your Agent</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                    <div class="modal-body">
-                                                        <div class="row">
-                                                            <div class="col justify-content-xl-center" style="padding-top: 15px;"><i class="fa fa-thumbs-up d-block" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
-                                                                <p id="" class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Good</p>
+                                                    <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
+                                                        
+                                                <div class="modal fade" role="dialog" tabindex="-1">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Rate your Agent</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="col justify-content-xl-center" style="padding-top: 15px;"><i class="fa fa-thumbs-up d-block" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
+                                                                        <p id="" class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Good</p>
+                                                                    </div>
+                                                                    <div class="col" style="padding-top: 15px;"><i class="fa fa-thumbs-down d-xl-flex justify-content-xl-center" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
+                                                                        <p class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Bad</p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="col" style="padding-top: 15px;"><i class="fa fa-thumbs-down d-xl-flex justify-content-xl-center" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
-                                                                <p class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Bad</p>
-                                                            </div>
+                                                            <div class="modal-footer"><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Cancel</button><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Complete</button></div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer"><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Cancel</button><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Complete</button></div>
-                                                </div>
+                                                </div>                                
                                             </div>
-                                        </div>                                </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                                {{/if}}
                         {{/each}}
                     {{/if}}
                     </div>
@@ -129,7 +133,10 @@
                     {{#if error_search}}
                         <h4>No active jobs.</h4>
                     {{else}}
-                        {{#each result}}    
+                        {{#each result}}
+                        {{#if approvedUser}}    
+                      
+                        {{else}}
                         <div class="row">
                             <div class="col">
                                 <div class="card" id="card-1" style="margin-top: 1rem;border-radius: 6px;">
@@ -145,6 +152,7 @@
                                 </div>
                             </div>
                         </div>
+                          {{/if}} 
                         {{/each}}
                     {{/if}}
                     </div>
