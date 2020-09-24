@@ -93,8 +93,6 @@
                                     </div>
                                 </div>
 
-                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
                             <label style="display:block;">Duration</label>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom:1rem;width: 382px;">
                                 <label class="btn durationbtn" name="duration">
@@ -109,15 +107,6 @@
                                 <label class="btn durationbtn" name="duration">
                                     <input type="radio" name="jobDuration" value="1 week+" autocomplete="off" style="visibility: hidden;"> 1 week+
                                 </label>
-
-                            <script>
-                                $(document).ready(function() {    
-                                        var buttons = $("input:radio").click(function() {
-                                        $(this).parent().toggleClass('select');  
-                                        buttons.not(this).parent().removeClass('select');            
-                                    });                                  
-                                })
-                            </script>
                                 
                             </div>
 
@@ -150,6 +139,7 @@
         </div>
         
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>
 </body>

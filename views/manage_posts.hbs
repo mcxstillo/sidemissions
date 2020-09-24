@@ -95,31 +95,27 @@
                                         <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
                                         <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
                                         
-                                            <button class="btn updatebtn" type="submit" style="background: #ffd28c;">Pending</button>
+                                            <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
                                                 
-                                                {{!-- MODAL FOR APPLICANTS --}} 
-                                                {{!-- WALA PA HBS TAGS YUNG PAPALITAN DITO --}}
-                                                <div class="modal fade" role="dialog" tabindex="-1" id="{{modal}}">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Applicants</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                            <div class="modal-body">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        {{!-- APPLICANT --}}
-                                                                        {{!-- WALA PA HBS TAGS YUNG INFO DITO (APPLICANTS) --}}
-                                                                        <h4 class="card-title modalheading">Full Name</h4>
-                                                                        <h6 class="text-muted card-subtitle modalsub">number</h6><button class="btn d-inline float-right updatebtn" type="button" style="width: 6rem;">Accept</button>
-                                                                        <h6 class="text-muted card-subtitle modalsub">email</h6>
-                                                                    </div>
-                                                                </div>
+                                        <div class="modal fade" role="dialog" tabindex="-1">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Rate your Agent</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col justify-content-xl-center" style="padding-top: 15px;"><i class="fa fa-thumbs-up d-block" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
+                                                                <p id="" class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Good</p>
                                                             </div>
-                                                            <div class="modal-footer"></div>
+                                                            <div class="col" style="padding-top: 15px;"><i class="fa fa-thumbs-down d-xl-flex justify-content-xl-center" style="color: rgba(33,37,41,0.5);font-size: 60px;text-align: center;"></i>
+                                                                <p class="d-block" style="text-align: center;margin-top: 1em;font-family: Poppins, sans-serif;">Bad</p>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="modal-footer"><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Cancel</button><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Complete</button></div>
                                                 </div>
-                                    </div>
+                                            </div>
+                                        </div>                                </div>
                                 </div>
                             </div>
                         </div>
