@@ -7,6 +7,7 @@ const hbs = require("hbs")
 const app= express()
 const {userModel} = require("./models/user.js")
 const {jobModel} = require("./models/job.js")
+require("dotenv").config()
 
 // const urlencoder = bodyparser.urlencoded({
 //     extended: true
@@ -42,7 +43,7 @@ app.engine('hbs', exphbs.create({
 }).engine);
 app.set('view engine', 'hbs');
 
-mongoose.connect('mongodb://localhost/sidemissions', options)
+mongoose.connect(`mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.gcjg9.mongodb.net/sidemissions?retryWrites=true&w=majority`, options)
         .then(() =>{ 
           console.log('success'); 
         },err =>{console.log(err);
@@ -51,6 +52,6 @@ mongoose.connect('mongodb://localhost/sidemissions', options)
 
 app.use('/', require("./router"))
 
-app.listen(3000, function(){
+app.listen(process.env.PORT, function(){
   console.log("now listening to port 3000")
 })

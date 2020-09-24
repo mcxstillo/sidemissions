@@ -571,9 +571,7 @@ const controllers = {
     },
     postAcceptApplicant: function(req,res){
       if(req.session.user){
-        console.log(req.body)
         jobModel.findOne({_id:req.body.jobID}).updateOne({$set : {approvedUser: req.body.id}},function (err) {
-          console.log(req.body)
           if(err){
             return console.log(err)
           }else{
