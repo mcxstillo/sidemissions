@@ -573,19 +573,11 @@ const controllers = {
       if(req.session.user){
         jobModel.findOne({_id:req.body.jobID}).updateOne({$set : {approvedUser: req.body.id}},function (err) {
           if(err){
-            return console.log(err)
+            res.status(400).send()
           }else{
-            res.render("/manage_posts",{
-              layout: false,
-              firstName: req.session.user.firstName,
-              skills: users.skills,
-              jobID: req.body.jobID,
-              result: JSON.parse(JSON.stringify(users))
-            })
+            res.status(200).send()
             }
          })
-        
-        console.log('Successfully Approved')
       }else{
         res.render('index.hbs',{
           layout: false

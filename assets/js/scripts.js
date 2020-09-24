@@ -50,7 +50,7 @@ $(document).ready(function(){
                 id:id
             },
             success: function(){
-                console.log('yay')
+                window.location.href= "/manage_posts"
             },
             error: function(res){
                 // alert(res)
