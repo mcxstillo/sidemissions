@@ -557,6 +557,10 @@ const controllers = {
                         layout: false,
                         firstName: req.session.user.firstName,
                         skills: users.skills,
+                        jobTitle: data.jobTitle,
+                        jobCategory: data.jobCategory,
+                        jobDuration: data.jobDuration,
+                        chargeRate: data.chargeRate,
                         jobID: data._id,
                         result: JSON.parse(JSON.stringify(users))
                     })
