@@ -1,9 +1,20 @@
 $(document).ready(function(){
 
     // CREATE DURATION BUTTONS
-    var buttons = $("input:radio").click(function() {
+    var buttons = $("input[name='jobDuration']").click(function() {
         $(this).parent().toggleClass('select');  
         buttons.not(this).parent().removeClass('select');            
+    });
+
+    // BUTTON COLOR CHANGE FOR RATING
+    $("input:radio[name='rating']").click(function() {  
+        if (this.id=="like") {
+            document.getElementById('likebtn').classList.add('liked');
+            document.getElementById('dislikebtn').classList.remove('disliked');
+        } else {
+            document.getElementById('dislikebtn').classList.add('disliked');
+            document.getElementById('likebtn').classList.remove('liked');
+        }
     }); 
 
     // function char70() {
