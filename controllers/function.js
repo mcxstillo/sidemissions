@@ -567,6 +567,7 @@ const controllers = {
                         firstName: req.session.user.firstName,
                         skills: users.skills,
                         jobTitle: data.jobTitle,
+                        jobDesc: data.jobDesc,
                         jobCategory: data.jobCategory,
                         jobDuration: data.jobDuration,
                         chargeRate: data.chargeRate,

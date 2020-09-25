@@ -20,52 +20,56 @@
     <link rel="stylesheet" href="../assets/css/profile.css">
 </head>
 
-<body style="background-color: #F6F7FB;">
-   {{!-- LOGO AND SIDEMISSIONS --}}
-    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;">
-        <a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a>
-        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 15px;font-weight: normal;font-style: normal;">SideMissions</a>
-    </div>
-
-  {{!-- SEARCH BAR --}}
-    <div class="form-group d-inline" style="width: 26%;">
-        <form method="get" action="/search" style="display:inline;">
-            <input type="search"name="search" class="searchbar" placeholder="Find a mission">
-            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
-            <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
-            </button>
-        </form>
-    </div>
-
-    {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
-    <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 40%;margin-top: 2rem;margin-right: 0rem;">
-        <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
-            <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
-            </li>
-        </ul>
-    </div>
-
-        {{!-- NAV BAR WITH CATEGORIES --}}
-        <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
-            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
-                    id="navcol-1" style="border-radius: 20px;">
-                    <ul class="nav navbar-nav d-flex">
-                         <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
-                    </ul>
-                </div>
+<body>
+    <div style="margin-top: 1rem;">
+        {{!-- LOGO AND SIDEMISSIONS --}}
+            <div class="container d-inline" style="margin-top: 3rem;width: 50%;margin-left: 5rem;">
+                <a href="/">
+                    <img src="../assets/img/logo.png"  style="height: 60px;margin: 3px;width: 75px;"></a>
+                <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/">SideMissions</a>
             </div>
-        </nav>
+
+        {{!-- SEARCH BAR --}}
+            <div class="form-group d-inline" style="width: 26%;">
+                <form method="get" action="/search" style="display:inline;">
+                    <input type="search"name="search" class="searchbar" placeholder="Find a mission">
+                    <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+                    <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+                    </button>
+                </form>
+            </div>
+
+            {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
+            <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 40%;margin-top: 2rem;margin-right: 0rem;">
+                <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
+                    <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
+                        <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
+                    </li>
+                </ul>
+            </div>
+
+                {{!-- NAV BAR WITH CATEGORIES --}}
+                <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-top:0.5em;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
+                    <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
+                            id="navcol-1" style="border-radius: 20px;">
+                            <ul class="nav navbar-nav d-flex">
+                                <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+    </div>
         
+        {{!-- START OF PAGE CONTENT: JOB CARD --}}
         <div class="container" style="margin-top: 2rem;height: 100%;max-height: auto;min-height: 500px;">
             <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">Applicants</h1>
             <div class="row mission">
@@ -73,45 +77,65 @@
                     <div class="card" style="margin-top: 1rem;border-radius: 6px;">
                         <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
                             <div class="row">
-                                <div class="col-10 d-inline-block" style="height: 100%;">
-                                    <h4 style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">{{jobTitle}}</h4>
-                                    <p style="margin-top: 2rem;margin-bottom: 2rem;width: 85%;">{{jobDesc}}</p>
+
+                                <div class="col-10 jobCard">
+                                    <h4 class="jobTitle">{{jobTitle}}</h4>
+                                    <div class="desc-div">
+                                        <span id="jobDesc" maxlength="30">{{jobDesc}}</span>
+                                    </div>  
                                 </div>
-                                <div class="col d-block float-right info-col" style="width: 310px;padding-right: 10px;padding-left: 0;margin-top: auto;margin-bottom: auto;">
-                                    <div class="float-right info-div" style="width: 80%;"><i class="la la-list" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block float-right" style="margin-left: 1rem;font-family: Poppins, sans-serif;font-size: 14px;">{{jobCategory}}</span></div>
-                                    <div class="float-right info-div" style="width: 80%;"><i class="fa fa-clock-o" style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block float-right" style="margin-left: 1rem;font-family: Poppins, sans-serif;font-size: 14px;">{{jobDuration}}</span></div>
-                                <div
-                                    class="float-right" style="width: 80%;"><i class="la la-money d-inline-block" style="font-size: 25px;color: #FF9800;"></i><span class="d-inline-block float-right" style="margin-left: 1rem;font-family: Poppins, sans-serif;font-size: 14px;">{{chargeRate}}</span></div>
-                        </div>
+
+                                <div class="col float-right info-col">
+                                    <div class="float-right info-div">
+                                        <i class="la la-list jobicon"></i>
+                                        <span class="d-inline-block float-right info-span">{{jobCategory}}</span>
+                                     </div>
+                                <div class="float-right info-div">
+                                    <i class="fa fa-clock-o jobicon"></i>
+                                    <span class="d-inline-block float-right info-span">{{jobDuration}}</span>
+                                </div>
+                                <div class="float-right info-div">
+                                    <i class="la la-money jobicon"></i>
+                                    <span class="d-inline-block float-right info-span">Php {{chargeRate}}</span>
+                                </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-        {{!-- {{result.jobApplicants}} --}}
+        </div>
+
+        {{!-- START OF PAGE CONTENT: APPLICANTS CARD --}}
         {{#if error_search}}
             <h3 class="error">This job has no applicants yet.</h3>  
         {{else}}
             {{#each result}}
-            <div class="col" style="background-color: rgba(255,255,255,0);">
-                <div class="card" style="padding: 0.5em;margin-top: 1rem;border-radius: 6px;">
-                    <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
+            <div class="col">
+                <div class="card applicant-card">
+                    <div class="card-body d-inline" style="padding: 20px;margin-top: 0rem;width: 100%;">
                         <div class="row">
                             <div class="col-10" style="height: 100%;">
-                                <h4 style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;">{{this.firstName}} {{this.lastName}}</h4>
-                                <i class="icontact fa fa-phone" style="font-size: 20px;color: #FF9800;margin-right: 1rem;"></i>
-                                <h6 class="text-muted card-subtitle mb-2 d-inline" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{this.contactNum}}</h6><br>
-                                <i class="icontact icon ion-android-mail" style="font-size: 20px;color: #FF9800;margin-right: 1rem;"></i>
-                                <h6 class="text-muted card-subtitle mb-2 d-inline" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{this.email}}</h6>
-                                <p id="userDesc" style="margin-top: 2rem;margin-bottom: 2rem;width: 85%;">{{this.userDesc}}</p>
-                                <p id="trimmedDesc" style="margin-top: 2rem;margin-bottom: 2rem;width: 85%;"></p>
+                                <h4 class="jobTitle">{{this.firstName}} {{this.lastName}}</h4>
+
+                                {{!-- CONTACT INFORMATION --}}
+                                <i class="icontact fa fa-phone contacticon"></i>
+                                <h6 class="text-muted card-subtitle mb-2 d-inline userDesc">{{this.contactNum}}</h6><br>
+                                <i class="icontact icon ion-android-mail contacticon"></i>
+                                <h6 class="text-muted card-subtitle mb-2 d-inline userDesc">{{this.email}}</h6><br>
+
+                                {{!-- USER DESCRIPTION --}}
+                                <div class="userDesc">
+                                    <span id="jobDesc" maxlength="30">{{this.userDesc}}</span>
+                                </div>
+
+                                {{!-- SKILLS --}}
                                 <h6 class="text-muted card-subtitle mb-2" style="margin-top: 1rem;margin-bottom: 0;font-family: Poppins, sans-serif;">Skills </h6>
                                 <div>
                                 {{#each skills}}
                                     <h6 class="text-muted card-subtitle mb-2 skills" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif; display: inline-block;">{{this}}</h6>
                                 {{/each}}
                             </div>
-                            </div>
+                        </div>
 
                             <div class="col info-col" style="display:flex; justify-content:center;padding-right: 10px;padding-left: 0;">
                                 <button class="btn acceptbtn accept" type="button" id="{{_id}}" value="{{_id}}">Accept</button>

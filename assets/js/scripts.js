@@ -6,6 +6,31 @@ $(document).ready(function(){
         buttons.not(this).parent().removeClass('select');            
     });
 
+    // Code for collapsible
+    var coll = document.getElementsByClassName("collapsible");     
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+       } 
+     });
+}
+
+        $('span[id=jobDesc]').each(function (f) {
+            let num = $(this).text().length;
+            console.log("value of num: " + num);
+
+            if(num > 300) {
+                var trim = $(this).text().substring(0,300);
+                var ellipsis = "..."
+                $(this).text(trim.concat(ellipsis));
+            }
+        });
+
     // BUTTON COLOR CHANGE FOR RATING
     $("input:radio[name='rating']").click(function() {  
         if (this.id=="like") {
@@ -16,6 +41,10 @@ $(document).ready(function(){
             document.getElementById('likebtn').classList.remove('liked');
         }
     }); 
+
+    $("button[id='modalbtn']").click(function() {
+        console.log("Complete button clicked");
+    })
 
     // function char70() {
     //     var str = document.getElementById("userDesc");

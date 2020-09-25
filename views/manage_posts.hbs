@@ -14,56 +14,60 @@
     <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
     <link rel="stylesheet" href="../assets/css/Contact-Form-Clean.css">
     <link rel="stylesheet" href="../assets/css/Footer-Dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="../assets/css/profile.css">
 </head>
 
 <body style="background-color: #F6F7FB;">
-    {{!-- LOGO AND SIDEMISSIONS --}}
-    <div class="container d-inline" style="margin: -2px;margin-top: 0px;width: 50%;margin-left: 5rem;padding: 0px;">
-        <a href="/"><img src="../assets/img/logo.png"  style="height: 70px;margin: 3px;width: 75px;"></a>
-        <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/" style="color: #1c1259;margin: 0rem 0.5rem;font-size: 2rem;font-family: 'Poppins', serif;padding-top: 15px;font-weight: normal;font-style: normal;">SideMissions</a>
-    </div>
-
-   {{!-- SEARCH BAR --}}
-    <div class="form-group d-inline" style="width: 26%;">
-        <form method="get" action="/search" style="display:inline;">
-            <input type="search"name="search" class="searchbar" placeholder="Find a mission">
-            <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
-            <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
-            </button>
-        </form>
-    </div>
-
-    {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
-    <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 40%;margin-top: 2rem;margin-right: 0rem;">
-        <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
-            <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
-            <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
-            </li>
-        </ul>
-    </div>
-
-        {{!-- NAV BAR WITH CATEGORIES --}}
-        <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
-            <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
-                    id="navcol-1" style="border-radius: 20px;">
-                    <ul class="nav navbar-nav d-flex">
-                         <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link active" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
-                            <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
-                    </ul>
-                </div>
+    <div>
+        {{!-- LOGO AND SIDEMISSIONS --}}
+            <div class="container d-inline" style="margin-top: 3rem;width: 50%;margin-left: 5rem;">
+                <a href="/">
+                    <img src="../assets/img/logo.png"  style="height: 60px;margin: 3px;width: 75px;"></a>
+                <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/">SideMissions</a>
             </div>
-        </nav>
+
+        {{!-- SEARCH BAR --}}
+            <div class="form-group d-inline" style="width: 26%;">
+                <form method="get" action="/search" style="display:inline;">
+                    <input type="search"name="search" class="searchbar" placeholder="Find a mission">
+                    <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
+                    <i class="fa fa-search" style="min-width: 0px;height: 4px;border-style: none;"></i>
+                    </button>
+                </form>
+            </div>
+
+            {{!-- NAME, MANAGE JOBS, AND SIGNOUT BUTTON --}}
+            <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 40%;margin-top: 2rem;margin-right: 0rem;">
+                <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
+                    <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
+                        <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
+                    </li>
+                </ul>
+            </div>
+
+                {{!-- NAV BAR WITH CATEGORIES --}}
+                <nav class="navbar navbar-light navbar-expand-md d-xl-flex" style="background-color: #1c1259;width: 97%;height: 10%;margin-top:0.5em;margin-left: 1%;margin-right: 1%;border-radius: 10px;padding: 0;padding-top: 5px;padding-bottom: 5px;">
+                    <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse text-right d-inline d-lg-flex justify-content-lg-end justify-content-xl-center"
+                            id="navcol-1" style="border-radius: 20px;">
+                            <ul class="nav navbar-nav d-flex">
+                                <li class="nav-item" role="presentation" data-bs-hover-animate="pulse" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" href="/categorysearch/Design" style="color: #f6f7fb;margin: -1px;font-family: Poppins, sans-serif;">Design</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Photography" style="color: #f6f7fb;font-family: Poppins, sans-serif;margin: 0;">Photography</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 2rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Video" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Video</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Typing" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Typing</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Tutor" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Tutor</a></li>
+                                    <li class="nav-item" role="presentation" style="margin-right: 3rem;margin-left: 3rem;"><a class="nav-link" data-bs-hover-animate="pulse" href="/categorysearch/Audio" style="color: #f6f7fb;font-family: Poppins, sans-serif;">Audio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>       
+    </div>
         
         {{!-- MANAGE POSTS HEADING + TAB LINKS--}}
         <div class="container" style="margin-top: 2rem;height: 100%;max-height: auto;min-height: 500px;">
@@ -87,60 +91,50 @@
                         {{else}}
                             {{#each result}}
                                 {{#if approvedUser}}
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="card" id="card" style="margin-top: 1rem;border-radius: 6px;">
-                                            <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
-                                                <h4 class="card-title" name="jobTitle"  style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
-                                                <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
-                                                <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
-                                                <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                                <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                                
-                                                <button class="btn updatebtn" type="button" data-toggle="modal" data-target="{{_id}}" style="background: #ffd28c;">Mark as Complete</button>
-                                                        
-                                                <div class="modal fade" role="dialog" tabindex="-1" id="{{_id}}">
-                                                    <div class="modal-dialog" role="document" style="resize: none;">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Rate your Agent</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                                            <div class="modal-body">
-                                                                <div class="row">
-                                                                    <div class="col" style="padding-top: 15px;text-align: center;">
-                                                                        <label class="btn">
-                                                                            <i id="likebtn" name="rating" class="fa fa-thumbs-up d-block like"></i>
-                                                                            <input class="" type="radio" name="rating" id="like" autocomplete="off" style="visibility: hidden;" checked>
-                                                                        </label>
-                                                                        <div class="row" style="display: block; margin-left: auto;margin-right: auto;">
-                                                                            <p style="text-align: center;font-family: Poppins, sans-serif;">Good</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col" style="padding-top: 15px;text-align: center;">
-                                                                        <label class="btn">
-                                                                            <i id="dislikebtn" name="rating" class="fa fa-thumbs-down d-xl-flex justify-content-xl-center dislike"></i>
-                                                                            <input class="" type="radio" name="rating" id="dislike" autocomplete="off" style="visibility: hidden;">
-                                                                        </label>
-                                                                        <div class="row" style="display: block; margin-left: auto;margin-right: auto;">
-                                                                            <p style="text-align: center;font-family: Poppins, sans-serif;">Bad</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer"><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Cancel</button><button class="btn" type="button" style="font-family: Poppins, sans-serif;">Complete</button></div>
-                                                        </div>
+                                <div class="row mission">
+                                <div class="col-10">
+                                    <div class="card">
+                                        <div class="card-body d-inline">
+                                        <div class="row">
+                                                <div class="col-9 d-inline-block" style="height: 100%;">
+                                                    <h4 class="jobTitle"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
+                                                    <h6 class="jobCreator text-muted mb-2">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
+                                                    <div class="desc-div">
+                                                        <span id="jobDesc" maxlength="30">{{jobDesc}}</span>
+                                                    </div>   
+                                                </div>
+                                                <div class="col float-right info-col">
+                                                    <div class="float-right info-div">
+                                                        <i class="la la-list jobicon"></i>
+                                                        <span class="d-inline-block float-right info-span">{{jobCategory}}</span>
                                                     </div>
-                                                </div>                          
+                                                <div class="float-right info-div">
+                                                    <i class="fa fa-clock-o jobicon"></i>
+                                                    <span class="d-inline-block float-right info-span">{{jobDuration}}</span>
+                                                </div>
+                                                <div class="float-right info-div">
+                                                    <i class="la la-money jobicon"></i>
+                                                    <span class="d-inline-block float-right info-span">‎₱ {{chargeRate}}</span>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="editbtn">
+                                            <form method="GET" action="/applicants/{{_id}}" style="display: inline;">
+                                                <button class="btn applicantsbtn" type="submit">Applicants</button>
+                                            </form>
+                                            <button class="btn delappbtn" id="{{_id}}" type="submit">Delete</button>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            </div>
                                 {{/if}}
                         {{/each}}
                     {{/if}}
                     </div>
 
 
-                    <div class="tab-pane active" role="tabpanel" id="tab-2" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
+                    <div class="tab-pane active" role="tabpanel" id="tab-2">
                     {{!-- PENDING TABS --}}
                     {{#if error_search}}
                         <h4>No active jobs.</h4>
@@ -149,21 +143,43 @@
                         {{#if approvedUser}}    
 
                         {{else}}
-                        <div class="row">
-                            <div class="col">
-                                <div class="card" id="card-1" style="margin-top: 1rem;border-radius: 6px;">
-                                    <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
-                                         <h4 class="card-title" name="jobTitle"  style="margin-bottom: 11px;font-family: Poppins, sans-serif;font-weight: bold;color: #1c1259;"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
-                                        <h6 class="text-muted card-subtitle mb-2" name="jobCreator"style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif;">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
-                                        <p class="card-text" name=""style="margin-top: 2rem;margin-bottom: 2rem;">{{jobDesc}}</p>
-                                        <p style="margin-bottom: 8px;"><i class="fa fa-clock-o" name="jobDuration"style="font-size: 25px;color: #FF9800;margin-left: 0rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">{{jobDuration}}</span></p>
-                                        <p><i class="la la-money d-inline-block" name="chargeRate"style="font-size: 25px;color: #FF9800;margin-left: rem;"></i><span class="d-inline-block" style="margin-left: 1rem;">Php {{chargeRate}}</span></p>
-                                            <button class="btn deletebtn" id="{{_id}}" type="submit">Delete</button>
-                                            <button class="btn updatebtn" type="submit"><a href="/applicants/{{_id}}">View Applicants</a></button>
+                        <div class="row mission">
+                                <div class="col-10">
+                                    <div class="card">
+                                        <div class="card-body d-inline">
+                                        <div class="row">
+                                                <div class="col-9 d-inline-block" style="height: 100%;">
+                                                    <h4 class="jobTitle"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
+                                                    <h6 class="jobCreator text-muted mb-2">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
+                                                    <div class="desc-div">
+                                                        <span id="jobDesc" maxlength="30">{{jobDesc}}</span>
+                                                    </div>   
+                                                </div>
+                                                <div class="col float-right info-col">
+                                                    <div class="float-right info-div">
+                                                        <i class="la la-list jobicon"></i>
+                                                        <span class="d-inline-block float-right info-span">{{jobCategory}}</span>
+                                                    </div>
+                                                <div class="float-right info-div">
+                                                    <i class="fa fa-clock-o jobicon"></i>
+                                                    <span class="d-inline-block float-right info-span">{{jobDuration}}</span>
+                                                </div>
+                                                <div class="float-right info-div">
+                                                    <i class="la la-money jobicon"></i>
+                                                    <span class="d-inline-block float-right info-span">‎₱ {{chargeRate}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="editbtn">
+                                            <form method="GET" action="/applicants/{{_id}}" style="display: inline;">
+                                                <button class="btn applicantsbtn" type="submit">Applicants</button>
+                                            </form>
+                                            <button class="btn delappbtn" id="{{_id}}" type="submit">Delete</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
                           {{/if}} 
                         {{/each}}
                     {{/if}}
@@ -178,7 +194,7 @@
         </form>
 
         {{!-- FOOTER --}}
-        <div id="footer" class="footer-dark" style="width: 100%;margin-top: 4rem;background-color: #0d0733;height: 75px;padding: 25px;">
+        <div id="footer" class="footer-dark">
             <footer style="color: #B9C0DF;">
                 <div>
                     <p class="copyright" style="color: #F6F7FB;font-size: 16px;padding-top: 0;opacity: 0.68;">SideMissions © 2020</p>
@@ -189,7 +205,6 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
         <script src="assets/js/Simple-Slider.js"></script>
         <script src="assets/js/scripts.js"></script>
 </body>

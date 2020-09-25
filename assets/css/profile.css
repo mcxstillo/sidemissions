@@ -2,6 +2,8 @@ body {
   width: 100%;
   height: 100%;
   min-height: 750px;
+  margin-top: 0.5em;
+  background-color: #F6F7FB;
 }
 
 #desc {
@@ -10,6 +12,55 @@ body {
   font-weight: normal;
   margin-bottom: 10px;
   margin-left: 0.5rem;
+}
+
+.desc-div {
+  min-height: 100px;
+  max-height:150px;
+  margin-top: 2rem;
+  width: 85%;
+  overflow:hidden
+}
+
+.tab-pane {
+  margin-bottom: 3rem;
+  height: 100%;
+  max-height: auto;
+}
+
+.jobCard {
+  display:block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.jobicon {
+  font-size: 25px;
+  color: #FF9800;
+}
+
+.contacticon {
+  font-size: 25px;
+  color: #FF9800;
+  margin-right: 0.5em;
+}
+
+#jobDesc {
+  color: #62646A;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.react-box {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.good-bad {
+  text-align: center;
+  font-family: Poppins, sans-serif;
 }
 
 label {
@@ -85,6 +136,41 @@ a {
   color: #1C1259;
 }
 
+.editbtn {
+  margin-top: 1rem;
+}
+
+.applicantsbtn {
+  color:#F6F7FB;
+  background-color: #FF9800;
+  width: 16%;
+  float: right;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: -0.5rem;
+}
+
+.applicantsbtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.delappbtn {
+  color: #F6F7FB;
+  background-color:#ee4266;
+  height: 35px;
+  width: 10%;
+  float: right;
+  font-family: 'Poppins';
+  margin-right: 0.5rem;
+}
+
+.delappbtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
 .signoutbtn {
   background: #FF9800;
   font-family: Poppins, sans-serif;
@@ -125,7 +211,7 @@ a {
 }
 
 .acceptbtn {
-  display:block; 
+  float:right;
   height:2.5em; 
   width: 7rem;
   margin:auto;
@@ -164,8 +250,31 @@ a {
   margin-right: auto;
 }
 
+.info-col {
+  width: 310px;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+.info-div {
+  width: 85%;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+.info-span {
+  margin-left: 1rem;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+}
+
 p {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .skills {
@@ -185,16 +294,39 @@ p {
 img {
   height: 70px;
   width: 80px;
+  margin-top: 2rem;
 }
 
 #sidemissions {
-  font-family: 'Poppins';
   font-weight: 400;
+  color: #1c1259;
+  font-size: 2rem;
+  font-family: 'Poppins', serif;
+  padding-top: 50px;
 }
 
-#card {
+.card {
+  border-radius: 6px;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.applicant-card {
+  width:88%;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 0em 2em;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+.card-body {
+  padding: 30px;
+  padding-bottom:25px;
+  margin-top: 0rem;
+  width: 100%;
 }
 
 .manage-btn {
@@ -209,19 +341,17 @@ img {
   background-color: #FFD28C;
 }
 
-.mission {
-  margin-top: 1rem;
+.jobTitle {
+  margin-bottom: 11px;
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  color: #1c1259;
 }
 
-.modalheading {
-  width: 50%;
-}
-
-.modalsub {
-  font-size: 18px;
-  width: 50%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+.jobCreator {
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-family: Poppins, sans-serif;
 }
 
 #card-text {
@@ -290,14 +420,71 @@ img {
 }
 
 .userDesc {
-  margin-top: 0.5em;
-  margin-bottom: 1rem;
   font-size: 15px;
   font-family: Poppins, sans-serif; 
   display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 85%;
+}
+
+.like {
+  color: rgba(33,37,41,0.5);
+  font-size: 60px;
+  transition: 0.3s;
+}
+
+.like:hover {
+  color:green;
+}
+
+.liked {
+  color:green;
+}
+
+.dislike {
+  color: rgba(33,37,41,0.5);
+  font-size: 60px;
+  transition: 0.3s;
+}
+
+.dislike:hover {
+  color:red;
+}
+
+.disliked {
+  color:red;
+}
+
+.collapsible {
+  color:#F6F7FB;
+  background-color: #FF9800;
+  cursor: pointer;
+  width: 16%;
+  float: right;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+}
+
+.collapsible:hover {
+  color: #1c1259;
+  background-color: #FFD28C;
+}
+
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 #footer {
+  width: 100%;
+  background-color: #0d0733;
+  height: 75px;padding: 25px;
   position: static;
   bottom: 0px;
   margin-top: 4rem;
