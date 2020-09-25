@@ -5,6 +5,8 @@ const session = require("express-session")
 const path = require("path")
 const exphbs = require("express-handlebars")
 const hbs = require("hbs")
+const bcrypt = require("bcrypt")
+const saltRounds= 7
 // const app= express()
 const {userModel} = require("../models/user.js")
 const {jobModel} = require("../models/job.js")
@@ -433,16 +435,16 @@ const controllers = {
             })
         } 
     },
-    postRegister: function(req,res){
+    postRegister: async function(req,res){
         let email = req.body.email
-        let password = req.body.password
+        let password =  req.body.password
         let firstName = req.body.firstName
         let lastName = req.body.lastName
         let contactNum = req.body.contactNum
-    
+      console.log(password)
         let doc = new userModel({
             email:email,
-            password:password,
+            password: await bcrypt.hash(password,saltRounds),
             firstName: firstName,
             lastName: lastName,
             contactNum: contactNum
@@ -473,27 +475,25 @@ const controllers = {
         })
         
     },
-    postLogin: function(req,res){
-          userModel.findOne({'email': req.body.email, 'password': req.body.password}, function(err,user){
-            if(err){
-              return console.error(error)
-            }else{
-              if(user) {
+    postLogin: async function(req,res){
+          
+          let password=req.body.password
+          let user= await userModel.findOne({'email': req.body.email})
+          comp= await bcrypt.compare(password, user.password)
+          if(comp){  
                 req.session.user=user
                 console.log("Logged In!")
                 res.render("index_sesh.hbs", {
                   layout: false,
                   firstName: req.session.user.firstName
+              })              
+          }else{
+              console.log("Email and Password does not match")
+              res.render("login.hbs", {
+                layout: false,
+                loginerror: "Email and Password does not match"
               })
-              }
-              else {
-                console.log("Email and Password does not match")
-                res.render("login.hbs", {
-                  layout: false,
-                  loginerror: "Email and Password does not match"
-                })
-              }}
-        })
+          }
     },
     postCreate: function(req,res){
       let jobTitle = req.body.jobTitle
