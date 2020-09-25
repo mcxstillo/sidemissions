@@ -119,10 +119,7 @@
                                             </div>
                                         </div>
                                         <div class="editbtn">
-                                            <form method="GET" action="/applicants/{{_id}}" style="display: inline;">
-                                                <button class="btn applicantsbtn" type="submit">Applicants</button>
-                                            </form>
-                                            <button class="btn delappbtn" id="{{_id}}" type="submit">Delete</button>
+                                            <button class="btn collapsible" type="button">Complete</button>
                                         </div>
                                     </div>
                                 </div>
@@ -170,11 +167,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="editbtn">
-                                            <form method="GET" action="/applicants/{{_id}}" style="display: inline;">
-                                                <button class="btn applicantsbtn" type="submit">Applicants</button>
-                                            </form>
-                                            <button class="btn delappbtn" id="{{_id}}" type="submit">Delete</button>
+                                        <div class="editbtn dropwdown">
+                                            <button class="btn applicantsbtn dropdown-toggle" type="button" data-toggle="dropdown">Options
+                                                 <span class="caret"></span></button>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><form method="get" action="/applicants/{{_id}}"><button class="btn optionsbtn" type="submit">Applicants</button></form>
+                                                <li><form method="get" action="/editjob/{{_id}}"><button class="btn optionsbtn" type="submit">Edit</form></li>
+                                                <li><form method="post" action="deletepost"><button class="btn optionsbtn" id="{{_id}}" type="submit">Delete</button></form></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ router.get('/signout', controller.getSignOut)
 router.get('/categorysearch/:jobCategory', controller.getCatSearch)
 router.get('/editprofile', controller.getEditProfile)
 
-router.post('/profile', controller.postUpdateProfile)
+router.post('/updateprofile', controller.postUpdateProfile)
 router.post('/addskill', controller.postAddSkill)
 router.get('/manage_posts', controller.getManagePosts)
 router.get('/mission_log', controller.getMissionLog)

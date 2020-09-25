@@ -27,7 +27,7 @@
         {{!-- LOGO AND SIDEMISSIONS --}}
             <div class="container d-inline" style="margin-top: 3rem;width: 50%;margin-left: 5rem;">
                 <a href="/">
-                    <img src="../assets/img/logo.png"  style="height: 65px;margin: 3px;width: 75px;"></a>
+                    <img src="../assets/img/logo.png"  style="height: 60px;margin: 3px;width: 75px;"></a>
                 <a class="navbar-brand text-capitalize d-inline" id="sidemissions" href="/">SideMissions</a>
             </div>
 
@@ -73,10 +73,10 @@
 
         <div class="row d-xl-flex justify-content-xl-center" style="width: 100%;">
             <div class="col-6" style="padding: 0;padding-top: 30px;margin-left: 3rem;margin-right: 5rem;width: 518px;">
-                <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;margin-bottom: 2rem;">Edit Profile</h1>
+                <h1 class="text-center" style="font-family: Poppins, sans-serif;font-weight: bold;">Edit Profile</h1>
                 <div class="row">
                     <div class="col">
-                        <div class="container">
+                        <div class="container" style="min-height: 100px;">
                             <div class="card" style="padding: 20px;">
                                 <div class="card-body" style="border-radius: 5px;">
                                     <form method="post" action="/updateprofile">
@@ -98,46 +98,28 @@
                                     </form>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="container">
-                            <div class="card" style="padding: 20px;margin-top: 1rem;">
-                                    <div class="card-body" style="border-radius: 5px;">
-                                        <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label>
-                                        <button class="btn d-inline float-right addbtn" data-toggle="modal" data-target="#modal1" type="button" style="padding-right: 8px;padding-left: 8px;padding-bottom: 4px;padding-top: 4px;">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                <div
-                                    class="modal fade" role="dialog" tabindex="-1" id="modal1">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <form method="post" action="addskill">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Add a Skill</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span></button></div>
-                                            <div class="modal-body">
-                                                <input type="text" placeholder="(ex. editing, typing)"name="skill" style="width: 100%;border-width: 1px;border-color: rgba(0,0,0,0.23);">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-light" type="button" data-dismiss="modal">Close</button>
-                                                <button class="btn addbtn" type="submit">Save</button>
-                                            </div>
-                                        </form>
+                            <div class="card" style="padding: 20px;">
+                                <div class="card-body" style="border-radius: 5px;">
+                                    <form method="post" action="/updateprofile">
+                                        <div class="form-group">
+                                            <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label><br>
+                                            <input class="form-control" type="text" name='skill' value='{{result.skills}}'>
                                         </div>
-                                    </div>
+                                          <button class="btn updatebtn" type="submit">Update</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         </div>
-
         {{!-- FIXED POST MISSION BUTTON --}}
         <form method="get" action="/create">
             <button class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>

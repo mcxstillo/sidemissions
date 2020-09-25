@@ -143,7 +143,7 @@ a {
 .applicantsbtn {
   color:#F6F7FB;
   background-color: #FF9800;
-  width: 16%;
+  width: 12%;
   float: right;
   font-family: 'Poppins';
   font-size: 14px;
@@ -152,6 +152,19 @@ a {
 }
 
 .applicantsbtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
+.optionsbtn {
+  width:100%;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+
+.optionsbtn:hover {
   background-color: #FFD28C;
   color: #1C1259;
 }

@@ -1,35 +1,35 @@
 $(document).ready(function(){
 
-    // CREATE DURATION BUTTONS
+        // CREATE DURATION BUTTONS
     var buttons = $("input[name='jobDuration']").click(function() {
-        $(this).parent().toggleClass('select');  
-        buttons.not(this).parent().removeClass('select');            
+         $(this).parent().toggleClass('select');  
+         buttons.not(this).parent().removeClass('select');            
     });
 
-    // Code for collapsible
+        // Code for collapsible
     var coll = document.getElementsByClassName("collapsible");     
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-       } 
-     });
-}
-
-        $('span[id=jobDesc]').each(function (f) {
-            let num = $(this).text().length;
-            console.log("value of num: " + num);
-
-            if(num > 300) {
-                var trim = $(this).text().substring(0,300);
-                var ellipsis = "..."
-                $(this).text(trim.concat(ellipsis));
-            }
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+        } 
         });
+    }
+
+    // CODE FOR TRIMMING DESCRIPTION
+    $('span[id=jobDesc]').each(function (f) {
+        let num = $(this).text().length;
+
+        if(num > 300) {
+            var trim = $(this).text().substring(0,300);
+            var ellipsis = "..."
+            $(this).text(trim.concat(ellipsis));
+        }
+    });
 
     // BUTTON COLOR CHANGE FOR RATING
     $("input:radio[name='rating']").click(function() {  
