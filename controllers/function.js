@@ -403,7 +403,7 @@ const controllers = {
                         res.render("manage_posts", {
                           layout: false,
                           firstName: req.session.user.firstName,
-                          tabone: "tab-1",
+                          
                           result: JSON.parse(JSON.stringify(data))
                           })
                   }
@@ -418,16 +418,25 @@ const controllers = {
     getMissionLog: function(req,res){
         // may urlencoder na middleware
         if(req.session.user){
-        jobModel.find({jobCreator: req.session.user._id},function (err, data) {
+        jobModel.find({approvedUser: req.session.user._id},function (err, data) {
             if(err){
-            return console.error(error)
+              return console.error(error)
             }else{
-            res.render("mission_log", {
-                layout: false,     
-                error_search: "No Active Missions",
-                firstName: req.session.user.firstName
-            })
-            }}
+              if(Object.keys(data).length === 0){
+                res.render("mission_log", {
+                  layout: false,     
+                  error_search: "No active jobs",
+                  firstName: req.session.user.firstName
+                  })
+              }else{
+                console.log(data)
+                    res.render("mission_log", {
+                      layout: false,
+                      firstName: req.session.user.firstName,
+                      result: JSON.parse(JSON.stringify(data))
+                      })
+              }
+              }}
             )
         }else{
             res.render('index.hbs',{

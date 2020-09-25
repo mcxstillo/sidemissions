@@ -81,7 +81,7 @@
                 {{!-- TAB CONTENT  --}}
                 <div class="tab-content" style="margin-top: 1rem;height: 100%;margin-bottom: 3rem;max-height: auto;">
                     <div class="tab-pane" role="tabpanel" id="tab-1" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
-                         
+                         {{!-- CLOSED TAB --}}
                       {{#if error_search}}
                         <h4>You have not posted any missions yet.</h4>  
                         {{else}}
@@ -141,13 +141,13 @@
 
 
                     <div class="tab-pane active" role="tabpanel" id="tab-2" style="margin-bottom: 3rem;height: 100%;max-height: auto;">
-                    {{!-- ACTIVE TABS --}}
+                    {{!-- PENDING TABS --}}
                     {{#if error_search}}
                         <h4>No active jobs.</h4>
                     {{else}}
                         {{#each result}}
                         {{#if approvedUser}}    
-                      
+
                         {{else}}
                         <div class="row">
                             <div class="col">
