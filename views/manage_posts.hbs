@@ -34,7 +34,7 @@
         </div> 
 
         {{!-- SEARCH BAR --}}
-            <div class="form-group d-inline" style="width: 26%;">
+            <div class="form-group d-inline" style="margin-left:1rem;width: 26%;">
                 <form method="get" action="/search" style="display:inline;">
                     <input type="search"name="search" class="searchbar" placeholder="Find a mission">
                     <button class="btn btn-primary" type="submit" style="margin-left: 10px;font-size: 13px;font-family: 'Suez One', serif;height: 37px;background-color: #FF9800;border-style: none;border-radius: 5px;margin-bottom: 4px;">
@@ -123,7 +123,30 @@
                                             </div>
                                         </div>
                                         <div class="editbtn">
-                                            <button class="btn collapsible" type="button">Complete</button>
+                                                
+                                                <button class="btn collapsible" type="button">Complete</button>
+                                                <div class="content">
+                                                    <div class="row">
+                                                        <div class="col" style="padding-top: 15px;text-align: center;">
+                                                            <label class="btn">
+                                                                <i id="likebtn" name="rating" class="fa fa-thumbs-up d-block like"></i>
+                                                                <input class="" type="radio" name="rating" id="like" autocomplete="off" style="visibility: hidden;" checked>
+                                                            </label>
+                                                            <div class="row react-box">
+                                                                <p class="good-bad">Good</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="padding-top: 15px;text-align: center;">
+                                                            <label class="btn">
+                                                                <i id="dislikebtn" name="rating" class="fa fa-thumbs-down d-xl-flex justify-content-xl-center dislike"></i>
+                                                                <input class="" type="radio" name="rating" id="dislike" autocomplete="off" style="visibility: hidden;">
+                                                            </label>
+                                                        <div class="row react-box">
+                                                            <p class="good-bad">Bad</p>
+                                                        </div>
+                                                    </div>
+                                                </div>    
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
