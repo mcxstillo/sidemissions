@@ -29,7 +29,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button id="sidemissions" type="submit">
+                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -144,7 +144,7 @@
                         </div>
 
                             <div class="col info-col" style="display:flex; justify-content:center;padding-right: 10px;padding-left: 0;">
-                                <button class="btn acceptbtn accept" type="button" id="{{_id}}" value="{{_id}}">Accept</button>
+                                <button data-bs-hover-animate="pulse" class="btn acceptbtn accept" type="button" id="{{_id}}" value="{{_id}}">Accept</button>
                             </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
 
         {{!-- FIXED POST MISSION BUTTON --}}
         <form method="get" action="/create">
-            <button class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
+            <button data-bs-hover-animate="pulse" class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
         </form>
 
         {{!-- FOOTER --}}

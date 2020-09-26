@@ -31,7 +31,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button id="sidemissions" type="submit">
+                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -99,7 +99,7 @@
                                                 <input class="form-control" name="contactNum" type="text" value="{{result.contactNum}}">
                                             </div>
                                        
-                                          <button class="btn updatebtn" type="submit">Update</button>
+                                          <button data-bs-hover-animate="pulse" class="btn updatebtn" type="submit">Update</button>
 
                                     </form>
                                 </div>
@@ -117,7 +117,7 @@
                                             <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label><br>
                                             <input class="form-control" type="text" name='skill' value='{{result.skills}}'>
                                         </div>
-                                          <button class="btn updatebtn" type="submit">Update</button>
+                                          <button data-bs-hover-animate="pulse" class="btn updatebtn" type="submit">Update</button>
                                     </form>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
         </div>
         {{!-- FIXED POST MISSION BUTTON --}}
         <form method="get" action="/create">
-            <button class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
+            <button data-bs-hover-animate="pulse" class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
         </form>
 
         {{!-- FOOTER --}}

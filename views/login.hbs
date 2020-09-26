@@ -24,7 +24,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button id="sidemissions" type="submit">
+                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -34,8 +34,8 @@
         <div class="collapse navbar-collapse text-right d-inline float-right d-lg-flex justify-content-lg-end justify-content-xl-end" id="navcol-2" style="border-radius: 20px;width: 50%;margin-top: 1.5rem;margin-right: 0rem;">
             <ul class="nav nav-tabs" style="border-style: none;margin-right: 2rem;">
                 <li class="nav-item" data-bs-hover-animate="pulse"></li>
-                <li class="nav-item" style="border-style: none;"><a class="nav-link" data-bs-hover-animate="pulse" href="/login" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;">LOGIN</a></li>
-                <li class="nav-item" style="border-style: none;color: #F6F7FB;background-color: #EE4266;border-radius: 10px;"><a class="nav-link" data-bs-hover-animate="pulse" href="/register" style="color: #F6F7FB;border-style: none;border-radius: 0;font-family: Poppins, sans-serif;">SIGNUP</a></li>
+                <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link" data-bs-hover-animate="pulse" href="/login" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;">LOGIN</a></li>
+                <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;color: #F6F7FB;background-color: #EE4266;border-radius: 10px;"><a class="nav-link" data-bs-hover-animate="pulse" href="/register" style="color: #F6F7FB;border-style: none;border-radius: 0;font-family: Poppins, sans-serif;">SIGNUP</a></li>
             </ul>
         </div>
 
@@ -64,9 +64,9 @@
                 <div class="logerror">{{loginerror}}</div>
                 <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email" required></div>
                 <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
-                <div class="form-group"><button id="button" class="loginbutton btn btn-block" type="submit" style=";margin-top: 30px; margin-bottom: 25px;">Log In</button>
+                <div class="form-group"><button data-bs-hover-animate="pulse" id="button" class="loginbutton btn btn-block" type="submit" style=";margin-top: 30px; margin-bottom: 25px;">Log In</button>
                 
-                </div><a class="signup" href="/register" style="margin-left: 11px;">Don't have an account yet? Sign up here.</a></form>
+                </div><a data-bs-hover-animate="pulse" class="signup" href="/register" style="margin-left: 11px;">Don't have an account yet? Sign up here.</a></form>
         </div>
 
         {{!-- FOOTER --}}

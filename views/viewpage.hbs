@@ -27,7 +27,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button id="sidemissions" type="submit">
+                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -81,7 +81,7 @@
                     <div class="card" style="width: 100%;padding-right: 0px;border-radius: 10px;">
                         <div class="job-card-body">
                             <!-- TITLE -->
-                            <h4 class="card-title">{{result.jobTitle}}</h4>
+                            <h4 data-bs-hover-animate="pulse" class="card-title">{{result.jobTitle}}</h4>
                             <!-- DESCRIPTION -->
                             <p class="card-text text-muted mb-2">{{result.jobDesc}}</p>
                             <div id="divider"></div>
@@ -133,7 +133,7 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
                 <form method="post" action="/apply/{{{result._id}}}">
-                    <button class="btn applybtn" id="applybtn"type="submit">Apply for Mission</button>
+                    <button data-bs-hover-animate="pulse" class="btn applybtn" id="applybtn"type="submit">Apply for Mission</button>
                 </form>
                 </div>
             </div>
@@ -143,7 +143,7 @@
 
         {{!-- FIXED POST MISSION BUTTON --}}
         <form method="get" action="/create">
-            <button class="post" type="submit"><i class="fa fa-plus" style="margin-right: 0.5rem;font-size: 14px;"></i>Post a Mission</button>
+            <button data-bs-hover-animate="pulse" class="post" type="submit"><i class="fa fa-plus" style="margin-right: 0.5rem;font-size: 14px;"></i>Post a Mission</button>
         </form>
 
         {{!-- FOOTER --}}

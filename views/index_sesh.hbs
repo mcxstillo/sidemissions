@@ -29,7 +29,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button id="sidemissions" type="submit">
+                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -41,8 +41,8 @@
                     <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/profile" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Hi, {{firstName}}!</a></li>
                     <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/mission_log" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Mission Log</a></li>
                     <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;"><a class="nav-link d-inline" href="/manage_posts" style="color: #1c1259;border-style: none;font-family: Poppins, sans-serif;padding-bottom: 5px;">Manage Missions</a></li>
-                    <li class="nav-item" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
-                        <form method="get" action="/signout"><button class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
+                    <li class="nav-item" data-bs-hover-animate="pulse" style="border-style: none;color: #F6F7FB;border-radius: 10px;height: 33px;width: 78px;padding-right: 1px;padding-left: 0px;background: rgba(238,66,102,0);">
+                        <form method="get" action="/signout"><button data-bs-hover-animate="pulse" class="btn signoutbtn" data-bs-hover-animate="pulse" type="submit">Signout</button></form>
                     </li>
                 </ul>
             </div>
@@ -103,7 +103,7 @@
                 
                 <div>
                     <label class="d-xl-flex justify-content-xl-end align-items-xl-center" style="background: #f6f7fb;height: 75px;width: 100px;border-top-right-radius: 50px;border-bottom-right-radius: 50px;padding-right: 1rem;">
-                        <button class="btn searchbtn" type="submit">
+                        <button data-bs-hover-animate="pulse" class="btn searchbtn" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
                     </label>
@@ -147,19 +147,21 @@
         <div class="row d-xl-flex justify-content-xl-center" style="margin-top: 2rem;">
             <div class="col-3" style="margin-right: 5rem;">
                 <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/create">
-                <button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <button data-bs-hover-animate="pulse" class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3">
-                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/profile"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/profile">
+                <button data-bs-hover-animate="pulse" class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
             <div class="col-3" style="margin-left: 5rem;">
-                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/mission_log"><button class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
+                <form class="gobtn d-xl-flex justify-content-xl-center" method="get" action="/mission_log">
+                <button data-bs-hover-animate="pulse" class="btn" id="navbutton" type="submit" style="border-style: none;font-family: Poppins, sans-serif;font-weight: normal;width: 97px;height: 38px;margin: 0;">Go</button></form>
             </div>
         </div>
 
         {{!-- FIXED POST MISSION BUTTON --}}
         <form method="get" action="/create">
-            <button class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
+            <button data-bs-hover-animate="pulse" class="post" type="submit"><i class="fa fa-plus" style="font-size: 14px;"></i> Post a Mission</button>
         </form>
         
         {{!-- FOOTER --}}
