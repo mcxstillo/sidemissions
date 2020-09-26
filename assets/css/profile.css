@@ -22,6 +22,12 @@ body {
   overflow:hidden
 }
 
+.form-title {
+  font-family: Poppins, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .tab-pane {
   margin-bottom: 3rem;
   height: 100%;
@@ -273,7 +279,7 @@ a {
 }
 
 .info-div {
-  width: 85%;
+  width: 100%;
   margin-top: 3px;
   margin-bottom: 3px;
   padding-left: 25px;
@@ -281,7 +287,6 @@ a {
 }
 
 .info-span {
-  margin-left: 1rem;
   font-family: Poppins, sans-serif;
   font-size: 14px;
 }
@@ -289,8 +294,9 @@ a {
 p {
   font-weight: 400;
 }
-
 .skills {
+  display: inline-block;
+  font-family: Poppins, sans-serif;
   font-weight: normal;
   font-size: 15px;
   background: rgb(255,255,255);
@@ -473,12 +479,15 @@ img {
   color:#F6F7FB;
   background-color: #FF9800;
   cursor: pointer;
-  width: 16%;
+  width: 12%;
   float: right;
   border: none;
   text-align: center;
   outline: none;
+  font-family: 'Poppins';
   font-size: 14px;
+  font-weight: 400;
+  margin-right: -0.5rem;
 }
 
 .collapsible:hover {

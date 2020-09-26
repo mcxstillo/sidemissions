@@ -11,8 +11,6 @@ const saltRounds= 7
 const {userModel} = require("../models/user.js")
 const {jobModel} = require("../models/job.js")
 
-
-
 // router.get('/populateusers', function(err,data){
   
 //     if(err){

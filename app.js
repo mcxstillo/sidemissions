@@ -52,6 +52,6 @@ mongoose.connect(`mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@clus
 
 app.use('/', require("./router"))
 
-app.listen(process.env.PORT, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("now listening to port 3000")
 })
