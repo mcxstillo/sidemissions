@@ -9,9 +9,12 @@ body {
 #sidemissions {
   font-weight: 400;
   color: #1c1259;
-  font-size: 2rem;
   font-family: 'Poppins', serif;
-  padding-top: 50px;
+  padding-top:1rem;color:#1c1259;
+  background-color:rgb(0,0,0,0)
+  ;border:0px; 
+  font-size:2rem;
+  height: 100%;
 }
 
 .navicon {
