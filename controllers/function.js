@@ -358,7 +358,7 @@ const controllers = {
             if(err){
                 return console.error(error)
             }else{
-                res.redirect("/editprofile")
+                res.redirect("/profile")
             }
             })
         }else{
@@ -372,11 +372,12 @@ const controllers = {
         
         console.log(JSON.stringify(req.body))
         if(req.session.user){
-        userModel.findOne({'_id': req.session.user._id}).updateOne({$push : {skills:  skill}},function(err,data){
+        userModel.findOne({'_id': req.session.user._id}).updateOne({$set : {skills:  skill}},function(err,data){
         if(err){
             return console.error(error)
         }else{
-            res.redirect("/editprofile")}
+            res.redirect("/profile")
+        }
         })
         
         }else{
@@ -399,7 +400,6 @@ const controllers = {
                       firstName: req.session.user.firstName
                       })
                   }else{
-                    console.log(data)
                         res.render("manage_posts", {
                           layout: false,
                           firstName: req.session.user.firstName,
@@ -443,7 +443,7 @@ const controllers = {
             layout: false
             })
         } 
-    },
+    },  
     postRegister: async function(req,res){
         let email = req.body.email
         let password =  req.body.password
@@ -595,8 +595,44 @@ const controllers = {
           layout: false
         })
       }
+    },
+    getEditJob: function(req,res){
+      if(req.session.user){
+      jobModel.findOne({'_id': req.params._id},function (err, data) {
+          // console.log(jobCreator)
+          if(err){
+          return console.error(err)
+          }else{
+         
+          res.render("editjob", {
+              layout: false,
+              firstName: req.session.user.firstName,
+              result: JSON.parse(JSON.stringify(data))
+          })
+          }  })
+      }else{
+          res.render('index.hbs',{
+          layout: false
+          })
+      } 
+    },
+     postUpdateJob: function(req,res){
+      let jobID = req.body.jobID
+      console.log(jobID)
+      if(req.session.user){
+      jobModel.findOne({'_id': jobID}).updateOne({$set : {jobTitle: req.body.jobTitle, jobDesc: req.body.jobDesc, jobCategory: req.body.jobCategory, jobDuration: req.body.jobDuration, chargeRate: req.body.chargeRate, jobSkills: req.body.jobSkills.split(", ")}},function(err,data){
+          if(err){
+              return console.error(error)
+          }else{
+              res.redirect("/manage_posts")
+          }
+          })
+      }else{
+          res.render('index.hbs',{
+          layout: false
+          })
+      } 
     }
-    
 }
 
 

@@ -86,15 +86,16 @@
                             <div class="card" style="padding: 20px;">
                                 <div class="card-body" style="border-radius: 5px;">
                                     <form method="post" action="/updatejob">
+                                    <input type="hidden" name="jobID" value="{{result._id}}"></input>
                                     {{!-- JOB TITLE --}}
                                         <div class="form-group">
                                             <label class="form-title">Title</label>
-                                            <input class="form-control" name="jobTitle" type="text" style="margin-top: 1rem;">{{result.jobTitle}}</input>
+                                            <input class="form-control" name="jobTitle" type="text" style="margin-top: 1rem;" value="{{result.jobTitle}}"></input>
                                         </div> 
                                     {{!-- JOB DESCRIPTION --}}
                                         <div class="form-group">
                                             <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Description</label>
-                                            <textarea class="form-control" name="userDesc" type="text" style="margin-top: 1rem;">{{result.jobDesc}}</textarea>
+                                            <textarea class="form-control" name="jobDesc" type="text" style="margin-top: 1rem;">{{result.jobDesc}}</textarea>
                                         </div> 
                                     {{!-- CATEGORY --}}
                                         <div class="form-group d-block" style="width: 382px;">
@@ -131,16 +132,16 @@
                                     {{!-- RATE OFFERED --}}
                                         <div class="form-group" style="width: 382px;">
                                           <label>Rate Offered</label>
-                                          <input class="form-control" type="number" name="chargeRate">
+                                          <input class="form-control" type="number" name="chargeRate" value="{{result.chargeRate}}">
                                         </div>
 
                                     {{!-- INPUT SKILLS --}}
                                         <div class="form-group d-block" style="width: 382px;">
                                             <label>Skills</label>
-                                            <input class="form-control" type="text" name="jobSkills">
+                                            <input class="form-control" type="text" name="jobSkills" value="{{skillsToStr result.jobSkills}}">
                                         </div>
                                     
-                                        <button data-bs-hover-animate="pulse" class="btn text-center createbtn" type="submit">Create Mission</button>
+                                        <button data-bs-hover-animate="pulse" class="btn text-center createbtn" type="submit">Update Mission</button>
 
                                     </form>
                                 </div>

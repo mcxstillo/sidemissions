@@ -31,5 +31,7 @@ router.post('/deletepost', controller.postDeletePost)
 
 router.get('/applicants/:_id', controller.getViewApplicants)
 router.post('/accepteduser', controller.postAcceptApplicant)
+router.get('/editjob/:_id',controller.getEditJob)
+router.post('/updatejob', controller.postUpdateJob)
 
 module.exports = router

@@ -39,7 +39,12 @@ var options ={
 app.use(express.static(__dirname + '/'));
 app.set('views', path.join(__dirname, 'views/'));
 app.engine('hbs', exphbs.create({
-    extname: 'hbs'
+    extname: 'hbs', 
+    helpers:{
+      skillsToStr: function(arr){
+        return arr.join(", ");
+      }
+    }
 }).engine);
 app.set('view engine', 'hbs');
 

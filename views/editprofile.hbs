@@ -112,10 +112,10 @@
                         <div class="container">
                             <div class="card" style="padding: 20px;">
                                 <div class="card-body" style="border-radius: 5px;">
-                                    <form method="post" action="/updateprofile">
+                                    <form method="post" action="/addskill">
                                         <div class="form-group">
                                             <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Skills</label><br>
-                                            <input class="form-control" type="text" name='skill' value='{{result.skills}}'>
+                                            <input class="form-control" type="text" name='skill' value='{{skillsToStr result.skills}}'>
                                         </div>
                                           <button data-bs-hover-animate="pulse" class="btn updatebtn" type="submit">Update</button>
                                     </form>
