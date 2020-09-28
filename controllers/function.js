@@ -415,13 +415,12 @@ const controllers = {
                         res.render("manage_posts", {
                           layout: false,
                           firstName: req.session.user.firstName,
-                          
                           result: JSON.parse(JSON.stringify(data))
                           })
                   }
                 }
-            }
-        )}else{
+            }).populate("approvedUser")
+       }else{
             res.render('index.hbs',{
                 layout: false
             })
@@ -529,7 +528,7 @@ const controllers = {
       
   
       var utcDate = '2011-06-29T16:52:48.000Z';  // ISO-8601 formatted date returned from server
-  var localDate = new Date(utcDate);
+      var localDate = new Date(utcDate);
       let doc = new jobModel({
         jobTitle:jobTitle,
         jobCreator: req.session.user,
@@ -569,7 +568,7 @@ const controllers = {
             console.log('Successfully Delete')
             // next();
         }).then(
-            res.send('kahit nao')
+            res.send('kahit ano')
         )
     },
     getViewApplicants: function(req,res){
@@ -653,6 +652,43 @@ const controllers = {
           layout: false
           })
       } 
+    },
+    postRating: function(req,res){
+      if(req.session.user){
+        if(req.body.rating === "like"){
+        userModel.findOne({_id:req.body.rateID}).updateOne({$inc : {'upvote' : 1}},function (err) {
+          if(err){
+            console.log(err)
+          }
+         })
+
+         jobModel.deleteOne({_id:req.body.jobID},function(err){
+            if(err){
+              res.status(400).send()
+            }else{
+              res.status(200).send()
+              }
+         })
+        }else{
+          userModel.findOne({_id:req.body.rateID}).updateOne({$inc : {'downvote': 1}},function (err) {
+            if(err){
+              console.log(err)
+            }
+           })
+
+           jobModel.deleteOne({_id:req.body.jobID},function(err){
+            if(err){
+              res.status(400).send()
+            }else{
+              res.status(200).send()
+              }
+         })
+        }
+      }else{
+        res.render('index.hbs',{
+          layout: false
+        })
+      }
     }
 }
 

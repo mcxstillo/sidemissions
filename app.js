@@ -44,18 +44,17 @@ app.engine('hbs', exphbs.create({
     helpers:{
       skillsToStr: function(arr){
         return arr.join(", ");
+      },
+      formatDate: function(postDate){
+        return moment(postDate).format("MMMM DD YYYY");
+      },
+      appRating: function(upvote,downvote){
+        var x= upvote / (upvote + downvote) * 100;
+        return x.toFixed(2);
       }
     }
 }).engine);
 
-
-app.engine('hbs', exphbs.create({
-  extname: 'hbs', 
-  helpers:{
-    formatDate: function(postDate){
-      return moment(postDate).format("MMMM DD YYYY")
-  }}
-}).engine);
 
 
 app.set('view engine', 'hbs');

@@ -34,11 +34,15 @@ $(document).ready(function(){
     // BUTTON COLOR CHANGE FOR RATING
     $("input:radio[name='rating']").click(function() {  
         if (this.id=="like") {
-            document.getElementById('likebtn').classList.add('liked');
-            document.getElementById('dislikebtn').classList.remove('disliked');
-        } else {
-            document.getElementById('dislikebtn').classList.add('disliked');
-            document.getElementById('likebtn').classList.remove('liked');
+            $('#likebtn').addClass("liked");
+            $('#dislikebtn').removeClass("disliked");
+            $('#like').prop("checked",true);
+            $('#dislike').prop("checked",false);
+        } else if(this.id=="dislike"){
+            $('#dislikebtn').addClass("disliked");
+            $('#likebtn').removeClass("liked");
+            $('#dislike').prop("checked",true);
+            $('#like').prop("checked",false);
         }
     }); 
 
@@ -54,12 +58,17 @@ $(document).ready(function(){
     })
 
     $("button[name='ratingbtn']").click(function() {
-
+        let id = $(this).attr("id"), 
+        row = $(this).closest(".row"),
+        rating = $("input[name='rating']:checked").val(),
+        jobID= $(this).attr("value")
         $.ajax({
             type:"POST",
             url:"/rating",
             data: {
-                rating: rating
+                rating: rating,
+                rateID:id,
+                jobID:jobID
             },
             success: function() {
                 ohSnap('Successfully rated Agent', {color: 'blue'}); 
