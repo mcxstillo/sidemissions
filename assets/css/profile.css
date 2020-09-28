@@ -481,6 +481,7 @@ img {
 }
 
 .collapsible {
+  display: block;
   color:#F6F7FB;
   background-color: #FF9800;
   cursor: pointer;
@@ -492,7 +493,7 @@ img {
   font-family: 'Poppins';
   font-size: 14px;
   font-weight: 400;
-  margin-right: -0.5rem;
+  margin-top: 1rem;
 }
 
 .collapsible:hover {
@@ -501,11 +502,48 @@ img {
 }
 
 .content {
-  padding: 0 18px;
+  display: block;
+  width: 100%;
   background-color: white;
   max-height: 0;
+  margin-right: -0.5rem;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #eed3d7;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 21px;
+  /* Each alert has its own width */
+  float: left;
+  clear: right;
+  background-color: white;
+}
+
+.alert-red {
+  color: white;
+  background-color: #DA4453;
+}
+.alert-green {
+  color: white;
+  background-color: #37BC9B;
+}
+.alert-blue {
+  color: white;
+  background-color: #4A89DC;
+}
+.alert-yellow {
+  color: white;
+  background-color: #F6BB42;
+}
+.alert-orange {
+  color:white;
+  background-color: #E9573F;
 }
 
 #footer {

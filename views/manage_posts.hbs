@@ -123,12 +123,12 @@
                                                     <span class="d-inline-block float-right info-span">‎₱ {{chargeRate}}</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="editbtn">
-                                                
+                                        </div>         
+
                                             <button data-bs-hover-animate="pulse" class="btn collapsible" type="button">Complete</button>
                                                 <div class="content">
                                                     <div class="row">
+                                                        <div class="col" style="padding-top: 15px;text-align: center;"><h4>How was their performance?</h4></div>
                                                         <div class="col" style="padding-top: 15px;text-align: center;">
                                                             <label class="btn">
                                                                 <i id="likebtn" name="rating" class="fa fa-thumbs-up d-block like"></i>
@@ -147,12 +147,12 @@
                                                             <p class="good-bad">Bad</p>
                                                         </div>
                                                     </div>
-                                                </div>    
+                                                </div>   
+                                                    <button id="ratingbtn" class="btn collapsible" type="submit">Submit</button> 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                                 {{/if}}
                         {{/each}}
@@ -203,7 +203,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><form method="get" action="/applicants/{{_id}}"><button class="btn optionsbtn" type="submit">Applicants</button></form>
                                                 <li><form method="get" action="/editjob/{{_id}}"><button class="btn optionsbtn" type="submit">Edit</form></li>
-                                                <li><form method="post" action="deletepost"><button class="btn optionsbtn" id="{{_id}}" type="submit">Delete</button></form></li>
+                                                <li><button name="delete" class="btn optionsbtn" id="{{_id}}" type="submit">Delete</button></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -231,11 +231,13 @@
                 </div>
             </footer>
         </div>
-          
+
+        <div id="ohsnap"></div>
+
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/bs-init.js"></script>
-        <script src="assets/js/Simple-Slider.js"></script>
+        <script src="../assets/js/ohsnap.js"></script>
         <script src="assets/js/scripts.js"></script>
 </body>
 

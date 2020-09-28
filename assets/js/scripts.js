@@ -42,8 +42,16 @@ $(document).ready(function(){
         }
     }); 
 
-    $("button[id='modalbtn']").click(function() {
-        console.log("Complete button clicked");
+    $("button[name='delete']").click(function() {
+        console.log('Delete job');
+
+        $.ajax({
+            type: 'POST',
+            url: '/deletepost',
+            success: function(){
+                ohSnap('Job successfully deleted', {color: 'blue'}); 
+            }
+        });
     })
 
     // function char70() {
@@ -58,7 +66,7 @@ $(document).ready(function(){
     })
 
     // DELETE POSTED JOB
-    $("button.deletebtn").click(function(){
+    $("button[name='delete']").click(function(){
         let id = $(this).attr("id"), row = $(this).closest(".row")
         $.ajax({
             method: "POST",
