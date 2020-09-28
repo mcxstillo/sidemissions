@@ -59,6 +59,7 @@ body {
 }
 
 .jobDate {
+  font-family: Poppins;
   font-size: 13px; 
   margin-top: 1rem;
   color: gray;

@@ -26,10 +26,11 @@ body {
 }
 
 .jobDate {
+    font-family: Poppins;
     font-size: 13px; 
     margin-top: 1rem;
     color: gray;
-}
+  }
 
 #divider {
     height: 0.5px;
