@@ -58,6 +58,13 @@ body {
   margin-bottom: 10px;
 }
 
+.jobDate {
+  font-family: Poppins;
+  font-size: 13px; 
+  margin-top: 1rem;
+  color: gray;
+}
+
 .react-box {
   display: block; 
   margin-left: auto;
