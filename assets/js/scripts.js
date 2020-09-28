@@ -43,7 +43,6 @@ $(document).ready(function(){
     }); 
 
     $("button[name='delete']").click(function() {
-        console.log('Delete job');
 
         $.ajax({
             type: 'POST',
@@ -54,11 +53,20 @@ $(document).ready(function(){
         });
     })
 
-    // function char70() {
-    //     var str = document.getElementById("userDesc");
-    //     var res = str.substring(0, 70);
-    //     document.getElementById("userDesc").innerHTML = res;
-    // }
+    $("button[name='ratingbtn']").click(function() {
+
+        $.ajax({
+            type:"POST",
+            url:"/rating",
+            data: {
+                rating: rating
+            },
+            success: function() {
+                ohSnap('Successfully rated Agent', {color: 'blue'}); 
+                row.remove()
+            }
+        })
+    })
 
     // APPLICATION OHSNAP
     $('#applybtn').click(function() {
