@@ -1,4 +1,6 @@
 const express = require("express")
+var moment = require('moment-timezone');
+const dateFormat = require("date-format")
 const bodyparser = require("body-parser")
 const router = express
 const session = require("express-session")
@@ -191,7 +193,10 @@ const controllers = {
       
         if(req.session.user){
           jobModel.find(filters,function (err, data) {
-            
+      
+          
+          // let day = Date.now().getDay();
+          // let year = Date.now().getYear();
             if(err){
               return console.error(err)
             }else{
@@ -203,11 +208,12 @@ const controllers = {
                   firstName: req.session.user.firstName
                 })
               }else{
-                // console.log(data)
+                console.log(typeof data.postDate)
                 res.render("searchresults", {
                   layout: false,
                   searchquery: req.query.search,
                   firstName: req.session.user.firstName,
+                  // postDate: data.postDate.slice(0,9),
                   result: JSON.parse(JSON.stringify(data))
               })
               
@@ -224,7 +230,8 @@ const controllers = {
     getFilter: function(req,res){
         let search = new RegExp (req.query.search,'gi');
         let filters = {jobTitle: search};
-        
+    
+
         if (!!req.query.min && !!req.query.max)
             filters['chargeRate'] = {
                 $gte: Number.parseInt(req.query.min),
@@ -237,13 +244,14 @@ const controllers = {
       
           if(req.session.user){
         jobModel.find(filters,function (err, data) {
-          console.log(data)
-            res.render("searchresults", {
-                layout: false,
-                searchquery: req.query.search,
-                firstName: req.session.user.firstName,
-                result: JSON.parse(JSON.stringify(data))
-            })
+          console.log(data.postDate)
+          res.render("searchresults", {
+            layout: false,
+            searchquery: req.query.search,
+            firstName: req.session.user.firstName,
+            // postDate: data.postDate.slice(0,9),
+            result: JSON.parse(JSON.stringify(data))
+        })
         })
         }else{
           res.render('index.hbs',{
@@ -283,15 +291,19 @@ const controllers = {
         res.redirect("/")
       },
       getCatSearch: function(req,res){
+       
         console.log(JSON.stringify(req.params.jobCategory))
         if(req.session.user){
         jobModel.find({jobCategory: req.params.jobCategory},function (err, data) {
           if(err){
             return console.error(error)
           }else{
+            console.log(data.postDate)
             res.render("searchresults", {
               layout: false,
+              searchquery: req.query.search,
               firstName: req.session.user.firstName,
+              // postDate: data.postDate.slice(0,9),
               result: JSON.parse(JSON.stringify(data))
           })
         }}).populate("jobCreator")
@@ -456,7 +468,9 @@ const controllers = {
             password: await bcrypt.hash(password,saltRounds),
             firstName: firstName,
             lastName: lastName,
-            contactNum: contactNum
+            contactNum: contactNum,
+            upvote: 0,
+            downvote: 0
         })
     
     
@@ -511,8 +525,11 @@ const controllers = {
       let jobDuration = req.body.jobDuration
       let jobCategory = req.body.jobCategory
       let jobSkills = req.body.jobSkills
-   
-        
+      
+      
+  
+      var utcDate = '2011-06-29T16:52:48.000Z';  // ISO-8601 formatted date returned from server
+  var localDate = new Date(utcDate);
       let doc = new jobModel({
         jobTitle:jobTitle,
         jobCreator: req.session.user,
@@ -521,11 +538,15 @@ const controllers = {
         jobDuration:jobDuration,
         jobCategory:jobCategory,
         jobSkills: jobSkills.split(', '),
+        // postDate: Date(moment(Date(Date.now)).format('MMMM Do YYYY')), 
+        postDate: moment(),
         approvedUser: null
       })
-    
+      // console.log( typeof Date(moment(Date(Date.now)).format('MMMM Do YYYY')))
+      // console.log(Date(moment(Date(Date.now)).format('MMMM Do YYYY')))
         if(req.session.user){
           doc.save(function(error,title){
+            
             if(error){
                 return console.error(error)
             }

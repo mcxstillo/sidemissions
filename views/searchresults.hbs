@@ -125,7 +125,7 @@
                  {{else}}
                     {{#each result}}
                         {{#if approvedUser}}    
-                            {{else}}
+                        {{else}}
                                 <div class="col" style="background-color: rgba(255,255,255,0);">
                                     <div class="card" style="margin-top: 1rem;border-radius: 6px;">
                                         <div class="card-body d-inline" style="padding: 30px;margin-top: 0rem;width: 100%;">
@@ -150,13 +150,19 @@
                                                         <i class="la la-money d-inline-block" style="font-size: 25px;color: #FF9800;"></i>
                                                         <span class="jobDetails d-inline-block float-right">‎₱ {{chargeRate}}</span>
                                                     </div>
+                                                   <div class="float-right" style="width: 85%;">
+                                                       
+                                                        <span class="jobDetails d-inline-block float-right">‎{{formatDate postDate}}</span>
+                                                    </div>  
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                        {{/if}}   
+                        {{/if}}
+                           
                     {{/each}}
+                                              
             {{/if}}
                 </div>
             </div>

@@ -2,6 +2,7 @@ const express = require("express")
 const bodyparser = require("body-parser")
 const session = require("express-session")
 const path = require("path")
+const moment = require("moment")
 const exphbs = require("express-handlebars")
 const hbs = require("hbs")
 const app= express()
@@ -46,6 +47,17 @@ app.engine('hbs', exphbs.create({
       }
     }
 }).engine);
+
+
+app.engine('hbs', exphbs.create({
+  extname: 'hbs', 
+  helpers:{
+    formatDate: function(postDate){
+      return moment(postDate).format("MMMM DD YYYY")
+  }}
+}).engine);
+
+
 app.set('view engine', 'hbs');
 
 mongoose.connect(`mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.gcjg9.mongodb.net/sidemissions?retryWrites=true&w=majority`, options)
