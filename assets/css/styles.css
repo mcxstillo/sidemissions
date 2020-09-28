@@ -94,6 +94,12 @@ a {
   margin-bottom: auto;
 }
 
+.jobDate {
+  font-size: 13px; 
+  margin-top: 1rem;
+  color: gray;
+}
+
 .post {
   position: fixed; 
   bottom: 30px; 

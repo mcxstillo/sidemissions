@@ -25,6 +25,12 @@ body {
     margin-bottom:1rem;
 }
 
+.jobDate {
+    font-size: 13px; 
+    margin-top: 1rem;
+    color: gray;
+}
+
 #divider {
     height: 0.5px;
     background-color: rgba(33,37,41,0.2);

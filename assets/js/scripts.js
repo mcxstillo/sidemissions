@@ -54,7 +54,7 @@ $(document).ready(function(){
     })
 
     $("button[name='ratingbtn']").click(function() {
-
+        console.log(rating);
         $.ajax({
             type:"POST",
             url:"/rating",
