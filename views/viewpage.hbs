@@ -109,11 +109,14 @@
                             <!-- SKILLS --> 
                             <i class="icon la la-gears"></i>  
                             <h6 style="display: inline;">Skills Required</h6>
-                                <div style="margin-top: 0.5rem; padding-bottom:5px;">
-                                    {{#each result.jobSkills}}
-                                        <h6 class="d-inline skills">{{this}}</h6>
-                                    {{/each}}  
+                                <div class="col">
+                                     <div style="margin-top: 0.5rem; padding-bottom:5px;">
+                                        {{#each result.jobSkills}}
+                                            <h6 class="d-inline-block skills">{{this}}</h6>
+                                        {{/each}}  
+                                    </div>
                                 </div>
+                               
                         </div>
                     </div>
                 </div>

@@ -158,6 +158,14 @@ a {
 
 .editbtn {
   margin-top: 1rem;
+  background: #ee4266;
+  font-family: Poppins, sans-serif;
+  font-size: 13px;
+  border-style: none;
+  margin-top: -3px;
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #f6f7fb;
 }
 
 .applicantsbtn {
@@ -255,6 +263,12 @@ a {
 .acceptbtn:hover{
   background-color: #FFD28C;
   color: #1C1259;
+}
+
+.approvalRating {
+  margin-top: 1rem;
+  color:#1C1259;
+  font-weight:500;
 }
 
 .trashicon {
@@ -500,7 +514,6 @@ img {
   background-color: #FF9800;
   cursor: pointer;
   width: 12%;
-  float: right;
   border: none;
   text-align: center;
   outline: none;
@@ -508,6 +521,8 @@ img {
   font-size: 14px;
   font-weight: 400;
   margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .collapsible:hover {

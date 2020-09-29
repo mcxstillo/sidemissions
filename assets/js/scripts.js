@@ -32,22 +32,23 @@ $(document).ready(function(){
     });
 
     // BUTTON COLOR CHANGE FOR RATING
-    $("input:radio[name='rating']").click(function() {  
+    $("input[name='rating']").click(function() {  
         if (this.id=="like") {
-            $('#likebtn').addClass("liked");
-            $('#dislikebtn').removeClass("disliked");
-            $('#like').prop("checked",true);
-            $('#dislike').prop("checked",false);
+            console.log("like");
+            $(this).prev().addClass("liked");
+            $("input:radio").eq($(".dislike").removeClass("disliked"));
+            // $('#like').prop("checked",true);
+            // $('#dislike').prop("checked",false);
         } else if(this.id=="dislike"){
-            $('#dislikebtn').addClass("disliked");
-            $('#likebtn').removeClass("liked");
-            $('#dislike').prop("checked",true);
-            $('#like').prop("checked",false);
+            console.log("dislike");
+            $(this).prev().addClass("disliked");
+            $("input:radio").eq( $(".like").removeClass("liked"));
+            // $('#dislike').prop("checked",true);
+            // $('#like').prop("checked",false);
         }
     }); 
 
     $("button[name='delete']").click(function() {
-
         $.ajax({
             type: 'POST',
             url: '/deletepost',

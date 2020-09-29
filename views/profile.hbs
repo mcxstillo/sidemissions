@@ -79,9 +79,9 @@
         <div class="container d-xl-flex justify-content-xl-center" style="min-height:500px;margin-top: 3rem;">
             <div class="card d-xl-flex" style="width: 95%;">
                 <div class="card-body" style="width: 100%;padding: 35px;">
-                    <h3 class="card-title d-inline"  style="margin: 1rem;margin-top:2rem;margin-bottom:2rem;">{{firstName}} {{lastName}}</h3>
+                    <h2 class="card-title d-inline"  style="font-family:Poppins;font-weight:bold;margin: 1rem;margin-top:2rem;margin-bottom:2rem;">{{firstName}} {{lastName}}</h2>
                     <form class="d-inline float-right" method="get" action="/editprofile">
-                        <button class="btn float-right" data-bs-hover-animate="pulse" type="submit" style="background: #ee4266;font-family: Poppins, sans-serif;font-size: 13px;border-style: none;margin-top: -3px;padding-right: 16px;padding-left: 16px;color: #f6f7fb;">Edit Profile</button>
+                        <button class="btn editbtn float-right" data-bs-hover-animate="pulse" type="submit">Edit Profile</button>
                     </form>
 
                     <div id="divider"></div>
@@ -91,16 +91,16 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col">
-                                <h4 style="margin-left:1rem;margin-bottom: 1.5rem;">Approval Rating</h4>
+                                <h5 style="font-family:Poppins;margin-left:1rem;margin-bottom: 1.5rem;">Approval Rating</h5>
                                 <div style="margin-left: 1rem;">
-                                    <h1 style="margin-top: 1rem;">{{appRating result.upvote result.downvote}}%</h1>
+                                    <h1 class="approvalRating">{{appRating result.upvote result.downvote}}%</h1>
                                     <div id="divider"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col" style="padding: 20px;padding-top: 0;">
-                                <h4 style="margin-left:1rem;margin-bottom: 1.5rem;">Contact Information</h4>
+                                <h5 style="font-family:Poppins;margin-left:1rem;margin-bottom: 1.5rem;">Contact Information</h5>
                                 <div style="margin-left: 1rem;">
                                     <i class="icontact fa fa-phone"></i>
                                     <p id="desc" style="display: inline;">{{result.contactNum}}</p><br>
@@ -116,20 +116,19 @@
                     <div class="col" style="margin-left: 1rem;">
                         <div class="row">
                             <div class="col">
-                                <h4>Description</h4>
+                                <h5 style="font-family:Poppins;">Description</h5>
                                 <p class="d-block" style="color: #62646A;border-width: 0;border-style: none;border-bottom-style: solid;border-bottom-color: rgb(0,53,213);font-weight: normal;margin-top: 16px;">{{result.userDesc}}</p>
                                 <div id="divider"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h4>Skills</h4>
+                                <h5 style="font-family:Poppins;">Skills</h5>
                                 {{#if error_search}}
                                     <h4>No skills entered.</h4>
                                 {{else}}
                                     <div>
                                     {{#each result.skills}}
-                                    
                                         <h6 class="text-muted card-subtitle mb-2 skills" style="margin-top: 0px;margin-bottom: 0;font-family: Poppins, sans-serif; display: inline-block;">{{this}}</h6>
                                     {{/each}}
                                     </div>
