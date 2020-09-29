@@ -65,6 +65,13 @@ body {
   color: gray;
 }
 
+.jobAssigned {
+  font-family: Poppins;
+  font-size: 16px; 
+  margin-top: 1rem;
+  color:#ee4266;
+}
+
 .react-box {
   display: block; 
   margin-left: auto;

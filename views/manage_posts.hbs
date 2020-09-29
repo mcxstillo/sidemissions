@@ -103,7 +103,7 @@
                                         <div class="card-body d-inline">
                                         <div class="row">
                                                 <div class="col-9 d-inline-block" style="height: 100%;">
-                                                    <h4 class="jobTitle"><a href="/viewpage/{{_id}}">{{jobTitle}}{{approvedUser.firstName}}{{approvedUser.lastName}}</a></h4>
+                                                    <h4 class="jobTitle"><a href="/viewpage/{{_id}}">{{jobTitle}}</a></h4>
                                                     <h6 class="jobCreator text-muted mb-2">{{jobCreator.firstName}} {{jobCreator.lastName}}</h6>
                                                     <div class="desc-div">
                                                         <span id="jobDesc" maxlength="30">{{jobDesc}}</span>
@@ -124,7 +124,7 @@
                                                 </div>
                                             </div>
                                         </div>         
-                                            <span class="jobDate d-block float-left">‎Posted on {{formatDate postDate}}</span>
+                                            <span class="jobAssigned d-block float-left">Assigned to {{approvedUser.firstName}} {{approvedUser.lastName}}</span>
                                             <button data-bs-hover-animate="pulse" class="btn collapsible" type="button">Complete</button>
                                                 <div class="content">
                                                     <div class="row">
