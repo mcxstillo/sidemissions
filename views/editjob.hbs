@@ -84,7 +84,7 @@
                     <div class="col">
                         <div class="container" style="min-height: 100px;">
                             <div class="card" style="padding: 20px;">
-                                <div class="card-body" style="border-radius: 5px;">
+                                <div class="card-body" style="display:block;margin-left:auto;margin-right:auto;border-radius: 5px;width:65%;">
                                     <form method="post" action="/updatejob">
                                     <input type="hidden" name="jobID" value="{{result._id}}"></input>
                                     {{!-- JOB TITLE --}}
@@ -102,6 +102,7 @@
                                         <label>Category</label>
                                             <div>
                                                 <select data-bs-hover-animate="pulse" class="dropdown" name="jobCategory">
+                                                    <option value="{{result.jobCategory}}" selected hidden>{{result.jobCategory}}</option>
                                                     <option value="Design">Design</option>
                                                     <option value="Photography">Photography</option>
                                                     <option value="Video">Video</option>
@@ -115,17 +116,18 @@
                                     {{!-- DURATION --}}
                                         <label style="display:block;">Duration</label>
                                          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-bottom:1rem;width: 382px;">
+                                            <input type="radio" name="durationdb" value="{{result.jobDuration}}" checked hidden>
                                             <label class="btn durationbtn" name="duration">
-                                                <input type="radio" name="jobDuration" value="1-24 Hours" autocomplete="off" style="visibility: hidden;" checked> 1-24 Hours
+                                                <input id="1st" type="radio" name="jobDuration" value="1-24 Hours" autocomplete="off" style="visibility: hidden;" checked> 1-24 Hours
                                             </label>
                                             <label class="btn durationbtn" name="duration">
-                                                <input type="radio" name="jobDuration" value="within 3 days" autocomplete="off" style="visibility: hidden;"> within 3 days
+                                                <input id="2nd" type="radio" name="jobDuration" value="within 3 days" autocomplete="off" style="visibility: hidden;"> within 3 days
                                             </label>
                                             <label class="btn durationbtn" name="duration">
-                                                <input type="radio" name="jobDuration" value="1 week" autocomplete="off" style="visibility: hidden;"> 1 week
+                                                <input id="3rd" type="radio" name="jobDuration" value="1 week" autocomplete="off" style="visibility: hidden;"> 1 week
                                             </label>
                                             <label class="btn durationbtn" name="duration">
-                                                <input type="radio" name="jobDuration" value="1 week+" autocomplete="off" style="visibility: hidden;"> 1 week+
+                                                <input id="4th" type="radio" name="jobDuration" value="1 week+" autocomplete="off" style="visibility: hidden;"> 1 week+
                                             </label>
                                          </div>
 
@@ -164,11 +166,11 @@
                 </div>
             </footer>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>

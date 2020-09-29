@@ -6,6 +6,17 @@ $(document).ready(function(){
          buttons.not(this).parent().removeClass('select');            
     });
 
+    // CODE FOR TRIMMING DESCRIPTION
+    $('span[id=jobDesc]').each(function (f) {
+        let num = $(this).text().length;
+
+        if(num > 300) {
+            var trim = $(this).text().substring(0,270);
+            var ellipsis = "..."
+            $(this).text(trim.concat(ellipsis));
+        }
+    });
+
         // Code for collapsible
     var coll = document.getElementsByClassName("collapsible");     
         for (i = 0; i < coll.length; i++) {
@@ -20,34 +31,37 @@ $(document).ready(function(){
         });
     }
 
-    // CODE FOR TRIMMING DESCRIPTION
-    $('span[id=jobDesc]').each(function (f) {
-        let num = $(this).text().length;
-
-        if(num > 300) {
-            var trim = $(this).text().substring(0,300);
-            var ellipsis = "..."
-            $(this).text(trim.concat(ellipsis));
+    // Automatic previous data as place holders for text and dropdown
+    // Automatic color selection for button group
+    var durationdb = $('input:radio[name="durationdb"]:checked').val();
+    if (durationdb) {
+        var duration = $('input:radio[name="jobDuration"]');
+        
+        if(durationdb == "1-24 Hours") {
+            $('input:radio[id="1st"]').parent().addClass('select');  
+            $('input:radio[id="1st"]').prop("checked", true);
+            duration.not('input:radio[id="1st"]').parent().removeClass('select');
+            $('input:radio[name="durationdb"]:checked').prop("checked", false);
+        } else if(durationdb == "within 3 days") {
+            $('input:radio[id="2nd"]').parent().addClass('select');  
+            $('input:radio[id="2nd"]').prop("checked", true);
+            duration.not('input:radio[id="2nd"]').parent().removeClass('select');
+            $('input:radio[name="durationdb"]:checked').prop("checked", false);
+        } else if(durationdb == "1 week") {
+            $('input:radio[id="3rd"]').parent().addClass('select');  
+            $('input:radio[id="3rd"]').prop("checked", true);
+            duration.not('input:radio[id="3rd"]').parent().removeClass('select');
+            $('input:radio[name="durationdb"]:checked').prop("checked", false);
+        } else if(durationdb == "1 week+") {
+            $('input:radio[id="4th"]').parent().addClass('select');  
+            $('input:radio[id="4th"]').prop("checked", true);
+            duration.not('input:radio[id="4th"]').parent().removeClass('select');
+            $('input:radio[name="durationdb"]:checked').prop("checked", false);
         }
-    });
+    }
 
-    // BUTTON COLOR CHANGE FOR RATING
-    $("input[name='rating']").click(function() {  
-        if (this.id=="like") {
-            console.log("like");
-            $(this).prev().addClass("liked");
-            $("input:radio").eq($(".dislike").removeClass("disliked"));
-            // $('#like').prop("checked",true);
-            // $('#dislike').prop("checked",false);
-        } else if(this.id=="dislike"){
-            console.log("dislike");
-            $(this).prev().addClass("disliked");
-            $("input:radio").eq( $(".like").removeClass("liked"));
-            // $('#dislike').prop("checked",true);
-            // $('#like').prop("checked",false);
-        }
-    }); 
 
+    // AJAX function to delete job from manage posts
     $("button[name='delete']").click(function() {
         $.ajax({
             type: 'POST',
@@ -58,6 +72,7 @@ $(document).ready(function(){
         });
     })
 
+    // AJAX function to send rating to db
     $("button[name='ratingbtn']").click(function() {
         let id = $(this).attr("id"), 
         row = $(this).closest(".row"),
@@ -77,6 +92,23 @@ $(document).ready(function(){
             }
         })
     })
+
+    // BUTTON COLOR CHANGE FOR RATING
+    $("input[name='rating']").click(function() {  
+        if (this.id=="like") {
+            console.log("like");
+            $(this).prev().addClass("liked");
+            $("input:radio").eq($(".dislike").removeClass("disliked"));
+            // $('#like').prop("checked",true);
+            // $('#dislike').prop("checked",false);
+        } else if(this.id=="dislike"){
+            console.log("dislike");
+            $(this).prev().addClass("disliked");
+            $("input:radio").eq( $(".like").removeClass("liked"));
+            // $('#dislike').prop("checked",true);
+            // $('#like').prop("checked",false);
+        }
+    }); 
 
     // APPLICATION OHSNAP
     $('#applybtn').click(function() {
@@ -103,6 +135,7 @@ $(document).ready(function(){
         });
     });
 
+    // Accepted user for job
     $("button.accept").click(function(){
         let id = $(this).attr("id")
         let jobID = $('input#jobID').attr("value")
