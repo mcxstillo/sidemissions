@@ -656,13 +656,13 @@ const controllers = {
     postRating: function(req,res){
       if(req.session.user){
         if(req.body.rating === "like"){
-        userModel.findOne({_id:req.body.rateID}).updateOne({$inc : {'upvote' : 1}},function (err) {
+        userModel.findOne({'_id':req.body.rateID}).updateOne({$inc : {'upvote' : 1}},function (err) {
           if(err){
             console.log(err)
           }
          })
 
-         jobModel.deleteOne({_id:req.body.jobID},function(err){
+         jobModel.deleteOne({'_id':req.body.jobID},function(err){
             if(err){
               res.status(400).send()
             }else{
@@ -670,13 +670,13 @@ const controllers = {
               }
          })
         }else{
-          userModel.findOne({_id:req.body.rateID}).updateOne({$inc : {'downvote': 1}},function (err) {
+          userModel.findOne({'_id':req.body.rateID}).updateOne({$inc : {'downvote': 1}},function (err) {
             if(err){
               console.log(err)
             }
            })
 
-           jobModel.deleteOne({_id:req.body.jobID},function(err){
+           jobModel.deleteOne({'_id':req.body.jobID},function(err){
             if(err){
               res.status(400).send()
             }else{
