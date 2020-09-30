@@ -95,13 +95,11 @@ $(document).ready(function(){
     // BUTTON COLOR CHANGE FOR RATING
     $("input:radio[name='rating']").click(function() {  
         if (this.id=="like") {
-            console.log("like");
             $(this).prev().addClass("liked");
             $("input:radio").eq($(".dislike").removeClass("disliked"));
             // $('#like').prop("checked",true);
             // $('#dislike').prop("checked",false);
         } else if(this.id=="dislike"){
-            console.log("dislike");
             $(this).prev().addClass("disliked");
             $("input:radio").eq( $(".like").removeClass("liked"));
             // $('#dislike').prop("checked",true);
@@ -138,8 +136,7 @@ $(document).ready(function(){
     $("button.accept").click(function(){
         let id = $(this).attr("id")
         let jobID = $('input#jobID').attr("value")
-        console.log(id)
-        console.log(jobID)
+        
         $.ajax({
             method: "POST",
             url: "/accepteduser",
