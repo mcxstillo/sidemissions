@@ -370,7 +370,7 @@ const controllers = {
             if(err){
                 return console.error(error)
             }else{
-                res.redirect("/profile")
+                res.redirect("/editprofile")
             }
             })
         }else{
@@ -388,7 +388,7 @@ const controllers = {
         if(err){
             return console.error(error)
         }else{
-            res.redirect("/profile")
+            res.redirect("/editprofile")
         }
         })
         
