@@ -29,7 +29,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
+                <button id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -91,7 +91,7 @@
                     <div class="col-4">
                         <div class="row">
                             <div class="col">
-                                <h5 style="font-family:Poppins;margin-left:1rem;margin-bottom: 1.5rem;">Approval Rating</h5>
+                                <h5 id="rating" style="font-family:Poppins;margin-left:1rem;margin-bottom: 1.5rem;">Approval Rating</h5>
                                 <div style="margin-left: 1rem;">
                                     <h1 class="approvalRating">{{appRating result.upvote result.downvote}}%</h1>
                                     <div id="divider"></div>
@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="col">
                                 <h5 style="font-family:Poppins;">Description</h5>
-                                <p class="d-block" style="color: #62646A;border-width: 0;border-style: none;border-bottom-style: solid;border-bottom-color: rgb(0,53,213);font-weight: normal;margin-top: 16px;">{{result.userDesc}}</p>
+                                <p class="d-block userDesc" style="color: #62646A;">{{result.userDesc}}</p>
                                 <div id="divider"></div>
                             </div>
                         </div>
@@ -154,11 +154,11 @@
                 </div>
             </footer>
         </div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/bs-init.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/bs-init.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-        <script src="assets/js/Simple-Slider.js"></script>
+        <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>

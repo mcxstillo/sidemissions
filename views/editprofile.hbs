@@ -31,7 +31,7 @@
         </div>
         <div class="d-inline" style="margin-top:1rem;">
             <form method="GET" action="/" style="display:inline;">
-                <button data-bs-hover-animate="pulse" id="sidemissions" type="submit">
+                <button id="sidemissions" type="submit">
                     SideMissions
                 </button>
             </form>
@@ -87,12 +87,12 @@
                                 <div class="card-body" style="border-radius: 5px;">
                                     <form method="post" action="/updateprofile">
                                         <div class="form-group">
-                                            <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 20px;">Description</label>
+                                            <h1 style="font-size: 22px;font-family: Poppins, sans-serif;font-weight: bold;">Description</h1>
                                             {{!-- if di gumana ulit, alisin yung handlebars --}}
                                             <textarea class="form-control" name="userDesc" type="text" style="margin-top: 1rem;">{{result.userDesc}}</textarea>
                                         </div> 
                                        
-                                            <h1 style="font-size: 20px;font-family: Poppins, sans-serif;font-weight: bold;">Contact Information</h1>
+                                            <h1 style="margin-top:2rem;font-size: 20px;font-family: Poppins, sans-serif;font-weight: bold;">Contact Information</h1>
                                             <div class="form-group">
                                                 <label style="font-family: Poppins, sans-serif;font-weight: normal;font-size: 17px;margin-top: 1rem;">Phone number</label>
                                                 {{!-- ginawa ko tong string kasi yun naka sulat sa design --}}
