@@ -60,7 +60,6 @@ $(document).ready(function(){
         }
     }
 
-
     // AJAX function to delete job from manage posts
     $("button[name='delete']").click(function() {
         $.ajax({
@@ -94,7 +93,7 @@ $(document).ready(function(){
     })
 
     // BUTTON COLOR CHANGE FOR RATING
-    $("input[name='rating']").click(function() {  
+    $("input:radio[name='rating']").click(function() {  
         if (this.id=="like") {
             console.log("like");
             $(this).prev().addClass("liked");
