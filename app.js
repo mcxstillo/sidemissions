@@ -49,9 +49,14 @@ app.engine('hbs', exphbs.create({
         return moment(postDate).format("MMMM DD YYYY");
       },
       appRating: function(upvote,downvote){
+    
         var x= upvote / (upvote + downvote) * 100;
+        if(x)
         return x.toFixed(2);
+        else
+        return 0;
       }
+
     }
 }).engine);
 
