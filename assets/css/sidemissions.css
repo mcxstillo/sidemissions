@@ -32,6 +32,21 @@ body {
     color: gray;
   }
 
+.updatebtn {
+  color: #1c1259;
+  background-color: #FF9800;
+  width: 8%;
+  float: right;
+  font-family: 'Poppins';
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.updatebtn:hover {
+  background-color: #FFD28C;
+  color: #1C1259;
+}
+
 #divider {
     height: 0.5px;
     background-color: rgba(33,37,41,0.2);
@@ -127,7 +142,7 @@ body {
     width: 100%;
     padding: 0px;
     padding-right: 0;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-right: 0;
     margin-left: 13rem;
 }
